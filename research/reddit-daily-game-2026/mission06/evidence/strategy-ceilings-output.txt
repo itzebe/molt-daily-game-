@@ -1,0 +1,42 @@
+============================================================
+MISSION 06 — EXACT STRATEGY CEILINGS (mean damage/striker)
+============================================================
+Asymptotic regime N=4000; 200 trials; seed 424242+N; model-level only.
+
+  obvious (lazy herd)          21.00
+  herd80 (casual)              24.21
+  uniform (blind random)       29.07
+  spread-top5 (deliberate)     28.00
+  spread-all (full spread)     29.08
+  best (DP optimum)            34.85
+
+Analytic cross-check (deterministic, share-based):
+  spread-all (1/15)            29.07
+  spread-top5 (1/5)            28.00
+  single-combo herd (1.0)      14.60
+
+============================================================
+CONSISTENT k RANGE
+============================================================
+  lazy herd fails:        k > 21.00 (and > 24.21 for casual)
+  blind random fails:     k > 29.07
+  deliberate spread wins: k <= 28.00
+  full spread wins:       k <= 28.00
+  optimum always wins:    k <= 34.85
+
+  => Design-intent-consistent range: 29.1 < k <= 28.0
+     (i.e. blind randomness fails, deliberate coordination wins).
+
+  k   obvious  herd80  uniform  top5  best   verdict
+  24   fail    win     win      win   win    
+  26   fail    fail    win      win   win    
+  27   fail    fail    win      win   win    
+  28   fail    fail    win      win   win    
+  29   fail    fail    win      fail  win    
+  30   fail    fail    fail     fail  win    
+  31   fail    fail    fail     fail  win    
+  32   fail    fail    fail     fail  win    
+  33   fail    fail    fail     fail  win    
+  34   fail    fail    fail     fail  win    
+
+Done.

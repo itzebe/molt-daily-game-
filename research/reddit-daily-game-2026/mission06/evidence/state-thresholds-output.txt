@@ -1,0 +1,22 @@
+============================================================
+MISSION 06 — THRESHOLD ACROSS BEAST STATES
+============================================================
+best-case SLAIN threshold per state (current sqrt(1000)/cap 12000 formula).
+
+  state                        threshold N   ceiling@N2000
+  all exposed (genesis)                348   34.79
+  1 armoured (crown)                   301   39.98
+  2 armoured (crown,gut)               275   43.80
+  5 armoured                           255   47.23
+  1 raw (tail)                         330   36.75
+  mixed (crown arm, gut raw)           260   46.27
+
+=> ALL-EXPOSED is the maximum threshold (worst case). Evolved beasts
+   (armoured or raw) have HIGHER ceilings and LOWER thresholds.
+   The gate is set by the CAP: N_min ≈ ceil(12000 / c_max).
+
+Note: this means, under the engine formula, the ESCAPE penalty (adds
+armour) RAISES next-day damage potential -> it does NOT create a death
+spiral. The spiral concern applies only to the rejected STATE_MULT reading.
+
+Done.

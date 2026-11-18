@@ -1,0 +1,44 @@
+============================================================
+MISSION 06 — SMALL-N HANDICAP (achievable ceiling vs N)
+============================================================
+    N   c_best   c_top5   c_uniform   c_herd80   c_obvious
+     1    21.00    21.00      14.88      20.10      21.00
+     2    21.00    21.00      14.55      19.64      21.00
+     3    21.00    20.67      14.47      19.65      21.00
+     4    29.00    29.00      19.90      20.92      21.00
+     8    29.00    28.50      20.14      20.86      21.00
+    12    32.42    28.33      24.39      21.89      21.00
+    20    30.45    28.00      23.10      22.05      21.00
+    34    33.88    28.12      26.98      23.49      21.00
+    50    32.78    28.00      25.94      23.31      21.00
+   100    33.72    28.00      27.40      23.45      21.00
+   200    34.13    28.00      28.47      23.99      21.00
+   500    34.55    28.00      29.02      24.19      21.00
+  1000    34.66    28.00      29.06      24.23      21.00
+  => c_best rises from ~21 (N=1, all in herd band) toward ~34.8 (N>=34).
+     The band structure penalises tiny crowds: they cannot spread finely.
+
+============================================================
+MISSION 06 — COEFFICIENT WINDOW (linear I=kN)
+============================================================
+For each k: the smallest N that CAN win (best play) and whether the
+lazy/casual/random crowds win at large N.
+
+   k   minN(best win)   herd80@N1000   uniform@N1000   verdict
+  22             4   WIN            WIN            lazy herd auto-wins (too easy)
+  24             4   WIN            WIN            lazy herd auto-wins (too easy)
+  25             4   fail            WIN            random auto-wins (participation only)
+  26             4   fail            WIN            random auto-wins (participation only)
+  27             4   fail            WIN            random auto-wins (participation only)
+  28             4   fail            WIN            random auto-wins (participation only)
+  29             4   fail            WIN            random auto-wins (participation only)
+  30            11   fail            fail            requires real coordination
+  31            11   fail            fail            requires real coordination
+  32            11   fail            fail            requires real coordination
+  34            41   fail            fail            requires real coordination
+
+Note: minN<0 means even the exact optimum cannot reach k*N at any N<=5000.
+=> the k that makes small subs winnable is the same k that lets random win.
+   This is the residual tension the mission asks us to surface.
+
+Done.

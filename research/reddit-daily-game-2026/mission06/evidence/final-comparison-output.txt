@@ -1,0 +1,27 @@
+============================================================
+MISSION 06 — FINAL CANDIDATE COMPARISON
+============================================================
+thr_best = smallest N a PERFECT crowd can slay (lower = small subs viable).
+thr_uniform = smallest N a BLIND-random crowd slays (lower = participation-only).
+thr_lazy = smallest N the LAZY herd slays (lower = large subs trivial).
+gap = thr_lazy - thr_best (larger = a wider "skill matters" band).
+
+  candidate                thr_best   thr_uniform   thr_lazy   band(gap)
+  A  sqrt 1000 (current)        348           415        572   348..572
+  B1 sqrt 300                    80           114        205   80..205
+  B2 sqrt 500                   211           299        567   211..567
+  B3 sqrt 700                   348           415        572   348..572
+  C1 linear k=25                  4            11         -1   n/a
+  C2 linear k=27                  4            41         -1   n/a
+  C3 linear k=29                  4           304         -1   n/a
+  C4 linear k=31                 11            -1         -1   n/a
+
+INTERPRETATION
+  - A and B* (any sqrt): thr_best > 0 always => a population gate exists.
+    Lowering the constant shifts the gate left but never removes it; and
+    the lazy herd still eventually wins for free (thr_lazy finite).
+  - C* (linear): the outcome is scale-invariant. thr_best is the only N
+    limit, and it is small (the band-structure handicap), NOT a population gate.
+    thr_lazy = -1 (the lazy herd NEVER wins at any N) for k>=25.
+
+Done.

@@ -1,0 +1,60 @@
+============================================================
+MISSION 06 — HARDENED-BEAST CEILING (death-spiral check)
+============================================================
+Per-striker ceiling at N=2000, as ESCAPEs add armour to the highest-value zones:
+
+  #armoured   zones armoured        c_best(A,engine)   c_best(B,STATE_MULT)
+          0   (none)                        34.79                34.79
+          1   crown                         39.98                32.11
+          2   crown,gut                     43.80                29.67
+          3   crown,gut,claw                45.60                27.74
+          4   crown,gut,claw,hide           46.92                26.38
+          5   crown,gut,claw,hide,tail          47.23                25.95
+
+=> Reading A (engine): hardening does NOT lower the ceiling (an armoured zone
+   still yields 1.6x with the right tool). No death spiral.
+=> Reading B: hardening lowers the ceiling. Repeated escapes could spiral.
+
+============================================================
+MISSION 06 — RECOMMENDED COEFFICIENT DERIVATION
+============================================================
+Measured asymptotic damage/striker: obvious=21.00 herd80=24.23 uniform=29.06 best=34.66
+
+Principle: the target k must satisfy
+  (i)  the lazy herd FAILS:      k > c_herd80
+  (ii) an engaged spread WINS:   k <= c_uniform
+  (iii) scale-invariance:        k constant (independent of N)
+
+Choose k = c_herd + 0.3*(c_best - c_herd) = 24.23 + 0.3*10.43 = 27.36
+  -> round to k = 27  (range 25..30 defensible)
+
+  k     obvious fails?  herd80 fails?  uniform wins?  coordination gap
+  21      no             no            yes          -0.31
+  24      yes            no            yes          -0.02
+  25      yes            yes           yes          0.07
+  26      yes            yes           yes          0.17
+  27      yes            yes           yes          0.27
+  28      yes            yes           yes          0.36
+  29      yes            yes           yes          0.46
+  30      yes            yes           no           0.55
+  32      yes            yes           no           0.75
+
+============================================================
+MISSION 06 — LINEAR FORMULA I(N)=k*N VERIFICATION (k=27)
+============================================================
+    N   I=kN    c_herd   c_best   coord-gap   obvious  herd80  uniform
+     4     108    20.92    29.00        0.75        .       .       .
+     8     216    20.86    29.00        0.75        .       .       .
+    12     324    21.89    32.42        0.49        .       .       .
+    20     540    22.05    30.45        0.59        .       .       .
+    50    1350    23.31    32.78        0.39        .       .       .
+   100    2700    23.45    33.72        0.35        .       .       S
+   250    6750    24.15    34.36        0.28        .       .       S
+   500   13500    24.19    34.55        0.27        .       .       S
+  1000   27000    24.23    34.66        0.27        .       .       S
+  5000  135000    24.22    34.86        0.26        .       .       S
+
+=> coord-gap is ~constant (~0.27) across N: the SAME effort wins at any size.
+   Scale-invariant. The lazy herd fails; an engaged spread succeeds.
+
+Done.

@@ -1,0 +1,41 @@
+============================================================
+MISSION 06 — ADVERSARIAL VERIFICATION
+============================================================
+
+--- T1: repeated use of one tool (fatigue 0.8 on yesterday's top tool) ---
+  day 1: fatiguedTool=none totalDamage=2400 topTool=cleave
+  day 2: fatiguedTool=cleave totalDamage=2200 topTool=cleave
+  day 3: fatiguedTool=cleave totalDamage=2200 topTool=cleave
+  => day 2 onwards, cleave (yesterday's top tool) is penalised 0.8x; the crowd is nudged to vary.
+
+--- T2: repeated attacks on one zone (over-use >=35% -> armour) ---
+  day 1: crownShare=1.00 crownState(before)=exposed -> next=armoured
+  day 2: crownShare=1.00 crownState(before)=armoured -> next=armoured
+  day 3: crownShare=1.00 crownState(before)=armoured -> next=armoured
+  day 4: crownShare=1.00 crownState(before)=armoured -> next=armoured
+  => piling on one zone arms it next day (self-limiting): the obvious target is punished.
+
+--- T3: participation variability (spike then low turnout) ---
+  low turnout  N=  12  I=  3464  dmg=    379  ESCAPED (current sqrt formula)
+               same N under linear k=27: I=324  dmg=379  SLAIN
+  normal       N= 200  I= 12000  dmg=   5839  ESCAPED (current sqrt formula)
+               same N under linear k=27: I=5400  dmg=5839  SLAIN
+  spike        N=3000  I= 12000  dmg=  87200  SLAIN (current sqrt formula)
+               same N under linear k=27: I=81000  dmg=87200  SLAIN
+  => sqrt: turnout alone decides. linear: the same per-striker bar applies at every turnout.
+
+--- T4: deliberate crowd manipulation (an adversary wants ESCAPED) ---
+  N=50: honest dmg=1479 (29.6/str) -> with 40% piling: 1250 (25.0/str)
+  N=500: honest dmg=14559 (29.1/str) -> with 40% piling: 12500 (25.0/str)
+  => a piling minority lowers the aggregate; the community outcome is manipulable by
+     coordinated spoilers. This is inherent to a shared pool and should be disclosed.
+
+--- T5: C2 (pierce vs exposed 1.0 vs 1.6) effect on the A5 threshold ---
+  pierce-vs-exposed=1.0 -> best-case threshold N=348
+  pierce-vs-exposed=1.6 -> best-case threshold N=255
+  => C2 shifts the threshold by a few % but does not change the structural conclusion.
+
+--- T6: is there a dominant static combo? (best for its zone in every state) ---
+  combos best in every state: 0  => no static dominant play (matches Mission 05 A4).
+
+Done.

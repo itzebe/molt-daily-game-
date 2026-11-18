@@ -1,0 +1,32 @@
+============================================================
+MISSION 06 — MIXED-CROWD TENSION (SLAIN rate vs de-herd fraction p)
+============================================================
+Crowd: fraction p de-herds (spreads over top-5), (1-p) piles on the best combo.
+100 days; seed 13579+N+p*100; model-level only.
+
+--- target = CURRENT sqrt(1000) ---
+   p     N=8     N=50    N=200   N=1000
+  0.0       0%      0%      0%    100%
+  0.1       0%      0%      0%    100%
+  0.2       0%      0%      0%    100%
+  0.3       0%      0%      0%    100%
+  0.4       0%      0%      0%    100%
+  0.5       0%      0%      0%    100%
+  0.7       0%      0%      0%    100%
+  1.0       0%      0%      0%    100%
+
+--- target = LINEAR k=27 ---
+   p     N=8     N=50    N=200   N=1000
+  0.0       0%      0%      0%      0%
+  0.1       9%     47%     69%     97%
+  0.2      14%     78%     88%     98%
+  0.3      24%     88%     99%     99%
+  0.4      31%     87%     99%     99%
+  0.5      31%     70%     84%     95%
+  0.7      33%     23%      0%      0%
+  1.0      41%     87%     96%    100%
+
+Interpretation: a healthy shared goal shows a TRANSITION as p rises from 0
+to 1 (a real coordination threshold). A degenerate goal is flat (0% or 100%).
+
+Done.

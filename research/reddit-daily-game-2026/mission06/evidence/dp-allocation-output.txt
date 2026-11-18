@@ -1,0 +1,39 @@
+============================================================
+MISSION 06 — DP-OPTIMAL ALLOCATION STRUCTURE
+============================================================
+N=1000; optimal distribution over combos (genesis/all-exposed):
+
+  combo            count   share    base   band(mult)   dmg/striker
+  crown:cleave        99   0.099     30   lone(1.4)        42
+  crown:pierce        99   0.099     30   lone(1.4)        42
+  crown:burn          63   0.063     18   lone(1.4)        25
+  hide:cleave         99   0.099     22   lone(1.4)        31
+  hide:pierce         99   0.099     22   lone(1.4)        31
+  hide:burn           29   0.029   13.2   read(1.9)        25
+  gut:cleave          99   0.099     28   lone(1.4)        39
+  gut:pierce          99   0.099     28   lone(1.4)        39
+  gut:burn            29   0.029   16.8   read(1.9)        32
+  claw:cleave         99   0.099     24   lone(1.4)        34
+  claw:pierce         99   0.099     24   lone(1.4)        34
+  claw:burn           29   0.029   14.399999999999999   read(1.9)        27
+  tail:cleave         29   0.029     16   read(1.9)        30
+  tail:pierce         29   0.029     16   read(1.9)        30
+  total=34659  per-striker=34.66
+
+=> The optimum concentrates high-value combos in the READ band (<3%) and
+   parks the rest in the LONE band (3-10%). That is the "read" skill.
+
+============================================================
+MISSION 06 — DECENTRALIZED INFORMED CROWD CEILINGS
+============================================================
+N=1000; mean of 400 trials; seed disclosed (LCG). Model-level only.
+
+  blind uniform (15)                     29.07 dmg/striker
+  random zone+tool                       29.09 dmg/striker
+  top-8 uniformly                        26.04 dmg/striker
+  top-10 uniformly                       28.66 dmg/striker
+  right-tool only (5 zones, best tool)   28.00 dmg/striker
+  2% read on top combos                  25.82 dmg/striker
+  DP optimum (central coordination)      34.66 dmg/striker
+
+Done.

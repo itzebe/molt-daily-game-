@@ -1,0 +1,15 @@
+============================================================
+MISSION 06 — AGGREGATE CEILINGS ON MIXED-STATE BEASTS
+============================================================
+Per-striker aggregate damage; exact; N=10000.
+
+  state                                  blind   toolAware  top5    top10
+  all exposed (genesis)                   29.08     24.00   28.00   24.30
+  crown armoured                          30.75     27.60   31.60   26.10
+  mixed: crown arm, gut raw, tail raw     35.82     33.00   38.80   31.20
+  heavy: crown+gut arm, claw+tail raw     36.89     35.80   39.80   32.30
+
+Question: does tool-aware beat blind? If the gap is small, the shared goal
+rewards DISPERSION, not tool-skill, at the aggregate level.
+
+Done.

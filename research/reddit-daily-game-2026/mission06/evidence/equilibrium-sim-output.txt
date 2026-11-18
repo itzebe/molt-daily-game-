@@ -1,0 +1,51 @@
+============================================================
+MISSION 06 — MULTI-DAY EQUILIBRIUM / DEGENERACY SIM
+============================================================
+Real engine (resolveDay+molt). Legend z:zoneState initials (e/a/r), S=slain e=escape.
+
+########## target = CURRENT sqrt(1000) ##########
+  N=   8 obvious         slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+  N=   8 spreadAll       slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aaeare  d3:aaeare  d4:aaeare  d5:aaeare  d6:aaeare
+  N=   8 adaptiveHerd    slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aeaeee  d3:aaeere  d4:aarere  d5:aarree  d6:aaerre
+  N=   8 smartContrarian slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+
+  N=  50 obvious         slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+  N=  50 spreadAll       slain   0/120  firstSlain=  -1  d1:eeeeee  d2:eeaeee  d3:eeaeee  d4:eeaeee  d5:eeaeee  d6:eeaeee
+  N=  50 adaptiveHerd    slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aeaere  d3:aarree  d4:aerrae  d5:araree  d6:aeaeee
+  N=  50 smartContrarian slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+
+  N= 200 obvious         slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+  N= 200 spreadAll       slain   0/120  firstSlain=  -1  d1:eeeeee  d2:eeaeee  d3:eeaeee  d4:eeaeee  d5:eeaeee  d6:eeaeee
+  N= 200 adaptiveHerd    slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aeaeee  d3:aeerae  d4:aeaeee  d5:araere  d6:araeee
+  N= 200 smartContrarian slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+
+  N=1000 obvious         slain 120/120  firstSlain=   1  d1:eeeeeS  d2:arrrrS  d3:arrrrS  d4:arrrrS  d5:arrrrS  d6:arrrrS
+  N=1000 spreadAll       slain 120/120  firstSlain=   1  d1:eeeeeS  d2:eeeeeS  d3:eeeeeS  d4:eeeeeS  d5:eeeeeS  d6:eeeeeS
+  N=1000 adaptiveHerd    slain 120/120  firstSlain=   1  d1:eeeeeS  d2:arrerS  d3:aererS  d4:aeeerS  d5:arereS  d6:aerrrS
+  N=1000 smartContrarian slain 120/120  firstSlain=   1  d1:eeeeeS  d2:arrrrS  d3:arrrrS  d4:arrrrS  d5:arrrrS  d6:arrrrS
+
+########## target = LINEAR k=27 ##########
+  N=   8 obvious         slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+  N=   8 spreadAll       slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aaeare  d3:aaeare  d4:aaeare  d5:aaeare  d6:aaeare
+  N=   8 adaptiveHerd    slain   1/120  firstSlain=  41  d1:eeeeee  d2:aeaeee  d3:aaeere  d4:aarere  d5:aarree  d6:aaerre
+  N=   8 smartContrarian slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+
+  N=  50 obvious         slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+  N=  50 spreadAll       slain 120/120  firstSlain=   1  d1:eeeeeS  d2:eeeeeS  d3:eeeeeS  d4:eeeeeS  d5:eeeeeS  d6:eeeeeS
+  N=  50 adaptiveHerd    slain  50/120  firstSlain=   3  d1:eeeeee  d2:aeaere  d3:aarreS  d4:aerrrS  d5:arrreS  d6:aeeeee
+  N=  50 smartContrarian slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+
+  N= 200 obvious         slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+  N= 200 spreadAll       slain  60/120  firstSlain=   1  d1:eeeeeS  d2:eeeeee  d3:eeaeeS  d4:eeeeee  d5:eeaeeS  d6:eeeeee
+  N= 200 adaptiveHerd    slain  99/120  firstSlain=   5  d1:eeeeee  d2:aeaeee  d3:aeerae  d4:aeaeee  d5:araerS  d6:arreeS
+  N= 200 smartContrarian slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+
+  N=1000 obvious         slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+  N=1000 spreadAll       slain  60/120  firstSlain=   1  d1:eeeeeS  d2:eeeeee  d3:eeeeaS  d4:eeeeee  d5:eeeeaS  d6:eeeeee
+  N=1000 adaptiveHerd    slain 110/120  firstSlain=   2  d1:eeeeee  d2:arreaS  d3:aererS  d4:aeeerS  d5:arereS  d6:aerrrS
+  N=1000 smartContrarian slain   0/120  firstSlain=  -1  d1:eeeeee  d2:aarrre  d3:aarrre  d4:aarrre  d5:aarrre  d6:aarrre
+
+Key question: does any STATIC strategy win ~every day (degenerate), or is
+the win rate sensitive to strategy (decision matters)?
+
+Done.

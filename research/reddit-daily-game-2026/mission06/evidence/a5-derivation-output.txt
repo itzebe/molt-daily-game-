@@ -1,0 +1,46 @@
+============================================================
+MISSION 06 — A5 INDEPENDENT DERIVATION (exact DP optimum)
+============================================================
+Integrity(N) = min(1000*sqrt(N), 12000); damage = base*TOOL_MULT*CROWD_FACTOR
+Best-case = exact max over all count distributions (DP), genesis beast.
+
+Best-case SLAIN threshold (exact DP): N = 348
+  at N=348: bestTotal=12018  integrity=12000
+  at N=347: bestTotal=11993  integrity=12000
+
+Realistic SLAIN threshold by crowd model (mean of 200 trials, seed 424242+N):
+  uniform      threshold N = 415
+  herd80       threshold N = 495
+  obvious      threshold N = 572
+  random-tool  threshold N = 415
+
+Population analysis (genesis beast):
+    N   Integrity   BestDP   Best/striker   uniform   herd80   obvious
+     1       1000       21         21.00        15       20       21   SLAIN(best)=n
+     4       2000      116         29.00        80       84       84   SLAIN(best)=n
+     8       2828      232         29.00       161      167      168   SLAIN(best)=n
+    12       3464      389         32.42       293      263      252   SLAIN(best)=n
+    20       4472      609         30.45       462      441      420   SLAIN(best)=n
+    50       7071     1639         32.78      1297     1165     1050   SLAIN(best)=n
+   100      10000     3372         33.72      2740     2345     2100   SLAIN(best)=n
+   250      12000     8591         34.36      7199     6037     5250   SLAIN(best)=n
+   350      12000    12068         34.48     10135     8476     7350   SLAIN(best)=Y
+   500      12000    17274         34.55     14512    12097    10500   SLAIN(best)=Y
+  1000      12000    34659         34.66     29056    24228    21000   SLAIN(best)=Y
+
+Optimal allocation structure at N=1200 (Integrity capped at 12000):
+  per-band best achievable damage/striker (genesis, all exposed):
+    band x0.7 (share>=0.3) -> crown:cleave = 21
+    band x1 (share>=0.1) -> crown:cleave = 30
+    band x1.4 (share>=0.03) -> crown:cleave = 42
+    band x1.9 (share>=0) -> crown:cleave = 57
+
+Analytic bound (the decisive mechanism):
+  If everyone piles on one combo, it lands in the >=30% "herd" band (x0.7).
+  Best herd combo: crown:cleave -> 21 dmg/striker.
+  So a coordinated crowd must SPREAD to reach higher bands, but spreading
+  lowers each combo's count... the optimum balances these.
+  With Integrity capped at 12000, SLAIN needs total>=12000.
+  At 21 dmg/striker (single-combo herd) that is >= 572 strikers.
+
+Done.

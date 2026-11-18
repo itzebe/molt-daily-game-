@@ -1,0 +1,4 @@
+dmgFor vs engine damageFor: 3000 pass, 0 fail
+totalDamage vs engine resolveDay: 520 pass, 0 fail
+
+OVERALL: 3520 pass, 0 fail

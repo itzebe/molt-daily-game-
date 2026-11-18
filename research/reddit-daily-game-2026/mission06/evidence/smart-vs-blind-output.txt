@@ -1,0 +1,29 @@
+============================================================
+MISSION 06 — SMART vs BLIND SPREAD (aggregate, exact)
+============================================================
+Per-striker aggregate damage; no randomness; N=10000 (shares exact).
+
+  herd (1 combo, 100%)                       21.00   [herd:1 common:0 lone:0 read:0]
+  right-tool only (5 combos, 20%)            28.00   [herd:0 common:5 lone:0 read:0]
+  blind uniform (15 combos, 6.7%)            29.08   [herd:0 common:0 lone:15 read:0]
+  smart4 (top-4, 25%)                        29.00   [herd:0 common:4 lone:0 read:0]
+  smart6 (top-6, 16.7%)                      27.34   [herd:0 common:6 lone:0 read:0]
+  smart10 (top-10, 10%)                      24.30   [herd:0 common:10 lone:0 read:0]
+  DP-like (9x10% + 5x3%)                     25.78   [herd:0 common:9 lone:5 read:0]
+
+=== LADDER (lazy -> optimal) ===
+  herd               21.00
+  right-tool only    28.00
+  blind uniform      29.08
+  smart4             29.00
+  smart6             27.34
+  smart10            24.30
+  DP-like            25.78
+
+=== k SEPARATING blind from smart ===
+  k must be > blind uniform AND <= a realistic smart-spread:
+  blind=29.08  smart4=29.00  smart6=27.34  smart10=24.30
+  => k in (29.08, 29.00] separates blind from smart (using smart4 as the
+     weakest "smart" strategy). Integer candidates: 30, 31.
+
+Done.

@@ -1,0 +1,37 @@
+============================================================
+MISSION 06 — STATIC vs ADAPTIVE ROBUSTNESS (real molt rules)
+============================================================
+SLAIN rate over 120 days; linear I=kN; 4 populations; 6 strategies.
+
+########## k=26 ##########
+  strategy                               N=8    N=50   N=200  N=1000
+  static obvious (crown:cleave)           0%      0%      0%      0%
+  static spread-all (cycle 15)            0%    100%    100%    100%
+  static spread-top5 (cycle 5)          100%    100%    100%    100%
+  static right-tool (zone=best tool)    100%    100%    100%    100%
+  adaptive: avoid fatigued tool           0%      1%      1%      1%
+  adaptive: spread + avoid armour         0%    100%    100%    100%
+
+########## k=27 ##########
+  strategy                               N=8    N=50   N=200  N=1000
+  static obvious (crown:cleave)           0%      0%      0%      0%
+  static spread-all (cycle 15)            0%    100%     50%     50%
+  static spread-top5 (cycle 5)          100%    100%    100%    100%
+  static right-tool (zone=best tool)    100%    100%    100%    100%
+  adaptive: avoid fatigued tool           0%      1%      1%      1%
+  adaptive: spread + avoid armour         0%    100%      1%     67%
+
+########## k=28 ##########
+  strategy                               N=8    N=50   N=200  N=1000
+  static obvious (crown:cleave)           0%      0%      0%      0%
+  static spread-all (cycle 15)            0%     50%     50%      1%
+  static spread-top5 (cycle 5)          100%    100%    100%    100%
+  static right-tool (zone=best tool)    100%    100%    100%    100%
+  adaptive: avoid fatigued tool           0%      1%      1%      1%
+  adaptive: spread + avoid armour         0%      1%      1%      2%
+
+Interpretation: a healthy design has static strategies with MIXED rates
+(no static strategy at 100%), while an adaptive strategy reaches 100%.
+If a static strategy is at 100% for all N, the game is "solved".
+
+Done.

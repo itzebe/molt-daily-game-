@@ -1,0 +1,46 @@
+============================================================
+MISSION 06 — SCALE-INVARIANCE PROBE
+============================================================
+Does the outcome depend on population N, or only on play quality?
+
+--- Damage per striker (mean) vs N, several crowd strategies ---
+     N    bestDP   uniform   herd80   obvious   (damage/striker)
+     10    28.00     20.14    20.92     21.00
+     25    32.32     25.01    22.26     21.00
+     50    32.78     25.94    23.31     21.00
+    100    33.72     27.40    23.45     21.00
+    200    34.13     28.47    23.99     21.00
+    400    34.49     28.95    24.15     21.00
+    800    34.63     29.03    24.19     21.00
+   1600    34.76     29.07    24.21     21.00
+   3200    34.83     29.07    24.21     21.00
+
+Observation: damage/striker converges to a CONSTANT as N grows.
+  best ~34.7, uniform ~29, herd80 ~24, obvious ~21. (Integrality makes
+  small N differ; asymptotically each is N-independent.)
+
+--- The ratio D/I under the CURRENT formula I=min(1000*sqrtN,12000) ---
+     N   I(N)    bestD/I   obviousD/I   outcome(best/obvious)
+     10    3162      0.09         0.07   escape / escape
+     25    5000      0.16         0.10   escape / escape
+     50    7071      0.23         0.15   escape / escape
+    100   10000      0.34         0.21   escape / escape
+    200   12000      0.57         0.35   escape / escape
+    400   12000      1.15         0.70   SLAIN / escape
+    800   12000      2.31         1.40   SLAIN / SLAIN
+   1600   12000      4.64         2.80   SLAIN / SLAIN
+   3200   12000      9.29         5.60   SLAIN / SLAIN
+
+=> As N grows, BOTH ratios grow without bound: SLAIN becomes automatic,
+   even for the laziest crowd. Below ~348, even the BEST crowd fails.
+   The outcome is a function of N, not of coordination. (A5 confirmed.)
+
+--- The same under a LINEAR target I(N)=k*N (scale-invariant) ---
+   For I=k*N, outcome is SLAIN iff damage/striker >= k, INDEPENDENT of N.
+   threshold k  ->  who slays (at any N large enough for the regime)
+        21         best, uniform, herd80, obvious
+        24         best, uniform, herd80
+        29         best
+      34.7         nobody
+
+Done.
