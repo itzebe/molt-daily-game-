@@ -1,0 +1,9 @@
+Payoff matrix: rows = probe strategy, cols = crowd strategy (90 days, 80 players)
+probe            chaser      loyal contrariancrownPierce  gutCleave
+chaser             2435       5869       4623       6309       5366
+loyal              3924       2157       3265       6526       3587
+contrarian         3878       4162       1696       5530       4098
+crownPierce        3308       2609       4174        822       4913
+gutCleave          3667       3233       3027       4006       2067
+
+(diagonal-agnostic: a healthy minority game shows each strategy winning in SOME column)

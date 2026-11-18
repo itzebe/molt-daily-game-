@@ -1,0 +1,1906 @@
+# The catalogue. This file is the single source of truth: the README and the
+# website are both generated from it by `npm run build`.
+#
+# Fields
+#   name        (required) display name
+#   url         (required) direct link to the game, https only
+#   category    (required) an `id` from data/categories.yml
+#   platform    (required) `web` or `reddit`
+#   description (required) one sentence, ends with a period, no marketing fluff
+#   tags        (optional) any of: nyt, paywalled, open-source, unlimited,
+#                          multiplayer, audio, non-english, classic
+#
+# Entries are sorted by category (in categories.yml order), then A-Z by name.
+# `npm run sort` will do that for you.
+
+# --------------------------------------------------------------- word-guessing
+- name: Wordle
+  url: https://www.nytimes.com/games/wordle/index.html
+  category: word-guessing
+  platform: web
+  description: Six guesses, five letters, green and yellow tiles — the game that created the genre.
+  tags: [nyt, classic]
+
+- name: 2word
+  url: https://www.reddit.com/r/2word/
+  category: word-guessing
+  platform: reddit
+  description: Guess the word from a pair of clue words, with the comment thread as the leaderboard.
+
+- name: Absurdle
+  url: https://qntm.org/files/absurdle/absurdle.html
+  category: word-guessing
+  platform: web
+  description: Adversarial Wordle that quietly changes its answer to stay as far from your guess as it legally can.
+  tags: [unlimited]
+
+- name: Antiwordle
+  url: https://www.antiwordle.com/
+  category: word-guessing
+  platform: web
+  description: Inverted scoring where the goal is to avoid the word for as many turns as possible.
+
+- name: Crosswordle
+  url: https://crosswordle.com/
+  category: word-guessing
+  platform: web
+  description: Reverse Wordle — you are given the coloured clue grid and have to reconstruct the guesses that produced it.
+
+- name: DailyGuess
+  url: https://www.reddit.com/r/DailyGuess/
+  category: word-guessing
+  platform: reddit
+  description: Straight-ahead Wordle playable inside a Reddit post, no site to visit.
+
+- name: Dordle
+  url: https://zaratustra.itch.io/dordle
+  category: word-guessing
+  platform: web
+  description: "The original multi-board spin-off: two grids, one shared set of guesses."
+
+- name: Duotrigordle
+  url: https://duotrigordle.com/
+  category: word-guessing
+  platform: web
+  description: Thirty-two boards and thirty-seven guesses, for when eight is not enough.
+
+- name: Fibble
+  url: https://fibble.xyz/
+  category: word-guessing
+  platform: web
+  description: Every row of feedback contains exactly one lie.
+
+- name: hello wordl
+  url: https://hellowordl.net/
+  category: word-guessing
+  platform: web
+  description: Unlimited Wordle with an adjustable word length from four to eleven letters.
+  tags: [unlimited, open-source]
+
+- name: Le Mot
+  url: https://wordle.louan.me/
+  category: word-guessing
+  platform: web
+  description: Wordle, but in french.
+  tags: [unlimited]
+
+- name: Lirdle
+  url: https://lirdle.com/
+  category: word-guessing
+  platform: web
+  description: Wordle where the game lies to you once per guess and you have to work out which tile it was.
+
+- name: Octordle
+  url: https://www.britannica.com/games/octordle/
+  category: word-guessing
+  platform: web
+  description: Eight boards solved in parallel with thirteen guesses.
+
+- name: Petals
+  url: https://www.reddit.com/r/Petals/
+  category: word-guessing
+  platform: reddit
+  description: Hangman rebuilt as a flower that loses a petal with every wrong letter.
+
+- name: Polygonle
+  url: https://www.polygonle.com/
+  category: word-guessing
+  platform: web
+  description: Instead of a fixed length you get a shape pattern showing which letters repeat.
+
+- name: Quordle
+  url: https://www.merriam-webster.com/games/quordle/
+  category: word-guessing
+  platform: web
+  description: Four grids at once — every guess is played on all of them simultaneously.
+
+- name: Reversle
+  url: https://reversle.net/
+  category: word-guessing
+  platform: web
+  description: Speed variant where you race to reproduce a finished board from its clue colours.
+
+- name: Squardle
+  url: https://fubargames.se/squardle/
+  category: word-guessing
+  platform: web
+  description: Wordle on a 5x5 board, solving six interlocking words across two directions at once.
+
+- name: Squareword
+  url: https://squareword.org/
+  category: word-guessing
+  platform: web
+  description: Fill a 5x5 grid where every row and every column has to be a real word.
+
+- name: Survivle
+  url: https://lazyguyy.github.io/survivle/
+  category: word-guessing
+  platform: web
+  description: Wordle turned survival horror — guessing the answer is how you lose.
+
+- name: SUTOM
+  url: https://sutom.nocle.fr/
+  category: word-guessing
+  platform: web
+  description: French Wordle with six to nine letter words and the first letter given away.
+  tags: [non-english]
+
+- name: Term.ooo
+  url: https://term.ooo/
+  category: word-guessing
+  platform: web
+  description: The Brazilian Portuguese Wordle, with three-board and six-board modes.
+  tags: [non-english]
+
+- name: Vowelkit
+  url: https://www.vowelkit.com/daily
+  category: word-guessing
+  platform: web
+  description: Guess the five-letter word of the day in six tries, with extra modes from 3 to 11 letters.
+  tags: [unlimited]
+
+- name: Waffle
+  url: https://wafflegame.net/
+  category: word-guessing
+  platform: web
+  description: A waffle-shaped grid of scrambled words that you repair in fifteen swaps or fewer.
+
+- name: Word Peaks
+  url: https://vegeta897.github.io/word-peaks/
+  category: word-guessing
+  platform: web
+  description: Clues tell you whether each letter comes alphabetically before or after your guess.
+  tags: [open-source]
+
+- name: Wordiply
+  url: https://www.wordiply.com/
+  category: word-guessing
+  platform: web
+  description: "The Guardian's game: find the five longest words containing a given starter string."
+
+- name: WordleLike
+  url: https://wordlelike.com/
+  category: word-guessing
+  platform: web
+  description: A free hub of five daily word games — classic Wordle, six-letter Word Hurdle, Mini Crossword, Word Search and Anagram Solver.
+
+# ------------------------------------------------------------ word-connections
+- name: Word Bridge
+  url: https://bludle.com/wordbridge/
+  category: word-connections
+  platform: web
+  description: Find one word that forms a familiar compound or phrase with both words on the daily board.
+
+- name: Cemantle
+  url: https://cemantle.certitudes.org/
+  category: word-connections
+  platform: web
+  description: Semantle's hot-and-cold sibling, reporting temperature instead of a raw rank.
+
+- name: ClueRoll
+  url: https://clueroll.com/
+  category: word-connections
+  platform: web
+  description: Find the word linking three clues, then roll lettered cubes into place so their top faces spell the answer.
+
+- name: Combinations
+  url: https://combinations.org/
+  category: word-connections
+  platform: web
+  description: Find the word that pairs with every one of the given words to form a compound.
+
+- name: Conexo
+  url: https://conexo.ws/en
+  category: word-connections
+  platform: web
+  description: Connections-style grouping puzzle with a generous daily archive.
+
+- name: Connections
+  url: https://www.nytimes.com/games/connections
+  category: word-connections
+  platform: web
+  description: Sort sixteen words into four hidden groups of four; four mistakes and you are out.
+  tags: [nyt, classic]
+
+- name: Contexto
+  url: https://contexto.me/
+  category: word-connections
+  platform: web
+  description: Guess the secret word; each attempt comes back ranked by semantic closeness.
+
+- name: Crossclimb
+  url: https://www.linkedin.com/games/crossclimb
+  category: word-connections
+  platform: web
+  description: Solve a ladder of one-letter-apart words, then reorder the rungs into a hidden sequence.
+
+- name: HotandCold
+  url: https://www.reddit.com/r/HotandCold/
+  category: word-connections
+  platform: reddit
+  description: Semantic hot-and-cold guessing played out in a Reddit post, with everyone's guesses visible.
+
+- name: Kinship
+  url: https://playkinship.com/
+  category: word-connections
+  platform: web
+  description: Four clues share one hidden word; every guess is ranked by how close it sits to the word at their centre.
+
+- name: Pedantle
+  url: https://pedantle.certitudes.org/
+  category: word-connections
+  platform: web
+  description: Uncover a hidden Wikipedia article by guessing words, with semantic near-misses highlighted.
+
+- name: Pimantle
+  url: https://semantle.pimanrul.es/
+  category: word-connections
+  platform: web
+  description: Semantle plotted on a two-dimensional map so you can see your guesses closing in.
+
+- name: Pinpoint
+  url: https://www.linkedin.com/games/pinpoint
+  category: word-connections
+  platform: web
+  description: Name the category from clues revealed one at a time — the fewer you need, the better.
+
+- name: PoopleGame.fun
+  url: https://pooplegame.fun/
+  category: word-connections
+  platform: web
+  description: A free daily four-letter word ladder that turns a start word into POOP one letter at a time, with hints, a solver and unlimited practice.
+  tags: [unlimited]
+
+- name: Puzzgrid
+  url: https://www.puzzgrid.com/
+  category: word-connections
+  platform: web
+  description: Community-made connecting walls in the style of the BBC quiz show Only Connect.
+  tags: [unlimited]
+
+- name: Redactle
+  url: https://redactle.net/
+  category: word-connections
+  platform: web
+  description: Identify a fully redacted Wikipedia article by guessing the words back into existence.
+
+- name: Semantle
+  url: https://semantle.com/
+  category: word-connections
+  platform: web
+  description: The original semantic-similarity hunt, and still one of the hardest daily games there is.
+  tags: [classic]
+
+- name: Stacks
+  url: https://www.theatlantic.com/games/stacks/
+  category: word-connections
+  platform: web
+  description: The Atlantic's stacking word game, where each answer feeds the next.
+
+- name: Weaver
+  url: https://weavergame.org/
+  category: word-connections
+  platform: web
+  description: Classic word ladder — change one letter at a time to get from the start word to the end word.
+
+- name: word.golf
+  url: https://word.golf/
+  category: word-connections
+  platform: web
+  description: Travel between two words in as few semantic hops as possible.
+
+- name: WordWeb
+  url: https://blendletan.github.io/WordWeb/
+  category: word-connections
+  platform: web
+  description: Connect the day's words by changing one letter at a time while using as few words as possible.
+
+# ------------------------------------------------------------------ crosswords
+- name: The Mini Crossword
+  url: https://www.nytimes.com/crosswords/game/mini
+  category: crosswords
+  platform: web
+  description: A 5x5 grid most people finish in under a minute — the gateway drug of crosswords.
+  tags: [nyt, classic]
+
+- name: The Atlantic Crossword
+  url: https://www.theatlantic.com/games/daily-crossword/
+  category: crosswords
+  platform: web
+  description: A free daily crossword that ramps from very easy on Monday to properly chewy by Friday.
+
+- name: Bracket City
+  url: https://www.theatlantic.com/games/bracket-city/
+  category: crosswords
+  platform: web
+  description: One sentence of nested bracketed clues; solve the inner ones to unlock the outer ones.
+
+- name: Crosshare
+  url: https://crosshare.org/
+  category: crosswords
+  platform: web
+  description: Free, open-source, ad-light home for community-built crosswords including a daily mini.
+  tags: [open-source]
+
+- name: Crossword Club
+  url: https://crosswordclub.com/puzzles/
+  category: crosswords
+  platform: web
+  description: A daily indie crossword from rotating constructors, free to solve in the browser.
+
+- name: CrosswordChef
+  url: https://www.reddit.com/r/CrosswordChef/
+  category: crosswords
+  platform: reddit
+  description: A hand-built daily mini crossword served straight into your Reddit feed.
+
+- name: Double Cross
+  url: https://everhall.ca/
+  category: crosswords
+  platform: web
+  description: A 7x7 daily crossword where each card clues two same-length slots at once; the crossing letters decide which answer goes where.
+
+- name: Guardian Cryptic Crossword
+  url: https://www.theguardian.com/crosswords/series/cryptic
+  category: crosswords
+  platform: web
+  description: The daily British cryptic, free and unapologetically difficult.
+
+- name: Guardian Quick Crossword
+  url: https://www.theguardian.com/crosswords/series/quick
+  category: crosswords
+  platform: web
+  description: Definition-only clues and a small grid; a good on-ramp before the cryptic.
+
+- name: LA Times Mini Crossword
+  url: https://www.latimes.com/games/mini-crossword
+  category: crosswords
+  platform: web
+  description: A free mini in the same shape as the NYT one, no account required.
+
+- name: Lex Mini Crossword
+  url: https://lex.games/mini/
+  category: crosswords
+  platform: web
+  description: Indie mini crossword with a friendlier clue voice than the newspaper minis.
+
+- name: Minute Cryptic
+  url: https://www.minutecryptic.com/
+  category: crosswords
+  platform: web
+  description: A single cryptic clue per day with progressive hints that teach you the mechanics.
+
+- name: PocketGrids
+  url: https://www.reddit.com/r/PocketGrids/
+  category: crosswords
+  platform: reddit
+  description: Bite-sized crossword grids designed for one-thumb solving on mobile.
+
+- name: Puzzmo Crossword
+  url: https://www.puzzmo.com/play/crossword
+  category: crosswords
+  platform: web
+  description: Puzzmo's flagship daily crossword, with a same-day mini for the impatient.
+
+- name: STAT Mini Crossword
+  url: https://www.statnews.com/stat-mini-crossword/
+  category: crosswords
+  platform: web
+  description: A mini crossword with a health, biotech and medicine slant.
+
+- name: Syllacrostic
+  url: https://www.reddit.com/r/syllacrostic/
+  category: crosswords
+  platform: reddit
+  description: An acrostic built out of syllables rather than single letters.
+
+- name: Unolingo
+  url: https://games.usatoday.com/games/uclick-unolingo
+  category: crosswords
+  platform: web
+  description: A crossword with no clues at all — every letter appears exactly once and logic does the rest.
+
+- name: Washington Post Crossword
+  url: https://www.washingtonpost.com/games/crossword/
+  category: crosswords
+  platform: web
+  description: A full-size free daily crossword with an easy Sunday-to-Saturday difficulty ramp.
+
+# ------------------------------------------------------------------ word-grids
+- name: Spelling Bee
+  url: https://www.nytimes.com/puzzles/spelling-bee
+  category: word-grids
+  platform: web
+  description: Seven letters, one mandatory centre letter, and a very long tail of obscure words.
+  tags: [nyt, classic]
+
+- name: BeeHints Daily
+  url: https://www.beehints.com/play
+  category: word-grids
+  platform: web
+  description: Make words from a seven-letter hive that must use the centre letter, and hunt for the pangram.
+
+- name: Blossom
+  url: https://www.merriam-webster.com/games/blossom-word-game
+  category: word-grids
+  platform: web
+  description: Merriam-Webster's petal-shaped take on Spelling Bee, with a rotating bonus letter.
+
+- name: Bongo
+  url: https://www.puzzmo.com/game/bongo
+  category: word-grids
+  platform: web
+  description: A letter-tile scoring game where bonus squares reward you for finding the highest-value words.
+
+- name: Cell Tower
+  url: https://www.andrewt.net/puzzles/cell-tower
+  category: word-grids
+  platform: web
+  description: Build words up a tower of cells where every level constrains the next.
+
+- name: DailyGrid
+  url: https://www.reddit.com/r/DailyGrid/
+  category: word-grids
+  platform: reddit
+  description: A Strands-style themed word search built for the Reddit app.
+
+- name: Elided
+  url: https://elided.app/
+  category: word-grids
+  platform: web
+  description: "A daily puzzle to find the longest hidden word: tap letters left to right across the grid, skipping any you like, to spell words."
+
+- name: Hexaword
+  url: https://www.reddit.com/r/hexaword/
+  category: word-grids
+  platform: reddit
+  description: Align syllable tiles on a hex grid so that every direction reads as a real word.
+
+- name: Jumble Daily
+  url: https://fun.chicagotribune.com/game/tca-jumble-daily/
+  category: word-grids
+  platform: web
+  description: The newspaper anagram classic, still running daily and still ending in a groan-worthy pun.
+  tags: [classic]
+
+- name: Jumblie
+  url: https://jumblie.com/
+  category: word-grids
+  platform: web
+  description: Untangle four themed words from a shared pool of letter tiles.
+
+- name: Letter Boxed
+  url: https://www.nytimes.com/puzzles/letter-boxed
+  category: word-grids
+  platform: web
+  description: Chain words around the sides of a square, never using two letters from the same side in a row.
+  tags: [nyt]
+
+- name: NYNR
+  url: https://nynr.day/
+  category: word-grids
+  platform: web
+  description: Trace words across a letter grid by swiping lock-screen-style patterns.
+
+- name: Scores
+  url: https://scores.lol/
+  category: word-grids
+  platform: web
+  description: Score words by their Scrabble-style letter values, chasing the highest total on a board that resets once a day.
+
+- name: Scrimp
+  url: https://playscrimp.com/
+  category: word-grids
+  platform: web
+  description: You are given the clued words, not asked to guess them, and must pack them into a row too short to spell them out.
+
+- name: Spelltower
+  url: https://www.puzzmo.com/play/spelltower
+  category: word-grids
+  platform: web
+  description: Word-finding meets falling blocks — clearing long words collapses the tower.
+
+- name: Squaredle
+  url: https://squaredle.app/
+  category: word-grids
+  platform: web
+  description: A Boggle-style grid where you have to find every valid word, not just the long ones.
+
+- name: Stepwords
+  url: https://stepwords.xyz/
+  category: word-grids
+  platform: web
+  description: Each answer is the previous one plus a letter, stacked into a staircase.
+
+- name: Strands
+  url: https://www.nytimes.com/games/strands
+  category: word-grids
+  platform: web
+  description: A themed word search where the words snake in any direction and one spangram ties it together.
+  tags: [nyt]
+
+- name: Syllo
+  url: https://www.reddit.com/r/syllo/
+  category: word-grids
+  platform: reddit
+  description: Build the day's words out of syllable blocks instead of letters — a genuinely fresh mechanic.
+
+- name: Triplet
+  url: https://triplet.daily-game.page/
+  category: word-grids
+  platform: web
+  description: Find the three letters that complete all the words.
+
+- name: Typeshift
+  url: https://www.puzzmo.com/play/typeshift
+  category: word-grids
+  platform: web
+  description: Slide columns of letters up and down until every letter has been used in a word.
+
+- name: Wordchute
+  url: https://wordchute.com/
+  category: word-grids
+  platform: web
+  description: Connect touching letters to make words while planning around a visible queue of falling letters, until all 32 tiles are cleared.
+
+- name: WordDash
+  url: https://www.reddit.com/r/WordDash/
+  category: word-grids
+  platform: reddit
+  description: "Spelling Bee crossed with Strands: hunt themed words out of a shared letter set against the clock."
+
+- name: Wordflower
+  url: https://www.latimes.com/games/wordflower
+  category: word-grids
+  platform: web
+  description: The LA Times' free Spelling Bee equivalent, with a daily word target.
+
+- name: Wordpaths
+  url: https://kindaneatgames.com/wordpaths/
+  category: word-grids
+  platform: web
+  description: Trace words from filled dots to open rings so the paths cover every letter of the grid without crossing.
+
+- name: WordSeekr
+  url: https://www.reddit.com/r/WordSeekr/
+  category: word-grids
+  platform: reddit
+  description: A word search that reveals a hidden quotation once you have found everything else.
+
+# ---------------------------------------------------------------- numbers-math
+- name: Numgrove
+  url: https://numgrove.com/
+  category: numbers-math
+  platform: web
+  description: A daily math puzzle where you grow a factor/sum tree to reach the target number.
+
+- name: Bulkle
+  url: https://www.outletpicks.com/bulkle
+  category: numbers-math
+  platform: web
+  description: Five real Amazon products a day, each in two to four pack sizes — pick the size that costs least per unit.
+
+- name: Mathler
+  url: https://www.mathler.com/
+  category: numbers-math
+  platform: web
+  description: Find the hidden calculation that produces the given target number.
+
+- name: Nerdle
+  url: https://nerdlegame.com/
+  category: numbers-math
+  platform: web
+  description: Wordle for equations — guess the hidden eight-character sum, operators included.
+  tags: [classic]
+
+- name: Numble
+  url: https://numble.wtf/
+  category: numbers-math
+  platform: web
+  description: Route through a grid of numbers and operators to hit the day's target.
+
+- name: Numle
+  url: https://martintale.com/numle/
+  category: numbers-math
+  platform: web
+  description: Wordle but with numbers where you guess the 5-digit number in 6 or less tries.
+
+- name: Primel
+  url: https://converged.yt/primel/
+  category: numbers-math
+  platform: web
+  description: Wordle where every guess and the answer must be a five-digit prime.
+
+- name: Summle
+  url: https://summle.net/
+  category: numbers-math
+  platform: web
+  description: Reach the target number by chaining small sums, Countdown-style.
+
+- name: Sumplete
+  url: https://sumplete.com/daily
+  category: numbers-math
+  platform: web
+  description: Delete numbers from a grid until every row and column adds up to its target.
+
+- name: Think in Odds
+  url: https://thinkinodds.com/
+  category: numbers-math
+  platform: web
+  description: Answer a daily probability question, using optional hints and a worked explanation to explore the reasoning.
+
+# ----------------------------------------------------------------------- logic
+- name: Rulebreaker
+  url: https://bludle.com/rulebreaker/
+  category: logic
+  platform: web
+  description: Tune and reorder cipher transformations until the daily encrypted phrase becomes readable.
+
+- name: Alembic
+  url: https://goblinarcade.com/play/alembic
+  category: logic
+  platform: web
+  description: Combine Fire, Water, Earth and Air to reach the day's target element in as few brews as possible, with par for Gold.
+
+- name: ArrowGame
+  url: https://arrowgame.app/
+  category: logic
+  platform: web
+  description: Tap arrows off the board only once their exit path is clear, with a shared daily Boss puzzle alongside a 1,000-level campaign.
+  tags: [unlimited]
+
+- name: Balance Grid
+  url: https://playbalancegrid.com/daily/
+  category: logic
+  platform: web
+  description: Fill a daily 6x6 grid with three Light and three Dark cells per line, no triples and no duplicate lines; each puzzle has exactly one solution.
+
+- name: Binarygrid
+  url: https://www.reddit.com/r/Binarygrid/
+  category: logic
+  platform: reddit
+  description: Binairo-style number logic — fill the grid with two symbols under balance and adjacency rules.
+
+- name: Blind Corners
+  url: https://arkai.win/games/blind-corners/
+  category: logic
+  platform: web
+  description: Fire a beam of light into a hidden grid of mirrors and mark where they must be, judged only by where each beam comes back out.
+  tags: [open-source]
+
+- name: Blokkit
+  url: https://www.reddit.com/r/Blokkit/
+  category: logic
+  platform: reddit
+  description: Grab, rotate and place the day's block set so everything fits with nothing left over.
+
+- name: BrainBashers Daily Puzzle
+  url: https://www.brainbashers.com/dailypuzzle.asp
+  category: logic
+  platform: web
+  description: A long-running rotation of Slitherlink, Hitori, Futoshiki and a dozen other pencil puzzles.
+  tags: [classic]
+
+- name: Campsite
+  url: https://campsite.daily-game.page/
+  category: logic
+  platform: web
+  description: Pitch a tent beside every tree to match the counts.
+
+- name: Clues by Sam
+  url: https://cluesbysam.com/
+  category: logic
+  platform: web
+  description: A daily deduction grid where each clue eliminates suspects, houses or objects.
+
+- name: Daily Akari
+  url: https://dailyakari.com/
+  category: logic
+  platform: web
+  description: Light up every square of a grid without letting two bulbs see each other.
+
+- name: Daily train puzzle
+  url: https://griffinley.com/harold-miller/inglenook/
+  category: logic
+  platform: web
+  description: Shunt eight numbered train cars across three short tracks to line up the day's five in the fewest moves.
+
+- name: Domino Fit
+  url: https://dominofit.isotropic.us/
+  category: logic
+  platform: web
+  description: Pack dominoes into an awkward grid so that the numbers line up correctly.
+
+- name: features
+  url: https://features.games/
+  category: logic
+  platform: web
+  description: Drag dots until no lines cross on eight shared daily untangling boards, with frozen, fused and linked dot twists.
+  tags: [paywalled]
+
+- name: Figure
+  url: https://figure.game/
+  category: logic
+  platform: web
+  description: Clear a colour grid in a fixed number of moves by chaining matching tiles.
+
+- name: Flipart
+  url: https://www.puzzmo.com/play/flip-art
+  category: logic
+  platform: web
+  description: Rotate irregular pieces until they tile the board exactly.
+
+- name: Goblin Maze
+  url: https://goblinarcade.com/play/goblin-maze
+  category: logic
+  platform: web
+  description: Steer a ball through the day's shared maze to grab the key and reach the exit, scored against the shortest route.
+
+- name: Ink Side Down
+  url: https://arkai.win/games/ink-side-down/
+  category: logic
+  platform: web
+  description: Roll a cube across a grid; the side that's inked prints the square it lands face-down on, and ink may only touch the marked squares.
+  tags: [open-source]
+
+- name: Lacey's Web
+  url: https://lieofsight.com/web
+  category: logic
+  platform: web
+  description: Spin threads between knots until each knot holds exactly its number and the whole web is one piece.
+
+- name: Lie of Sight
+  url: https://lieofsight.com/
+  category: logic
+  platform: web
+  description: Move a family around a room to test what each says they saw, then accuse the one whose story can't be true.
+  tags: [paywalled]
+
+- name: Murdle
+  url: https://murdle.com/
+  category: logic
+  platform: web
+  description: A daily murder mystery solved with a logic grid — suspect, weapon, location, motive.
+
+- name: Ninigrams
+  url: https://www.reddit.com/r/ninigrams/
+  category: logic
+  platform: reddit
+  description: Nonograms sized for a phone screen and playable without leaving Reddit.
+
+- name: NonoDaily
+  url: https://www.nonodaily.com/
+  category: logic
+  platform: web
+  description: A fresh nonogram every day, where the numbers along the edges reveal a picture.
+
+- name: One Step Late
+  url: https://arkai.win/games/one-step-late/
+  category: logic
+  platform: web
+  description: Your shadow repeats your previous move one turn late; bring yourself to the sun and it to the moon on the same turn.
+  tags: [open-source]
+
+- name: One Up Puzzle
+  url: https://www.oneuppuzzle.com/
+  category: logic
+  platform: web
+  description: Fill each run of cells with ascending numbers so no row or column repeats.
+
+- name: Pigment Pour Daily
+  url: https://www.reddit.com/r/PigmentPourDaily/
+  category: logic
+  platform: reddit
+  description: A water-sort puzzle where you pour coloured liquids between tubes until every tube holds a single pigment.
+
+- name: Pips
+  url: https://www.nytimes.com/games/pips
+  category: logic
+  platform: web
+  description: Place dominoes so every marked region satisfies its sum, equality or inequality rule.
+  tags: [nyt]
+
+- name: Queens
+  url: https://www.linkedin.com/games/queens
+  category: logic
+  platform: web
+  description: Place one crown per row, column and colour region without any two touching.
+
+- name: Regexle
+  url: https://regexle.com/
+  category: logic
+  platform: web
+  description: A hexagonal crossword where every line is a regular expression you have to satisfy.
+
+- name: Rex's Fetch
+  url: https://lieofsight.com/fetch
+  category: logic
+  platform: web
+  description: Lead a dog through every square of the yard exactly once to his ball without crossing his own trail.
+
+- name: Shikaku of the Day
+  url: https://shikakuofthe.day/
+  category: logic
+  platform: web
+  description: Cut a grid into rectangles so that each one contains exactly one number equal to its area.
+
+- name: Shinro Garden
+  url: https://shinro-garden.daily-game.page/
+  category: logic
+  platform: web
+  description: Plant 12 flowers using the arrow and count clues.
+
+- name: Sudoku (NYT)
+  url: https://www.nytimes.com/puzzles/sudoku
+  category: logic
+  platform: web
+  description: Easy, medium and hard grids refreshed every day, free to play.
+  tags: [nyt, classic]
+
+- name: Sunset
+  url: https://sunset.daily-game.page/
+  category: logic
+  platform: web
+  description: Find the six sets hidden in the board.
+
+- name: Tango
+  url: https://www.linkedin.com/games/tango
+  category: logic
+  platform: web
+  description: Balance suns and moons across a grid under equality and difference constraints.
+
+- name: WitLocked Daily Lock
+  url: https://witlocked.com/puzzles/daily-lock
+  category: logic
+  platform: web
+  description: Search an illustrated story scene for clues and connect them to crack a new escape-room-style lock each day.
+
+- name: Zebra Puzzles
+  url: https://www.zebrapuzzles.com/
+  category: logic
+  platform: web
+  description: The classic "who owns the fish" constraint puzzle, generated fresh each day.
+
+- name: Zip
+  url: https://www.linkedin.com/games/zip
+  category: logic
+  platform: web
+  description: Draw one continuous path that hits every numbered dot in order and fills the board.
+
+# ------------------------------------------------------------------- geography
+- name: Worldle
+  url: https://worldle.teuteuf.fr/
+  category: geography
+  platform: web
+  description: Name the country from its silhouette, with distance and bearing hints after each miss.
+  tags: [classic]
+
+- name: Countryle
+  url: https://www.countryle.com/
+  category: geography
+  platform: web
+  description: Narrow down a country using continent, hemisphere, population and temperature clues.
+
+- name: Flagle
+  url: https://www.flagle.io/
+  category: geography
+  platform: web
+  description: A flag revealed one tile at a time; guess it before the whole thing is uncovered.
+
+- name: GeoGrid
+  url: https://www.geogridgame.com/
+  category: geography
+  platform: web
+  description: Fill a 3x3 grid with countries that satisfy both the row and the column criteria.
+
+- name: Geonections
+  url: https://geonections.com/
+  category: geography
+  platform: web
+  description: Connections, but every group is a geographic category.
+
+- name: Globle
+  url: https://globle-game.com/
+  category: geography
+  platform: web
+  description: Guess countries on a 3D globe that warm from blue to red as you get closer.
+
+- name: Globle Capitals
+  url: https://globle-capitals.com/
+  category: geography
+  platform: web
+  description: The same hot-and-cold globe, but you are hunting a capital city.
+
+- name: Juxtastat
+  url: https://urbanstats.org/quiz.html
+  category: geography
+  platform: web
+  description: Head-to-head statistical comparisons between real places — which one is denser, richer, hotter.
+
+- name: Mapster
+  url: https://mapster.teuteuf.fr/
+  category: geography
+  platform: web
+  description: Rebuild a map from scattered country pieces.
+
+- name: Satle
+  url: https://satle.ca/
+  category: geography
+  platform: web
+  description: Identify a city from a slowly zooming-out satellite image.
+
+- name: Statele
+  url: https://statele.teuteuf.fr/
+  category: geography
+  platform: web
+  description: Worldle for the fifty US states.
+
+- name: Subwaydle
+  url: https://www.subwaydle.com/
+  category: geography
+  platform: web
+  description: Work out a New York City subway trip from its route bullets in six guesses.
+
+- name: Tradle
+  url: https://oec.world/en/games/tradle
+  category: geography
+  platform: web
+  description: Identify a country from the breakdown of what it exports.
+
+- name: Travle
+  url: https://travle.earth/
+  category: geography
+  platform: web
+  description: Connect a start country to an end country by naming the chain of neighbours between them.
+
+- name: Whereabouts
+  url: https://whereabouts.earth/daily/
+  category: geography
+  platform: web
+  description: A daily street-level location round in the GeoGuessr mould, free and account-free.
+
+- name: WhereTaken
+  url: https://wheretaken.teuteuf.fr/
+  category: geography
+  platform: web
+  description: Guess where a photograph was taken, with proximity feedback after each attempt.
+
+- name: World Flag Games
+  url: https://worldflagmap.com/games/daily/
+  category: geography
+  platform: web
+  description: Identify ten countries from their flags, then ten more from real outlines and map positions in two shared daily challenges.
+
+# --------------------------------------------------------------------- history
+- name: TimeGuessr
+  url: https://timeguessr.com/
+  category: history
+  platform: web
+  description: Place five historical photographs in both space and time, scored on distance and years off.
+
+- name: Chrono
+  url: https://chrono.quest/
+  category: history
+  platform: web
+  description: Drop historical events into the correct order on a timeline.
+
+- name: Chronophoto
+  url: https://www.chronophoto.app/
+  category: history
+  platform: web
+  description: Five photographs, five guesses at the year each one was taken.
+
+- name: EraGuessr
+  url: https://eraguessr.ai/play/daily
+  category: history
+  platform: web
+  description: Explore an AI-generated historical panorama and guess its place and year in a shared daily challenge.
+  tags: [paywalled]
+
+- name: guessNow
+  url: https://guessnow.fun/
+  category: history
+  platform: web
+  description: Guess the year of five real archival photographs, with the provenance shown at each reveal.
+
+- name: Timdle
+  url: https://www.timdle.com/
+  category: history
+  platform: web
+  description: Sort a shuffled set of events chronologically, with themed daily rounds.
+
+- name: WhenTaken
+  url: https://whentaken.com/
+  category: history
+  platform: web
+  description: Year-and-location guessing over a rotating archive of historical photography.
+
+- name: Wikitrivia
+  url: https://wikitrivia.tomjwatson.com/daily
+  category: history
+  platform: web
+  description: Build a timeline card by card from Wikidata; one wrong placement ends the run.
+  tags: [open-source]
+
+- name: Yeardle
+  url: https://histordle.com/yeardle
+  category: history
+  platform: web
+  description: Guess the year an event happened, with warmer or colder feedback each turn.
+
+# ----------------------------------------------------------------------- music
+- name: Bandle
+  url: https://bandle.app/
+  category: music
+  platform: web
+  description: The song is layered in one instrument at a time — name it before the full band arrives.
+  tags: [audio]
+
+- name: Crosstune
+  url: https://crosstune.io/
+  category: music
+  platform: web
+  description: A crossword whose clues are song clips instead of text.
+  tags: [audio]
+
+- name: Guess The Audio
+  url: https://guesstheaudio.com/
+  category: music
+  platform: web
+  description: Identify the track from progressively longer snippets, Heardle-style.
+  tags: [audio]
+
+- name: Harmonies
+  url: https://harmonies.io/
+  category: music
+  platform: web
+  description: Connections for music nerds — group sixteen artists, songs or albums into four sets.
+
+- name: Heardle Daily
+  url: https://www.heardle.info/daily/
+  category: music
+  platform: web
+  description: A community-run continuation of Heardle after Spotify shut the original down.
+  tags: [audio]
+
+- name: Lyricle
+  url: https://www.lyricle.app/
+  category: music
+  platform: web
+  description: Guess the song from its lyrics, revealed a line at a time.
+
+- name: MeloGuessr
+  url: https://meloguessr.com/
+  category: music
+  platform: web
+  description: GeoGuessr's format applied to sheet music and melodies.
+  tags: [audio]
+
+- name: Perfect Pitch Puzzle
+  url: https://www.perfectpitchpuzzle.com/
+  category: music
+  platform: web
+  description: An ear-training daily that turns interval recognition into a scored puzzle.
+  tags: [audio]
+
+- name: Relatle
+  url: https://relatle.io/
+  category: music
+  platform: web
+  description: Travel from one artist to another through related-artist links in as few hops as possible.
+
+- name: Sound of Sliver
+  url: https://soundofsliver.com/
+  category: music
+  platform: web
+  description: Name ten tunes on a daily theme, each from a 300ms slice; a wrong pick buys a longer listen for fewer points.
+  tags: [audio]
+
+- name: Spotle
+  url: https://spotle.io/
+  category: music
+  platform: web
+  description: Deduce the mystery artist from genre, popularity, debut year and country clues.
+
+# ------------------------------------------------------------------- movies-tv
+- name: Framed
+  url: https://framed.wtf/
+  category: movies-tv
+  platform: web
+  description: Name the film from a single still; each miss buys you another frame.
+  tags: [classic]
+
+- name: Actorle
+  url: https://actorle.com/
+  category: movies-tv
+  platform: web
+  description: Identify an actor from a filmography with the titles blanked out and only genres and ratings showing.
+
+- name: Box Office Game
+  url: https://boxofficega.me/
+  category: movies-tv
+  platform: web
+  description: Name the top five films at the US box office for a mystery weekend in history.
+
+- name: Cinematrix
+  url: https://www.vulture.com/article/daily-movie-grid-trivia-game-cinematrix.html
+  category: movies-tv
+  platform: web
+  description: Vulture's 3x3 film grid — fill each cell with a movie matching both criteria.
+
+- name: CineNerdle
+  url: https://www.cinenerdle.app/
+  category: movies-tv
+  platform: web
+  description: A suite of film puzzles including the excellent Cine2Nerdle tile-swapping grid.
+
+- name: Emoji Flicks
+  url: https://simplegamestoday.com/emoji-flicks/
+  category: movies-tv
+  platform: web
+  description: Name the film from emoji clues revealed one per miss, with the genre and year shown from the start.
+
+- name: FilmLink
+  url: https://filmlink.io/
+  category: movies-tv
+  platform: web
+  description: Connect two films through shared cast and crew in as few steps as you can.
+
+- name: Flickle
+  url: https://flickle.app/
+  category: movies-tv
+  platform: web
+  description: Guess the film from a one-second clip that grows longer with every wrong answer.
+
+- name: Gaps
+  url: https://gaps.wtf/
+  category: movies-tv
+  platform: web
+  description: Fill in the blanked-out words of a famous film quote.
+
+- name: Letterboxdle
+  url: https://letterboxdle.net/
+  category: movies-tv
+  platform: web
+  description: Identify a film from its Letterboxd reviews, poster and stats.
+
+- name: Movie Grid
+  url: https://moviegrid.io/
+  category: movies-tv
+  platform: web
+  description: Immaculate Grid for cinema — nine cells, nine films, each matching two constraints.
+
+- name: Moviedle
+  url: https://moviedle.xyz/
+  category: movies-tv
+  platform: web
+  description: An entire film compressed into one second, then two, then four, until you recognise it.
+
+- name: Plotwords
+  url: https://plotwords.com/daily
+  category: movies-tv
+  platform: web
+  description: Guess the film from a drip-feed of plot keywords, cheapest clues first.
+
+# ---------------------------------------------------------------------- sports
+- name: Immaculate Grid
+  url: https://www.sports-reference.com/immaculate-grid/
+  category: sports
+  platform: web
+  description: Fill a 3x3 grid with players matching each row and column team — the format everything else copied.
+  tags: [classic]
+
+- name: Ballometry
+  url: https://www.ballometry.com/
+  category: sports
+  platform: web
+  description: Sketch the hidden part of five real sports stat charts, then see how close your line came to the actual data.
+
+- name: Connections Sports Edition
+  url: https://www.nytimes.com/athletic/connections-sports-edition
+  category: sports
+  platform: web
+  description: The Athletic's sports-only take on Connections.
+  tags: [nyt]
+
+- name: Daily Walkoff
+  url: https://www.dailywalkoff.com/
+  category: sports
+  platform: web
+  description: A baseball trivia daily built around famous at-bats and box scores.
+
+- name: HoopGrids
+  url: https://www.hoopgrids.com/
+  category: sports
+  platform: web
+  description: The grid format for the NBA, with a rarity score that rewards obscure picks.
+
+- name: Immaculate Footy
+  url: https://www.sports-reference.com/immaculate-footy/
+  category: sports
+  platform: web
+  description: The grid applied to world football, powered by FBref data.
+
+- name: MLB Pickle
+  url: https://www.mlbpickle.com/
+  category: sports
+  platform: web
+  description: Deduce a mystery baseball player from team, position, age and stat feedback.
+
+- name: Poeltl
+  url: https://poeltl.nbpa.com/
+  category: sports
+  platform: web
+  description: Eight guesses to find the mystery NBA player, with feedback on team, height, age and number.
+  tags: [classic]
+
+- name: Puckdoku
+  url: https://www.puckdoku.com/
+  category: sports
+  platform: web
+  description: The grid for hockey, covering the full history of the NHL.
+
+- name: Weddle
+  url: https://www.weddlegame.com/
+  category: sports
+  platform: web
+  description: Wordle rules applied to NFL players — conference, division, position, height and number.
+
+# ----------------------------------------------------------------- video-games
+- name: Gamedle
+  url: https://www.gamedle.wtf/
+  category: video-games
+  platform: web
+  description: Five daily modes — cover art, screenshots, keywords, characters and classic deduction.
+
+- name: Balatrodle
+  url: https://www.balatrodle.com/
+  category: video-games
+  platform: web
+  description: Guess the day's Balatro joker from its rarity, cost and effect.
+
+- name: GuessThe.Game
+  url: https://guessthe.game/
+  category: video-games
+  platform: web
+  description: Name the game from up to six screenshots, starting with the least helpful one.
+
+- name: HowLongToBeat Daily
+  url: https://howlongtobeat.com/play
+  category: video-games
+  platform: web
+  description: Guess the game from its completion times, genres and platforms.
+
+- name: Isaaconnect
+  url: https://isaaconnect.com/
+  category: video-games
+  platform: web
+  description: Connections for The Binding of Isaac's enormous item pool.
+
+- name: LoLdle
+  url: https://loldle.net/
+  category: video-games
+  platform: web
+  description: League of Legends champion deduction across classic, quote, ability and splash art modes.
+
+- name: LoLdoku
+  url: https://www.loldoku.gg/
+  category: video-games
+  platform: web
+  description: Fill a League of Legends champion grid, identify champions from attribute clues, or guess their silhouettes.
+  tags: [unlimited]
+
+- name: Minecraftle
+  url: https://minecraftle.zachmanson.com/
+  category: video-games
+  platform: web
+  description: Wordle played on a crafting table — reach the target item through valid recipes.
+  tags: [open-source]
+
+- name: Pokedle
+  url: https://pokedle.net/
+  category: video-games
+  platform: web
+  description: Guess the Pokémon from type, generation, habitat and stat comparisons.
+
+- name: Pokedoku
+  url: https://pokedoku.com/
+  category: video-games
+  platform: web
+  description: The Immaculate Grid format applied to the National Pokédex.
+
+- name: Seekade
+  url: https://seekade.com/
+  category: video-games
+  platform: web
+  description: Word search featuring a new video game theme every day.
+
+- name: Smashdle
+  url: https://smashdle.net/
+  category: video-games
+  platform: web
+  description: Super Smash Bros. character, move and stage guessing modes.
+
+- name: Squirdle
+  url: https://squirdle.fireblend.com/daily.html
+  category: video-games
+  platform: web
+  description: The original Pokémon Wordle, with higher-or-lower feedback on height, weight and generation.
+
+- name: Stardewdle
+  url: https://www.stardewdle.com/
+  category: video-games
+  platform: web
+  description: A Stardew Valley daily covering villagers, items and seasons.
+
+- name: Steamdle
+  url: https://steamdle.com/
+  category: video-games
+  platform: web
+  description: Identify a Steam game from its user reviews, revealed one at a time.
+
+# ---------------------------------------------------------------------- trivia
+- name: FoodieGame
+  url: https://www.foodiegame.org/
+  category: trivia
+  platform: web
+  description: Test your tastebuds! Discover world cuisines and pinpoint where every dish comes from.
+
+- name: Daily Dozen Trivia
+  url: https://dailydozentrivia.com/
+  category: trivia
+  platform: web
+  description: Twelve questions a day across a fixed set of categories, with a streak to protect.
+
+- name: Factle
+  url: https://frontofficesports.com/trivia/factle
+  category: trivia
+  platform: web
+  description: Guess the entries in a real top-five list, ranked in the right order.
+
+- name: Floored
+  url: https://playfloored.com/
+  category: trivia
+  platform: web
+  description: Five ranked lists a day, each with a target rank; guess any item to see its rank and work higher or lower until you land on it.
+
+- name: FoodGuessr
+  url: https://www.foodguessr.com/
+  category: trivia
+  platform: web
+  description: Name the country a dish comes from, three plates a day.
+
+- name: Google Feud
+  url: https://googlefeud.com/
+  category: trivia
+  platform: web
+  description: Complete the search query the way the rest of the internet did.
+  tags: [classic]
+
+- name: Jeopardy! J6
+  url: https://www.jeopardy.com/play/j6
+  category: trivia
+  platform: web
+  description: Six official Jeopardy! clues a day, in ascending difficulty.
+
+- name: Krillion Space
+  url: https://krilion.app/
+  category: trivia
+  platform: web
+  description: Answer a daily space-themed trivia challenge whose choices shape a galaxy shared by every player.
+
+- name: Nanizo
+  url: https://nanizo.com/en/daily/
+  category: trivia
+  platform: web
+  description: Ten trivia questions a day, the same for everyone and one try only, scored on accuracy and speed with world and country leaderboards.
+
+- name: On the Record
+  url: https://www.washingtonpost.com/news-quiz
+  category: trivia
+  platform: web
+  description: The Washington Post's daily news quiz.
+
+- name: Rankle
+  url: https://www.rankle.app/
+  category: trivia
+  platform: web
+  description: Put five things in the correct order — by size, date, price or whatever the day demands.
+
+- name: Revealed
+  url: https://www.britannica.com/games/revealed
+  category: trivia
+  platform: web
+  description: "Britannica's daily: an image is uncovered piece by piece as the clues get easier."
+
+- name: riddl.ing
+  url: https://riddl.ing/
+  category: trivia
+  platform: web
+  description: One lateral-thinking riddle a day, with hints if you get stuck.
+
+- name: Shople
+  url: https://playshople.com/
+  category: trivia
+  platform: web
+  description: Guess the mystery brand in ten tries; each guess compares headquarters, founding year, industry, revenue and more against the answer.
+
+- name: Spaceillion
+  url: https://spaceillion.com/
+  category: trivia
+  platform: web
+  description: Seven trivia prompts at 25 seconds each, where rarer correct answers launch your pixel rocket farther into space.
+  tags: [paywalled]
+
+- name: Thrice
+  url: https://thrice.geekswhodrink.com/
+  category: trivia
+  platform: web
+  description: Three questions, three guesses each, from the people behind Geeks Who Drink pub quizzes.
+
+- name: Tightrope
+  url: https://www.britannica.com/quiz/tightrope
+  category: trivia
+  platform: web
+  description: Keep answering correctly to stay on the wire; one slip ends the run.
+
+- name: Uncommon Trivia
+  url: https://www.uncommontrivia.com/
+  category: trivia
+  platform: web
+  description: Seven open-ended questions a day, where the most obscure correct answer scores the most points.
+
+- name: The Wiki Game Daily
+  url: https://www.thewikigamedaily.com/
+  category: trivia
+  platform: web
+  description: Race from one Wikipedia article to another using only in-article links.
+
+- name: WikiCards Trivia
+  url: https://playwikicards.com/trivia-questions/
+  category: trivia
+  platform: web
+  description: Twenty general-knowledge questions a day, generated from Wikidata facts, with each answer linked to its source item.
+
+# ---------------------------------------------------------------------- visual
+- name: Artle
+  url: https://www.nga.gov/artle.html
+  category: visual
+  platform: web
+  description: The National Gallery of Art shows you four works; name the artist who made them.
+
+- name: Angle
+  url: https://angle.wtf/
+  category: visual
+  platform: web
+  description: Estimate the angle in degrees, with warmer and colder feedback.
+
+- name: Ballpark
+  url: https://ballparkdaily.com/
+  category: visual
+  platform: web
+  description: Answer five daily number questions with a range on a log slider; a tighter range that still contains the answer scores more.
+
+- name: Chroma
+  url: https://robson.plus/chroma
+  category: visual
+  platform: web
+  description: Reproduce the target colour by mixing your own.
+
+- name: Colorecall
+  url: https://www.colorecall.com/
+  category: visual
+  platform: web
+  description: Two shapes, two colors, one intense memory challenge testing your color recall.
+
+- name: Colorfle
+  url: https://colorfle.com/
+  category: visual
+  platform: web
+  description: Guess the exact colour by blending three of your own in Wordle-style rounds.
+
+- name: ColorGuessr
+  url: https://www.reddit.com/r/ColorGuessr/
+  category: visual
+  platform: reddit
+  description: Reddit game where players recreate a displayed color name.
+
+- name: Costcodle
+  url: https://costcodle.com/
+  category: visual
+  platform: web
+  description: Guess the price of a Costco item in six tries — a surprisingly brutal test of grocery intuition.
+
+- name: Cropple
+  url: https://cropple.app/
+  category: visual
+  platform: web
+  description: Identify a photograph from an extreme crop that widens with every guess.
+
+- name: Guess The House
+  url: https://guessthe.house/
+  category: visual
+  platform: web
+  description: Estimate what a real listed property sold for.
+
+- name: Guess The Logo
+  url: https://guessthelogo.wtf/
+  category: visual
+  platform: web
+  description: Name the brand from a partially obscured logo.
+
+- name: Hexcodle
+  url: https://www.hexcodle.com/
+  category: visual
+  platform: web
+  description: Guess the hex code of a displayed colour, digit by digit.
+
+- name: How expensive?
+  url: https://howexpensive.roughly.is/
+  category: visual
+  platform: web
+  description: Guess what an item cost in a given country and year, then see the official historical price and how far off you were.
+  tags: [paywalled]
+
+- name: How Far Off
+  url: https://griffinley.com/margaret-brown/how-far-off.html
+  category: visual
+  platform: web
+  description: Guess a low-to-high range for one number about a US city in three tries; narrower ranges that still hold the answer score higher.
+
+- name: Meccha Chameleon
+  url: https://kmufti.com/chameleon/
+  category: visual
+  platform: web
+  description: Find a blank 3D figure camouflaged somewhere in the daily photo, scored on how fast and in how few clicks you spot it.
+
+- name: Picsey
+  url: https://picsey.io/
+  category: visual
+  platform: web
+  description: Identify an image from a handful of colour-sampled pixels.
+
+- name: Play Color Guesser
+  url: https://playcolorguesser.com/
+  category: visual
+  platform: web
+  description: A logo, flag, Pokémon or football crest appears in grey; pick its exact colour from memory within 20 seconds.
+  tags: [unlimited, multiplayer]
+
+- name: Play Higher Lower
+  url: https://playhigherlower.com/daily
+  category: visual
+  platform: web
+  description: Guess which of two real-world numbers is bigger, from box office grosses to country populations, across a shared daily board.
+
+- name: Prompt Duel
+  url: https://prompt-duel-delta.vercel.app/?daily
+  category: visual
+  platform: web
+  description: Describe the day's AI-generated picture in 60 seconds; an image model paints your words and an AI judge scores the match from 0 to 100.
+
+- name: Scrandle
+  url: https://scrandle.com/
+  category: visual
+  platform: web
+  description: Two foods head to head, and you have to call which one packs more calories.
+
+- name: SizeGuess
+  url: https://sizeguess.com/
+  category: visual
+  platform: web
+  description: Resize real-world objects against a known reference over five daily rounds, then see the true measurement and how close you got.
+  tags: [unlimited]
+
+- name: Spot the Differences
+  url: https://www.spot-differences.com/
+  category: visual
+  platform: web
+  description: A new pair of near-identical images every day.
+
+# -------------------------------------------------------------- science-nature
+- name: Metazooa
+  url: https://metazooa.com/
+  category: science-nature
+  platform: web
+  description: Guess the animal; feedback is the taxonomic rank at which your guess and the answer diverge.
+
+- name: Birdie Game
+  url: https://birdiegame.net/
+  category: science-nature
+  platform: web
+  description: Identify the bird of the day from photographs and range clues.
+
+- name: Chemdle
+  url: https://www.chemdle.com/
+  category: science-nature
+  platform: web
+  description: Deduce the day's chemical compound from its formula and properties.
+
+- name: Elemingle
+  url: https://elemingle.com/
+  category: science-nature
+  platform: web
+  description: Pin down a periodic-table element using group, period and physical property hints.
+
+- name: Metaflora
+  url: https://flora.metazooa.com/
+  category: science-nature
+  platform: web
+  description: Metazooa's botanical sibling, built on the plant family tree.
+
+- name: Real Bird Fake Bird
+  url: https://realbirdfakebird.com/
+  category: science-nature
+  platform: web
+  description: Decide whether each bird name is a genuine species or an invention.
+
+- name: Stardle
+  url: https://stardlegame.github.io/stardle/
+  category: science-nature
+  platform: web
+  description: Identify a star or deep-sky object from its astronomical data.
+  tags: [open-source]
+
+# ---------------------------------------------------------------------- arcade
+- name: putt.day
+  url: https://putt.day/play
+  category: arcade
+  platform: web
+  description: One daily minigolf course, shared par, and 2D or 3D replays of everyone's shots.
+
+- name: DayBrix
+  url: https://vole.wtf/daybrix
+  category: arcade
+  platform: web
+  description: A daily brick-breaking layout where everyone plays the identical board.
+
+- name: Dungleon
+  url: https://www.dungleon.com/
+  category: arcade
+  platform: web
+  description: A short daily dungeon crawl where every player gets the same seed.
+
+- name: Final Fit Block Game
+  url: https://www.reddit.com/r/BlockGame/
+  category: arcade
+  platform: reddit
+  description: Fit three pieces per round onto an 8x8 grid, clearing rows and columns — a shared daily board with identical pieces for all, plus an unlimited endless run.
+
+- name: Jigsy
+  url: https://jigsy.app/
+  category: arcade
+  platform: web
+  description: A daily jigsaw puzzle sized to be finished in a coffee break.
+
+- name: Kinda Hard Golf
+  url: https://kindahardgolf.com/
+  category: arcade
+  platform: web
+  description: A physics-golf daily that lives up to its name.
+
+- name: Minigolfle
+  url: https://minigolfle.com/
+  category: arcade
+  platform: web
+  description: Nine holes of daily minigolf with a shareable scorecard.
+
+- name: pick_a_partridge
+  url: https://www.reddit.com/r/pick_a_partridge/
+  category: arcade
+  platform: reddit
+  description: A daily memory game where you track the partridge through the shuffle.
+
+- name: Rogule
+  url: https://rogule.com/
+  category: arcade
+  platform: web
+  description: A tiny daily roguelike run that takes about five minutes and shares as an emoji grid.
+  tags: [open-source]
+
+- name: Squishy Billiards
+  url: https://squishybilliards.com/
+  category: arcade
+  platform: web
+  description: A daily trick-shot puzzle played with deformable billiard balls.
+
+# ------------------------------------------------------------------ board-card
+- name: Chess.com Daily Puzzle
+  url: https://www.chess.com/daily-chess-puzzle
+  category: board-card
+  platform: web
+  description: One tactical position a day from real games, free without an account.
+  tags: [classic]
+
+- name: Chessguessr
+  url: https://www.chessguessr.com/
+  category: board-card
+  platform: web
+  description: Predict the next moves of a famous game, Wordle-style.
+
+- name: Chessle
+  url: https://jackli.gg/chessle/
+  category: board-card
+  platform: web
+  description: Guess the chess opening from its move sequence with green and yellow feedback.
+
+- name: Codenames Daily
+  url: https://codenames.game/daily/en
+  category: board-card
+  platform: web
+  description: A solo daily board of Codenames where you play the guesser against fixed clues.
+
+- name: Echo Chess
+  url: https://echochess.com/
+  category: board-card
+  platform: web
+  description: A single-player chess roguelike where capturing a piece turns you into it.
+
+- name: Lichess Daily Puzzle
+  url: https://lichess.org/training/daily
+  category: board-card
+  platform: web
+  description: The same idea, fully free and fully open source.
+  tags: [open-source]
+
+- name: Mahjong Handle
+  url: https://mahjong-handle.update.sh/
+  category: board-card
+  platform: web
+  description: Wordle for riichi mahjong hands.
+
+- name: Pile-Up Poker
+  url: https://www.puzzmo.com/play/pile-up-poker
+  category: board-card
+  platform: web
+  description: Build the highest-scoring poker grid from a fixed daily deal.
+
+- name: Pokle
+  url: https://poklegame.com/
+  category: board-card
+  platform: web
+  description: Reconstruct the board of a poker hand from the players' final results.
+
+- name: Really Bad Chess
+  url: https://www.puzzmo.com/play/really-bad-chess
+  category: board-card
+  platform: web
+  description: Chess with a randomly generated army, as a daily beat-the-computer challenge.
+
+# ------------------------------------------------------------------------ hubs
+- name: Puzzmo
+  url: https://www.puzzmo.com/
+  category: hubs
+  platform: web
+  description: A dozen well-crafted dailies with genuinely good design; several are free, the rest are subscriber-only.
+  tags: [paywalled]
+
+- name: BrainiLab Daily
+  url: https://brainilabgames.com/daily-quiz/
+  category: hubs
+  platform: web
+  description: One shared main game a day that rotates between a mixed-knowledge quiz, a word game and a number puzzle, plus an optional extra.
+
+- name: Britannica Games
+  url: https://www.britannica.com/games
+  category: hubs
+  platform: web
+  description: Revealed, Tightrope, Octordle and a rotating set of knowledge dailies.
+
+- name: Coffee First Games
+  url: https://coffeefirst.games/
+  category: hubs
+  platform: web
+  description: A small indie studio shipping several short, polished dailies.
+
+- name: DailyWordSnacks
+  url: https://www.reddit.com/r/DailyWordSnacks/
+  category: hubs
+  platform: reddit
+  description: A rotating collection of small word games posted daily to Reddit.
+
+- name: Gamebunny
+  url: https://gamebunny.app/
+  category: hubs
+  platform: web
+  description: A tidy collection of original dailies spanning words, trivia and logic.
+
+- name: Grid Puzzles
+  url: https://gridpuzzles.app/
+  category: hubs
+  platform: web
+  description: Five daily logic puzzles (6x6 sudoku, rectangles, word paths, dominoes, number paths), each checked to have one solution, with an unlimited mode for every game.
+  tags: [unlimited]
+
+- name: Lex.Games
+  url: https://lex.games/
+  category: hubs
+  platform: web
+  description: Six free word puzzles a day, including a mini crossword and a Connections variant.
+
+- name: LinkedIn Games
+  url: https://www.linkedin.com/games/
+  category: hubs
+  platform: web
+  description: Queens, Tango, Zip, Pinpoint and Crossclimb — free, but you need a LinkedIn account.
+
+- name: Merriam-Webster Games
+  url: https://www.merriam-webster.com/games
+  category: hubs
+  platform: web
+  description: Quordle, Blossom and friends, hosted by the dictionary itself.
+
+- name: Netflix Puzzled
+  url: https://www.netflix.com/tudum/puzzled
+  category: hubs
+  platform: web
+  description: Netflix's free daily puzzle collection — sudoku, jigsaws, crosswords and word games.
+
+- name: The New Yorker Puzzles & Games
+  url: https://www.newyorker.com/puzzles-and-games-dept
+  category: hubs
+  platform: web
+  description: Crosswords, cryptics and original word games from the magazine.
+
+- name: Nibble Games
+  url: https://nibble.games/
+  category: hubs
+  platform: web
+  description: A set of short pencil-and-paper style puzzles refreshed daily.
+
+- name: NYT Games
+  url: https://www.nytimes.com/crosswords
+  category: hubs
+  platform: web
+  description: Wordle, Connections, Strands and the Mini are free; the full crossword and archive are not.
+  tags: [nyt, paywalled]
+
+- name: Puzzmallow
+  url: https://puzzmallow.com/
+  category: hubs
+  platform: web
+  description: Several original daily logic and word puzzles with a clean, ad-free interface.
+
+- name: Simple Games Today
+  url: https://simplegamestoday.com/
+  category: hubs
+  platform: web
+  description: Twelve short original dailies, from a word ladder and a 5x5 crossword to 6x6 sudoku and a history timeline.
+
+- name: TED Games
+  url: https://www.ted.com/games
+  category: hubs
+  platform: web
+  description: TED's free daily word and knowledge puzzles.
+
+- name: Thinky Dailies
+  url: https://thinkygames.com/dailies/today/
+  category: hubs
+  platform: web
+  description: An aggregator that pulls together the day's puzzles from dozens of indie thinky games.
+
+- name: Washington Post Games
+  url: https://www.washingtonpost.com/games/
+  category: hubs
+  platform: web
+  description: Free crosswords, Keyword, Wridges and the daily news quiz.

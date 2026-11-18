@@ -1,0 +1,19 @@
+
+ RUN  v2.1.9 /workspace/project/research/reddit-daily-game-2026/mission04/prototype
+
+ ✓ tests/engine.test.ts (15 tests) 14ms
+ ✓ tests/adversarial.test.ts (14 tests) 34ms
+stdout | tests/balance.test.ts > MOLT balance — the strategic space stays alive over a season > the season produces a readable narrative (sample)
+  season sample: d1:crown:cleave d2:gut:pierce d3:claw:burn d4:crown:cleave d5:crown:burn d6:claw:cleave d7:hide:pierce d8:crown:cleave d9:crown:burn d10:crown:cleave d11:claw:pierce d12:crown:cleave
+
+stdout | tests/balance.test.ts > MOLT balance — no static dominant strategy (payoff matrix) > no single strategy wins in every crowd column
+  column winners: contrarian, chaser, chaser, loyal, chaser
+
+ ✓ tests/balance.test.ts (7 tests) 210ms
+ ✓ tests/server.test.ts (6 tests) 58ms
+
+ Test Files  4 passed (4)
+      Tests  42 passed (42)
+   Start at  11:18:59
+   Duration  661ms (transform 169ms, setup 0ms, collect 320ms, tests 317ms, environment 1ms, prepare 266ms)
+

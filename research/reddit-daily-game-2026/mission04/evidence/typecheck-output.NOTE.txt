@@ -1,0 +1,2 @@
+# typecheck-output.txt is intentionally EMPTY: `npx tsc --noEmit` printed nothing, which means 0 type errors.
+# Captured 2026-11-18 from mission04/prototype.

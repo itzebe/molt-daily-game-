@@ -1,0 +1,13 @@
+PASS  beast renders 5 selectable zones  — found 5
+PASS  primary STRIKE action present  — Cleaveheavy — cracks armour|Piercepointed — opens raw flesh|Burnfire — sears raw
+PASS  selecting a zone updates the readout  — Crownexposedcrowd: unknown
+PASS  a tool can be selected  — tool-on count 1
+PASS  strike produces a result card with damage  — −21You struck with the crowd (100% chose this).day 1 · shared integrity 1,000
+PASS  second strike is blocked after the first  — Struck — back tomorrow
+PASS  server rejects duplicate strike (409)  — status 409
+PASS  day advanced after molt  — day 2
+PASS  molt explanation is shown to the player  — After day 1: Crown & Hide armoured; Gut & Claw & Tail left raw; the beast grew used to cleave.
+PASS  bestiary records the previous round  — Bestiaryday 1ESCAPED1 strikers · 21 dmg
+PASS  zones expose accessible names/states  — Crown: armoured, scarred|Hide: armoured|Gut: raw|Claw: raw|Tail: raw
+
+11/11 checks passed

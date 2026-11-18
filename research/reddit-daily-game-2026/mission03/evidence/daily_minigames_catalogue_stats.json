@@ -1,0 +1,119 @@
+{
+  "total": 303,
+  "by_platform": {
+    "web": 283,
+    "reddit": 20
+  },
+  "by_category": {
+    "word-guessing": 27,
+    "word-connections": 21,
+    "crosswords": 18,
+    "word-grids": 26,
+    "numbers-math": 10,
+    "logic": 38,
+    "geography": 17,
+    "history": 9,
+    "music": 11,
+    "movies-tv": 13,
+    "sports": 10,
+    "video-games": 15,
+    "trivia": 20,
+    "visual": 22,
+    "science-nature": 7,
+    "arcade": 10,
+    "board-card": 10,
+    "hubs": 19
+  },
+  "by_tag": {
+    "nyt": 10,
+    "classic": 15,
+    "unlimited": 11,
+    "open-source": 11,
+    "non-english": 2,
+    "paywalled": 7,
+    "audio": 7,
+    "multiplayer": 1
+  },
+  "reddit_games": [
+    {
+      "name": "2word",
+      "category": "word-guessing"
+    },
+    {
+      "name": "DailyGuess",
+      "category": "word-guessing"
+    },
+    {
+      "name": "Petals",
+      "category": "word-guessing"
+    },
+    {
+      "name": "HotandCold",
+      "category": "word-connections"
+    },
+    {
+      "name": "CrosswordChef",
+      "category": "crosswords"
+    },
+    {
+      "name": "PocketGrids",
+      "category": "crosswords"
+    },
+    {
+      "name": "Syllacrostic",
+      "category": "crosswords"
+    },
+    {
+      "name": "DailyGrid",
+      "category": "word-grids"
+    },
+    {
+      "name": "Hexaword",
+      "category": "word-grids"
+    },
+    {
+      "name": "Syllo",
+      "category": "word-grids"
+    },
+    {
+      "name": "WordDash",
+      "category": "word-grids"
+    },
+    {
+      "name": "WordSeekr",
+      "category": "word-grids"
+    },
+    {
+      "name": "Binarygrid",
+      "category": "logic"
+    },
+    {
+      "name": "Blokkit",
+      "category": "logic"
+    },
+    {
+      "name": "Ninigrams",
+      "category": "logic"
+    },
+    {
+      "name": "Pigment Pour Daily",
+      "category": "logic"
+    },
+    {
+      "name": "ColorGuessr",
+      "category": "visual"
+    },
+    {
+      "name": "Final Fit Block Game",
+      "category": "arcade"
+    },
+    {
+      "name": "pick_a_partridge",
+      "category": "arcade"
+    },
+    {
+      "name": "DailyWordSnacks",
+      "category": "hubs"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+gut:pierce @2% share (exposed): 53 spec says 53
+crown:cleave @40% share (armoured): 34 spec says 34
+tail base value: 16 (spec §1.1 says 16)

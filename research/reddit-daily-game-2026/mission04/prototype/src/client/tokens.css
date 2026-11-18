@@ -1,0 +1,78 @@
+/**
+ * MOLT design tokens — naturalist's field plate.
+ * Source: mission03/WINNING_GAME_DESIGN.md §7 (Visual identity).
+ *
+ * Ground: bone/parchment. Ink: near-black. ONE accent: vermilion.
+ * Armour: cool slate, drawn as cross-hatch. Never colour alone for state.
+ */
+:root {
+  --bone: #f3ede1;
+  --bone-2: #e9e0cf;
+  --ink: #1a1714;
+  --ink-soft: #3d3833;
+  --slate: #5b6670;
+  --vermilion: #d9401f;
+  --vermilion-soft: #e07a5f;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+
+  --radius: 3px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+[tabindex]:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--vermilion);
+  outline-offset: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
