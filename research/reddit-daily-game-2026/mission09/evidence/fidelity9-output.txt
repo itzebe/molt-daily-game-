@@ -1,0 +1,21 @@
+============================================================
+MISSION 09 — LIB9 FIDELITY vs FROZEN ENGINE (ENGINE_RULES)
+============================================================
+lib9 dmg vs engine damageFor:      450 checks
+lib9 integrity vs engine:          11 checks
+lib9 resolveDay vs engine:         400 trials
+OVERALL: 906 pass, 0 fail
+
+--- C1 (STATE_MULT) reading difference, genesis all-exposed beast ---
+  state  reading   tail:burn   crown:cleave  tail:pierce
+  armoured  A(engine)  30   34   18
+            B(§1.2)    17   18   10
+  exposed   A(engine)  18   21   30
+            B(§1.2)    18   21   30
+  raw       A(engine)  49   13   49
+            B(§1.2)    83   21   83
+
+--- C2 (pierce vs exposed) reading difference, exposed gut, 2% share ---
+  pierce vs exposed: 1.0 -> 53   |   1.6 -> 85
+
+Done.

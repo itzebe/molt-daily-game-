@@ -1,0 +1,48 @@
+============================================================
+MISSION 09 — ADVERSARIAL STRATEGIES + INDIVIDUAL vs SHARED
+============================================================
+
+########## PART A — ADVERSARIAL BATTERY (engine reading) ##########
+--- A1. steady per-player by strategy and k (N=200, 150d, state evolves) ---
+  strategy        sqrt     k=27     k=29     k=30     k=31
+  herd(obvious)       24.0   24.0   24.0   24.0   24.0
+  even5               23.0   23.0   23.0   23.0   23.0
+  cycle15             28.2   27.6   28.2   28.2   28.2
+  uniform-agnostic    28.2   27.5   28.2   28.2   28.2
+  rightTool/zone      22.0   22.0   22.0   22.0   22.0
+  equil(selfish)      33.2   33.8   33.8   33.8   33.8
+  top5(beast-read)    29.7   32.3   32.4   32.4   29.7
+  random(seed1)       29.1   27.9   28.5   29.1   29.1
+
+--- A2. which rules CLEAR each k? (steady >= k) ---
+  k=27 clears: herd? even5? cycle15? uniform? random? | top5?
+  k=27: herd=n even5=n cycle15=n uniform-agnostic=n rightTool/zone=n equil=Y top5=Y random=Y
+  k=29: herd=n even5=n cycle15=n uniform-agnostic=n rightTool/zone=n equil=Y top5=Y random=n
+  k=30: herd=n even5=n cycle15=n uniform-agnostic=n rightTool/zone=n equil=Y top5=Y random=n
+
+--- A3. defection: one player deviates from a herd of N-1 (individual premium) ---
+  k=27: herd dmg=21, deviator(crown:pierce) dmg=57, premium=171%
+  k=30: herd dmg=21, deviator(crown:pierce) dmg=57, premium=171%
+
+
+########## PART B — INDIVIDUAL vs SHARED AXES ##########
+--- B1. individual best response at fixed crowd (N=200, genesis state) [PROOF] ---
+  best individual combo vs a uniform crowd: crown:cleave -> 42 (crowd avg ~42)
+  => the individual axis rewards reading the crowd (low share -> x1.9).
+
+--- B2. shared ceiling vs k (N=200, state evolves) [SIM] ---
+  strategy         k=27     k=30     k=33     (shared-goal feasibility)
+  even5                23.0/0    23.0/0    23.0/0
+  top5               32.3/150  32.4/148    29.7/0
+  (value/slainDays)
+
+--- B3. central-planner ceiling (exact DP) vs best decentralised strategy ---
+  N=50    DP ceiling=32.78  top5 steady=29.70  gap=3.08
+  N=200   DP ceiling=34.13  top5 steady=29.70  gap=4.43
+  N=1000  DP ceiling=34.66  top5 steady=32.25  gap=2.41
+
+--- B4. k-independence of the INDIVIDUAL axis (single-player, fixed crowd) ---
+  A player's own damage does not depend on k (k is the shared target).
+  k only changes whether the SHARED goal is met, not individual payoffs.
+
+Done.

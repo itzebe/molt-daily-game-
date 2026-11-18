@@ -1,0 +1,116 @@
+============================================================
+MISSION 09 — COMBINED C1 x C2 ANALYSIS (full battery)
+============================================================
+
+########## engine x 1.0  (C1=engine C2=engine(1.0)) ##########
+--- beast-ignoring battery (max steady over 3 seeds) ---
+  even5              50:23.00  200:23.00  1000:23.00
+  cycle15            50:28.46  200:28.21  1000:26.89
+  herd-agnostic      50:28.20  200:28.20  1000:26.87
+  fixed-5z-1t        50:23.00  200:23.00  1000:23.00
+  fixed-3z           50:17.98  200:18.00  1000:18.01
+  fixed-crown-heavy  50:25.28  200:24.12  1000:25.69
+  fixed-uniform-tools 50:28.46  200:28.21  1000:26.89
+  fixed-tail-heavy   50:21.58  200:21.29  1000:20.57
+  random-realised    50:24.80  200:29.13  1000:27.44
+  => GLOBAL MAX beast-ignoring = 29.13 at random-realised@N=200
+  => min beast-reading (top5) = 29.70 at N=50
+  => FEASIBLE k window = [30, 29]
+  => dynamic top5 @N=200: steady=29.70 slain=0/150
+
+########## engine x 1.6  (C1=engine C2=alt(1.6)) ##########
+--- beast-ignoring battery (max steady over 3 seeds) ---
+  even5              50:23.00  200:23.00  1000:23.00
+  cycle15            50:33.94  200:33.43  1000:33.63
+  herd-agnostic      50:33.27  200:33.27  1000:33.60
+  fixed-5z-1t        50:23.00  200:23.00  1000:23.00
+  fixed-3z           50:17.98  200:18.00  1000:18.01
+  fixed-crown-heavy  50:27.88  200:28.33  1000:31.42
+  fixed-uniform-tools 50:33.94  200:33.43  1000:33.63
+  fixed-tail-heavy   50:24.26  200:23.70  1000:23.79
+  random-realised    50:29.58  200:34.50  1000:33.51
+  => GLOBAL MAX beast-ignoring = 34.50 at random-realised@N=200
+  => min beast-reading (top5) = 33.00 at N=50
+  => FEASIBLE k window = [35, 33]
+  => dynamic top5 @N=200: steady=33.00 slain=0/150
+
+########## alt(§1.2) x 1.0  (C1=alt(§1.2) C2=engine(1.0)) ##########
+--- beast-ignoring battery (max steady over 3 seeds) ---
+  even5              50:12.80  200:12.80  1000:12.80
+  cycle15            50:25.46  200:24.96  1000:26.89
+  herd-agnostic      50:24.60  200:24.60  1000:26.87
+  fixed-5z-1t        50:12.80  200:12.80  1000:12.80
+  fixed-3z           50:9.66  200:9.66  1000:9.67
+  fixed-crown-heavy  50:19.06  200:22.14  1000:25.69
+  fixed-uniform-tools 50:25.46  200:24.96  1000:26.89
+  fixed-tail-heavy   50:16.80  200:16.20  1000:17.24
+  random-realised    50:22.14  200:27.17  1000:27.44
+  => GLOBAL MAX beast-ignoring = 27.44 at random-realised@N=1000
+  => min beast-reading (top5) = 24.70 at N=50
+  => FEASIBLE k window = [28, 24]
+  => dynamic top5 @N=200: steady=24.70 slain=0/150
+
+########## alt(§1.2) x 1.6  (C1=alt(§1.2) C2=alt(1.6)) ##########
+--- beast-ignoring battery (max steady over 3 seeds) ---
+  even5              50:12.80  200:12.80  1000:12.80
+  cycle15            50:30.94  200:30.18  1000:33.63
+  herd-agnostic      50:29.67  200:29.67  1000:33.60
+  fixed-5z-1t        50:12.80  200:12.80  1000:12.80
+  fixed-3z           50:9.66  200:9.66  1000:9.67
+  fixed-crown-heavy  50:21.66  200:26.35  1000:31.42
+  fixed-uniform-tools 50:30.94  200:30.18  1000:33.63
+  fixed-tail-heavy   50:19.48  200:18.63  1000:20.46
+  random-realised    50:26.92  200:32.54  1000:33.51
+  => GLOBAL MAX beast-ignoring = 33.63 at cycle15@N=1000
+  => min beast-reading (top5) = 28.30 at N=50
+  => FEASIBLE k window = [34, 28]
+  => dynamic top5 @N=200: steady=28.30 slain=0/150
+
+
+########## FAILURE CLIFF PER COMBINATION ##########
+
+--- engine x 1.0 ---
+  k=26: beast-reader steady=32.25  slain=150/150
+  k=27: beast-reader steady=32.25  slain=150/150
+  k=28: beast-reader steady=32.25  slain=150/150
+  k=29: beast-reader steady=32.41  slain=149/150
+  k=30: beast-reader steady=32.37  slain=148/150
+  k=31: beast-reader steady=29.70  slain=0/150
+  k=32: beast-reader steady=29.70  slain=0/150
+  k=33: beast-reader steady=29.70  slain=0/150
+  k=34: beast-reader steady=29.70  slain=0/150
+
+--- engine x 1.6 ---
+  k=26: beast-reader steady=33.00  slain=150/150
+  k=27: beast-reader steady=33.00  slain=150/150
+  k=28: beast-reader steady=33.00  slain=150/150
+  k=29: beast-reader steady=33.00  slain=150/150
+  k=30: beast-reader steady=33.00  slain=150/150
+  k=31: beast-reader steady=33.00  slain=150/150
+  k=32: beast-reader steady=33.00  slain=150/150
+  k=33: beast-reader steady=33.00  slain=150/150
+  k=34: beast-reader steady=33.00  slain=1/150
+
+--- alt(§1.2) x 1.0 ---
+  k=26: beast-reader steady=45.10  slain=150/150
+  k=27: beast-reader steady=45.10  slain=150/150
+  k=28: beast-reader steady=45.10  slain=150/150
+  k=29: beast-reader steady=24.70  slain=0/150
+  k=30: beast-reader steady=24.70  slain=0/150
+  k=31: beast-reader steady=24.70  slain=0/150
+  k=32: beast-reader steady=24.70  slain=0/150
+  k=33: beast-reader steady=24.70  slain=0/150
+  k=34: beast-reader steady=24.70  slain=0/150
+
+--- alt(§1.2) x 1.6 ---
+  k=26: beast-reader steady=39.20  slain=150/150
+  k=27: beast-reader steady=39.20  slain=150/150
+  k=28: beast-reader steady=39.20  slain=150/150
+  k=29: beast-reader steady=39.20  slain=150/150
+  k=30: beast-reader steady=39.20  slain=150/150
+  k=31: beast-reader steady=39.20  slain=150/150
+  k=32: beast-reader steady=39.20  slain=150/150
+  k=33: beast-reader steady=39.20  slain=150/150
+  k=34: beast-reader steady=28.30  slain=3/150
+
+Done.

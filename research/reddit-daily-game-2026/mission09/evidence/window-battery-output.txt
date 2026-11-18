@@ -1,0 +1,39 @@
+============================================================
+MISSION 09 — WINDOW (shared battery) + C1xC2 COMBINATIONS
+============================================================
+
+--- VALIDATION vs MISSION 08 (engine reading, sqrt integrity) ---
+  GLOBAL max beast-ignoring steady = 29.50 at zoneMajor15@N=22
+  Mission 08 reported 29.50 (even-spread). smallest defeating integer = 30
+
+
+--- FEASIBLE WINDOW PER COMBINATION (full battery, 9 seeds, fine N) ---
+
+  engine x 1.0
+    max beast-ignoring = 29.50 (zoneMajor15@N=22)
+    min beast-reading  = 21.69 (top8-stateRead@N=200)
+    window = [30, 21]  *** EMPTY: no valid integer k ***
+
+  engine x 1.6
+    max beast-ignoring = 35.24 (zoneMajor15@N=25)
+    min beast-reading  = 27.19 (top8-stateRead@N=200)
+    window = [36, 27]  *** EMPTY: no valid integer k ***
+
+  alt(§1.2) x 1.0
+    max beast-ignoring = 27.75 (fixedRandomAlloc@N=500)
+    min beast-reading  = 16.40 (top5-stateRead@N=10)
+    window = [28, 16]  *** EMPTY: no valid integer k ***
+
+  alt(§1.2) x 1.6
+    max beast-ignoring = 34.56 (fixedRandomAlloc@N=500)
+    min beast-reading  = 16.40 (top5-stateRead@N=10)
+    window = [35, 16]  *** EMPTY: no valid integer k ***
+
+
+--- SMALLEST INTEGER k DEFEATING EVERY IGNORING RULE (per combination) ---
+  engine x 1.0       k >= 30   (beast-reader clears at 21.69)
+  engine x 1.6       k >= 36   (beast-reader clears at 27.19)
+  alt(§1.2) x 1.0    k >= 28   (beast-reader clears at 16.40)
+  alt(§1.2) x 1.6    k >= 35   (beast-reader clears at 16.40)
+
+Done.

@@ -1,0 +1,30 @@
+============================================================
+MISSION 09 — FAILURE CLIFF CHARACTERISATION
+============================================================
+
+--- 1. FINE k SWEEP (top5 engaged crowd, N=200, 9 seeds) ---
+  k=29.8   SLAIN = 1332/1350 (98.7%)
+  k=29.9   SLAIN = 1332/1350 (98.7%)
+  k=30     SLAIN = 1332/1350 (98.7%)
+  k=30.02  SLAIN = 0/1350 (0.0%)
+  k=30.05  SLAIN = 0/1350 (0.0%)
+  k=30.1   SLAIN = 0/1350 (0.0%)
+  k=30.2   SLAIN = 0/1350 (0.0%)
+  k=30.5   SLAIN = 0/1350 (0.0%)
+
+--- 2. MECHANISM: per-player damage in early vs late windows ---
+  k=30: days 1-10 mean=31.54  days 11-30=32.37  days 100-150=32.35  overall=32.29
+  k=30.1: days 1-10 mean=29.50  days 11-30=29.70  days 100-150=29.70  overall=29.69
+
+--- 3. SEED STABILITY AT k=30 (per-seed SLAIN) ---
+  seed=1      steady=32.37 slain=148/150
+  seed=2      steady=32.37 slain=148/150
+  seed=3      steady=32.37 slain=148/150
+  seed=7      steady=32.37 slain=148/150
+  seed=42     steady=32.37 slain=148/150
+  seed=101    steady=32.37 slain=148/150
+  seed=1234   steady=32.37 slain=148/150
+  seed=9001   steady=32.37 slain=148/150
+  seed=90210  steady=32.37 slain=148/150
+
+Done.

@@ -1,0 +1,59 @@
+============================================================
+MISSION 09 — C1 (STATE_MULT) INVESTIGATION
+============================================================
+Reading A (engine, §2/§4):  dmg = ZONE_VALUE * TOOL_MULT[tool][state] * CROWD(share)
+Reading B (§1.2):           dmg = ZONE_VALUE * STATE_MULT[state] * TOOL_MULT[tool][state] * CROWD(share)
+STATE_MULT = { armoured: 0.55, exposed: 1.00, raw: 1.70 }
+
+--- 1. EXACT DAMAGE TABLE (share <3%, crowd x1.9) [PROOF] ---
+zone:tool            armoured A/B     exposed A/B      raw A/B
+crown:cleave          91/ 50           57/ 57           34/ 58
+crown:pierce          34/ 19           57/ 57           91/155
+crown:burn            57/ 31           34/ 34           91/155
+hide:cleave           67/ 37           42/ 42           25/ 43
+hide:pierce           25/ 14           42/ 42           67/114
+hide:burn             42/ 23           25/ 25           67/114
+gut:cleave            85/ 47           53/ 53           32/ 54
+gut:pierce            32/ 18           53/ 53           85/145
+gut:burn              53/ 29           32/ 32           85/145
+claw:cleave           73/ 40           46/ 46           27/ 47
+claw:pierce           27/ 15           46/ 46           73/124
+claw:burn             46/ 25           27/ 27           73/124
+tail:cleave           49/ 27           30/ 30           18/ 31
+tail:pierce           18/ 10           30/ 30           49/ 83
+tail:burn             30/ 17           18/ 18           49/ 83
+
+--- 2. ACHIEVABLE CEILING (exact DP, best total damage per N) [PROOF] ---
+  N       A(engine)   B(§1.2)    B/A     state
+  100        33.72      33.72   1.000   genesis (all exposed)
+  500        34.55      34.55   1.000   genesis (all exposed)
+  2000       34.79      34.79   1.000   genesis (all exposed)
+  2000       39.98      32.11   0.803   1 armoured (crown)
+  2000       43.80      29.67   0.677   2 armoured (crown,gut)
+  2000       45.60      27.74   0.608   3 armoured (crown,gut,claw)
+  2000       47.23      25.95   0.549   5 armoured (crown,gut,claw,hide,tail)
+
+--- 3. DEATH-SPIRAL CHECK (ceiling/striker at N=2000 as armour accumulates) [PROOF] ---
+  #armoured   A(engine)   B(§1.2)
+  0              34.79      34.79
+  1              39.98      32.11
+  2              43.80      29.67
+  3              45.60      27.74
+  4              46.92      26.38
+  5              47.23      25.95
+  => A: hardening RAISES the ceiling (no spiral).  B: hardening LOWERS it (spiral risk).
+
+--- 4. DYNAMIC CEILINGS (150 days, state evolves, mean last 20) [SIM] ---
+  reading   N=50     N=200    N=1000   (even-5 spread, beast-ignoring)
+  A(engine)   23.00    23.00    23.00
+  B(§1.2)     12.80    12.80    12.80
+
+  beast-reading top5 spread:
+  A(engine)   29.70    29.70    32.25
+  B(§1.2)     24.70    24.70    45.10
+
+--- 5. IMPLIED k (feasible window: > beast-ignoring, <= beast-reading) [SIM] ---
+  A(engine) maxBeastIgnoring=24.00  minBeastReading=29.70  => k in [24, 29]
+  B(§1.2)   maxBeastIgnoring=19.20  minBeastReading=24.70  => k in [20, 24]
+
+Done.

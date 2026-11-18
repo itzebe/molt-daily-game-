@@ -1,0 +1,46 @@
+
+=== k=30 ===
+  day  1: per=28.00  ESCAPED state=eeeee
+  day  2: per=29.40  ESCAPED state=aaaer
+  day  3: per=30.00  SLAIN   state=aeaar
+  day  4: per=32.80  SLAIN   state=araer
+  day  5: per=32.60  SLAIN   state=aaerr
+  day  6: per=34.00  SLAIN   state=aerar
+  day  7: per=31.60  SLAIN   state=araer
+  day  8: per=31.40  SLAIN   state=aaerr
+  day  9: per=34.00  SLAIN   state=aerar
+  day 10: per=31.60  SLAIN   state=araer
+  day 11: per=31.40  SLAIN   state=aaerr
+  day 12: per=34.00  SLAIN   state=aerar
+  day 13: per=31.60  SLAIN   state=araer
+  day 14: per=31.40  SLAIN   state=aaerr
+  day 15: per=34.00  SLAIN   state=aerar
+  day 16: per=31.60  SLAIN   state=araer
+  day 17: per=31.40  SLAIN   state=aaerr
+  day 18: per=34.00  SLAIN   state=aerar
+  day 19: per=31.60  SLAIN   state=araer
+  day 20: per=31.40  SLAIN   state=aaerr
+
+=== k=30.02 ===
+  day  1: per=28.00  ESCAPED state=eeeee
+  day  2: per=29.40  ESCAPED state=aaaer
+  day  3: per=30.00  ESCAPED state=aeaar
+  day  4: per=29.40  ESCAPED state=aaaer
+  day  5: per=30.00  ESCAPED state=aeaar
+  day  6: per=29.40  ESCAPED state=aaaer
+  day  7: per=30.00  ESCAPED state=aeaar
+  day  8: per=29.40  ESCAPED state=aaaer
+  day  9: per=30.00  ESCAPED state=aeaar
+  day 10: per=29.40  ESCAPED state=aaaer
+  day 11: per=30.00  ESCAPED state=aeaar
+  day 12: per=29.40  ESCAPED state=aaaer
+  day 13: per=30.00  ESCAPED state=aeaar
+  day 14: per=29.40  ESCAPED state=aaaer
+  day 15: per=30.00  ESCAPED state=aeaar
+  day 16: per=29.40  ESCAPED state=aaaer
+  day 17: per=30.00  ESCAPED state=aeaar
+  day 18: per=29.40  ESCAPED state=aaaer
+  day 19: per=30.00  ESCAPED state=aeaar
+  day 20: per=29.40  ESCAPED state=aaaer
+
+Done.
