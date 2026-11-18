@@ -116,8 +116,10 @@ Evidence files: `evidence/test-output.txt`, `evidence/typecheck-output.txt`,
   output 1000/1000 times.
 - **A coordinated group manipulates the beast** → 100% coordination arms the zone (self-defeating);
   a perfectly even crowd triggers a mutation, so the board cannot be frozen.
-- **One player exploits scoring** → the crowd factor is capped (1.9×); alt-accounts add sub-linear
-  value because Integrity scales with √N.
+- **One player exploits scoring** → the crowd factor is capped (1.9×); alt-accounts gain no shared
+  advantage because Integrity scales **linearly** with N (an extra distinct striker raises both the
+  achievable damage and the target in the same proportion), and the per-user strike lock allows one
+  strike per user per day. *(Updated in Mission 10: the formula is now linear, `Integrity = 30 × N`.)*
 - **Newcomers are punished** → the obvious herd play is decent (≥30), and the wrong tool is a soft
   penalty (×0.6), not a wipeout.
 - **Low participation** → 1 player and 0 players both resolve without crash or NaN.

@@ -24,7 +24,15 @@
    exercised (no Devvit deployment exists yet).
 8. **Documentation drift fixed, not exhaustive.** Only the spec/design files that stated the
    resolved rules were corrected; historical mission reports (04–09) retain their original text as
-   point-in-time records and were deliberately not rewritten.
+   point-in-time records and were deliberately not rewritten — with **one** exception: a live claim
+   in `mission04/MISSION04_PROTOTYPE_REPORT.md` §3.1 ("Integrity scales with √N") was corrected to the
+   linear formula and tagged *(Updated in Mission 10)*.
+9. **Mission 04 checksum manifest.** `mission04/evidence/SHA256SUMS.txt` lists per-file hashes
+   computed at Mission 04. Five entries no longer match: the 4 files the authorised change necessarily
+   modifies (`resolve.ts`, `rules.ts`, `engine.test.ts`, `adversarial.test.ts`) plus the one report
+   line above. The manifest was **left unmodified** as the historical record — Mission 10's own
+   `mission10/SHA256SUMS.txt` is the authoritative manifest for the current tree. (Mission 09's
+   manifest, by contrast, still verifies 40/40: the change touched none of its files.)
 
 ## 2. Open questions
 
