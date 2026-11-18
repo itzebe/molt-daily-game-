@@ -15,6 +15,8 @@ evidence (there is none — no playtest was run).
 | `integrity-bestcase-crossover.txt` | A5: fine sweep pinning the best-case crossover to ~348–350 strikers. | `analysis/integrity-bestcase.ts` (edited N list) |
 | `hardened-crossover-check.txt` | A5 robustness: damage vs N on a hardened beast (2 armoured, 1 raw) — threshold persists. | inline check (see `ADVERSARIAL_FINDINGS.md`) |
 | `scorer-selftest-output.txt` | Proof the playtest scorer runs (on the clearly-labelled synthetic sheet). **Not a result.** | `playtest-kit/score-playtest.mjs` |
+| `screenshots/{desktop,tablet,mobile}.png` | The frozen build rendered after a genuine 8-participant molt, at 1440/834/390 px. | `analysis/capture-screenshots.mjs` |
+| `screenshot-palette-analysis.txt` | Objective palette measurement of those screenshots (design direction intact). | inline `python3` analysis |
 
 ## Honesty notes
 

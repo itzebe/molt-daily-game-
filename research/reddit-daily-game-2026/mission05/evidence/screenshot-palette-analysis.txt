@@ -1,0 +1,15 @@
+MISSION 05 — frozen-build screenshot palette analysis (objective, not eyeballed)
+Captured from the frozen build (commit 410b3ba prototype) after a genuine 8-participant
+molt (day 2: Crown & Hide armoured). Rendered in headless Chromium 156 via CDP at
+1440x900 (desktop), 834x1112 (tablet), 390x844 (mobile).
+
+Reference palette (design §7): bone #F3EDE1, ink #1A1714, slate #5B6670, vermilion #D9401F.
+
+Viewport        bone ground   ink    slate   vermilion
+desktop 1440      90.8%      1.0%    0.4%    0.01%
+tablet  834       84.7%      1.5%    0.5%    0.01%
+mobile  390       78.6%      2.0%    0.4%    0.05%
+
+Interpretation: a flat bone field dominates; ink carries structure; armour is cool slate;
+the single vermilion accent is used sparingly (<0.06%). No gradients, no glass, no glow.
+The frozen build preserves the Mission 03 visual direction.
