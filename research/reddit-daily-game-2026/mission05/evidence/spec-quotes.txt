@@ -1,0 +1,112 @@
+=== SPEC §1.2 (GAME_MECHANICS_SPECIFICATION.md lines 20-27) ===
+### 1.2 Zone states (3)
+
+| id | multiplier on damage | visual | accessibility cue |
+| --- | --- | --- | --- |
+| `armoured` | 0.55 | cross-hatched plates | hatch pattern + slate tint |
+| `exposed` | 1.00 | plain ink outline | none |
+| `raw` | 1.70 | open wound | vermilion fill + shape |
+
+
+=== SPEC §1.3 tool matrix (lines 30-40) ===
+Effectiveness matrix `TOOL_MULT[tool][state]`:
+
+| tool | armoured | exposed | raw |
+| --- | --- | --- | --- |
+| `cleave` | **1.6** | 1.0 | 0.6 |
+| `pierce` | 0.6 | 1.0 | **1.6** |
+| `burn` | 1.0 | 0.6 | **1.6** |
+
+> Note: two tools are strong vs `raw`; the `burn` tool is strong vs `raw` but weak vs `exposed`, and
+> `pierce` is strong vs `raw` and weak vs `armoured`. `cleave` is the only tool strong vs `armoured`.
+> This guarantees every state has at least one counter and the crowd can specialise — which is exactly
+
+=== SPEC §2 formula (lines 46-58) ===
+| --- | --- |
+| ≥ 0.30 | 0.7 |
+| 0.10 – 0.30 | 1.0 |
+| 0.03 – 0.10 | 1.4 |
+| < 0.03 | 1.9 |
+
+### 1.5 Beast Integrity (the shared pool)
+
+```
+Integrity(day) = min(1000 * sqrt(N_distinct_strikers), 12000)
+```
+
+`N_distinct_strikers` = number of unique users who submitted at least one strike that day (Reddit user
+
+=== SPEC §4 worked example (lines 136-156) ===
+| gut | 17 | 0.17 | exposed |
+| claw | 12 | 0.12 | exposed |
+| tail | 8 | 0.08 | exposed |
+
+`topTool(D) = burn` → on `D+1`, `burn` takes ×0.8.
+
+Now a player on `D+1` faces an armoured Crown, a normal middle, and an **un-hit** Tail. A **contrarian
+read** — e.g. `pierce` on `gut` (exposed) chosen by only 2% — scores:
+
+```
+dmg = 28 (gut) × 1.0 (pierce vs exposed) × 1.9 (<3% crowd) = 53
+```
+
+versus the herd's `cleave` on the armoured Crown at 40% share:
+
+```
+dmg = 30 (crown) × 1.6 (cleave vs armoured) × 0.7 (≥30% crowd) = 34   [× 0.8 if cleave were yesterday's top tool]
+```
+
+**The lesson is legible in one day:** *the obvious play is not the best play.*
+
+
+=== DESIGN §2.1 states (lines 42-62) ===
+## 2. The rules (precise)
+
+### 2.1 The beast
+
+The Molt is drawn as a silhouette with **five zones**:
+
+| Zone | Character |
+| --- | --- |
+| **Crown** (head) | High value, obvious — crowds love it |
+| **Hide** (flank) | Medium value, the "safe" middle |
+| **Gut** | High value when soft, punishing when armoured |
+| **Claw** | Medium value, punishes careless tools |
+| **Tail** | Low value, but almost always under-attacked → **the contrarian zone** |
+
+Each zone has exactly one **state** each day:
+
+| State | Meaning | Visual |
+| --- | --- | --- |
+| **Armoured** | Hard to hurt | Cross-hatched plates |
+| **Exposed** | Normal | Plain ink outline |
+| **Raw** | Very soft, high damage | Bright vermilion wound |
+
+=== DESIGN §2.2 tools + §2.4 scoring (lines 64-75, 86-99) ===
+### 2.2 The tools (three)
+
+| Tool | Strong vs | Weak vs |
+| --- | --- | --- |
+| **Cleave** (heavy) | Armoured | Raw |
+| **Pierce** (pointed) | Exposed | Armoured |
+| **Burn** (fire) | Raw | Exposed |
+
+Damage multiplier: **1.6×** if the tool counters the zone state, **0.6×** if it is the wrong tool,
+**1.0×** otherwise.
+
+### 2.3 The one decision
+...
+```
+
+Where `CROWD_FACTOR` rewards reading against the grain **without** rewarding blind randomness:
+
+| Crowd share choosing your exact combo | Factor |
+| --- | --- |
+| ≥ 30% (you are the herd) | 0.7× |
+| 10–30% | 1.0× |
+| 3–10% | 1.4× |
+| < 3% (**a true read**) | 1.9× |
+
+The skill: a combo can only be both *effective* (right tool for the zone state) and *contrarian* if the
+player correctly predicts that the crowd will overlook a soft spot. Pure randomness rarely lands both.
+

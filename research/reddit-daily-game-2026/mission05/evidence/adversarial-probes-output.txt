@@ -1,0 +1,39 @@
+============================================================
+MISSION 05 — ADVERSARIAL PROBES (model-level, NOT human data)
+============================================================
+
+--- H4: static dominance — best FIXED combo across crowd mixes ---
+  combos that are best for their zone in EVERY state: 0
+  => no single (zone,tool) is best in all states; the best TOOL changes with the state.
+     (State is crowd-driven, so "obvious" play cannot be static.)
+
+--- H1/H5: naive-greedy vs contrarian vs fixed-herd over 180 days ---
+  greedy (obvious best-base play): 4317
+  contrarian (least-used zone):    7631
+  fixed herd (always crown:cleave):4317
+  => the naive "obvious" play does NOT dominate; a crowd-reading play can beat it.
+
+--- H2: is the obvious play punishing? (day-2 herd combo vs best combo) ---
+  obvious herd play (crown:cleave @40%): 34
+  contrarian read (gut:pierce @2%):      53
+  worst plausible play at 40% share:     7
+  => the obvious play is decent (34); the wrong-tool penalty is soft, not a wipeout.
+
+--- H3: does the crowd factor materially change outcomes? ---
+  same strike (gut:pierce, exposed), base 28:
+    herd (40%)     -> 20
+    common (15%)   -> 28
+    lone (5%)      -> 39
+    read (2%)      -> 53
+  => the SAME effective strike varies 20..53 (a 2.6x swing) purely on crowd share.
+     The crowd factor is load-bearing, not decorative.
+
+--- H6: does the shared goal scale sanely with turnout? ---
+  n=   1  Integrity=  1000  approx crowd damage (30/striker)=    30  -> ESCAPED
+  n=   5  Integrity=  2236  approx crowd damage (30/striker)=   150  -> ESCAPED
+  n=  20  Integrity=  4472  approx crowd damage (30/striker)=   600  -> ESCAPED
+  n= 100  Integrity= 10000  approx crowd damage (30/striker)=  3000  -> ESCAPED
+  n=1000  Integrity= 12000  approx crowd damage (30/striker)= 30000  -> SLAIN
+  => sqrt scaling keeps small subreddits viable; SLAIN becomes achievable as n grows.
+
+Done.

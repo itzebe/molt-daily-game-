@@ -1,0 +1,14 @@
+genesis(all exposed)
+  N= 100  avgTotal(uniform)=  2728  avgTotal(herd)=  2343
+  N= 250  avgTotal(uniform)=  7175  avgTotal(herd)=  6013
+  N= 400  avgTotal(uniform)= 11587  avgTotal(herd)=  9642
+  N= 500  avgTotal(uniform)= 14500  avgTotal(herd)= 12063
+  N= 700  avgTotal(uniform)= 19504  avgTotal(herd)= 16898
+  N=1000  avgTotal(uniform)= 29096  avgTotal(herd)= 24139
+hardened(2 armoured,1 raw)
+  N= 100  avgTotal(uniform)=  3194  avgTotal(herd)=  3480
+  N= 250  avgTotal(uniform)=  8395  avgTotal(herd)=  8865
+  N= 400  avgTotal(uniform)= 13572  avgTotal(herd)= 14207
+  N= 500  avgTotal(uniform)= 16976  avgTotal(herd)= 17765
+  N= 700  avgTotal(uniform)= 22793  avgTotal(herd)= 24470
+  N=1000  avgTotal(uniform)= 34073  avgTotal(herd)= 35557

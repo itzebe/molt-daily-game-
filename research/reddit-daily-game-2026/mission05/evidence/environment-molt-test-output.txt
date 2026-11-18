@@ -1,0 +1,35 @@
+reset: {"ok":true}
+--- 8 distinct participants strike day 1 (one combo each) ---
+state after 8 strikes:
+  day 1 strikers 8
+    crown exposed band=herd
+    hide exposed band=common
+    gut exposed band=common
+    claw exposed band=common
+    tail exposed band=common
+--- duplicate strike by P01 must be refused (409) ---
+  HTTP 409
+--- advance the day (genuine molt from the 8 real submissions) ---
+  outcome ESCAPED totalDamage 198 integrity 2828.42712474619 n 8 topTool cleave
+--- day 2 state (molt result) ---
+  day 2
+    crown armoured
+    hide armoured
+    gut exposed
+    claw exposed
+    tail exposed
+  moltNote: After day 1: Crown & Hide armoured; the beast grew used to cleave.
+  fatiguedTool: cleave
+--- history ---
+{
+    "entries": [
+        {
+            "day": 1,
+            "outcome": "ESCAPED",
+            "totalDamage": 198,
+            "integrity": 2828.42712474619,
+            "n": 8,
+            "topTool": "cleave"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+================================================================
+MOLT — PLAYTEST SCORER
+sheet: playtest-kit/SELF_TEST_synthetic_NON_DATA.csv
+participants: 8  (N=4, G=4)
+================================================================
+
+--- Mission 05 acceptance thresholds (P1–P7) ---
+  P1  PASS  Non-gamers complete a first strike 4/4 = 100% (≥3/4)
+  P2  PASS  Non-gamers name ≥3 zones           3/4 = 75% (≥3/4)
+  P3  PASS  Any explains the crowd factor      7/8 = 88% (≥5/8)
+  P4  PASS  Any forms a day-2 plan             7/8 = 88% (≥5/8)
+  P5  PASS  Any connects crowd → molt          8/8 = 100% (≥4/8)
+  P6  PASS  Would return tomorrow              7/8 = 88% (≥5/8)
+  P7  PASS  Median time to first strike (N)    38 s (≤60 s)
+
+--- Enjoyment (five-point scale), per group ---
+  non-gamers (N)  average = 4.50 / 5   (n=4)   threshold ≥4/5  -> PASS
+  gamers (G)      average = 4.75 / 5   (n=4)   threshold ≥4/5  -> PASS
+
+--- Voluntary replay intention, per group ---
+  non-gamers (N)  3/4 = 75%   threshold ≥70%  -> PASS
+  gamers (G)      4/4 = 100%   threshold ≥70%  -> PASS
+
+--- Secondary signals (mean / 5, where collected) ---
+  perceived agency             4.50 / 5
+  fairness of scoring          4.38 / 5
+  curiosity about next molt    4.75 / 5
+  enjoyed social prediction    4.50 / 5
+
+--- Mission 05 completion metrics (whole sample) ---
+  first-strike completion   8/8 = 100%   threshold ≥90% -> PASS
+  first strike within 30 s  5/8 = 63%   threshold ≥80% -> FAIL
+
+--- Overall: 7/7 P-criteria pass ---
+ALL THRESHOLDS MET (subject to the n=4 caveat)
+
+Reminder: a small qualitative sample cannot prove broad market demand even if all thresholds pass.

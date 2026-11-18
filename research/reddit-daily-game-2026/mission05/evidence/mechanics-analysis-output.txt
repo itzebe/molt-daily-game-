@@ -1,0 +1,35 @@
+============================================================
+MOLT — MECHANICS CONTRADICTION ANALYSIS (Mission 05)
+============================================================
+
+--- Fidelity self-check ---
+  damageVariant(...,false) vs real damageFor: 180/180 identical
+  PASS — the Option-A branch IS the real engine.
+
+--- Spec §4 worked example under BOTH readings ---
+  gut:pierce @2% (exposed):     A = 53   B = 53   (spec §4 states 53)
+  crown:cleave @40% (armoured): A = 34   B = 18   (spec §4 states 34)
+  => Option A matches §4 on BOTH cases; Option B matches only the exposed case.
+
+--- Does each STATE mean what the design says? (best-tool base damage, avg over zones) ---
+  armoured  best-tool avg base:  A = 38.4   B = 21.1
+  exposed   best-tool avg base:  A = 24.0   B = 24.0
+  raw       best-tool avg base:  A = 38.4   B = 65.3
+  Design intent: armoured("hard to hurt") < exposed("normal") < raw("very soft, high damage").
+  Option A: armoured(38.4) == raw(38.4) -> the STATE does not change the payoff, only the tool choice.
+  Option B: armoured(21.1) < exposed(24.0) < raw(65.3) -> the state means what it says.
+
+--- Contradiction 2: design §2.2 vs spec §1.3 (tool matrix) ---
+  design §2.2: Pierce STRONG vs Exposed, WEAK vs Armoured.
+  spec §1.3:   pierce vs exposed = 1 (neutral), pierce vs raw = 1.6 (strong).
+  §4 uses pierce vs exposed = 1.0 -> §1.3 and §4 agree; design §2.2 is the outlier.
+
+--- Resolver self-check ---
+  resolveVariant(...,false) vs real resolveDay: 40/40 identical
+  PASS — the Option-A resolver IS the real engine.
+
+--- Non-degeneracy under each reading (120 days, 50-player naive crowd, real molt) ---
+  Option A (as-built)      distinct best plays/120d =  12   probes: chaser=2791 loyal=4768 contrarian=5070
+  Option B (state-scaled)  distinct best plays/120d =  14   probes: chaser=2862 loyal=4145 contrarian=3983
+
+Done.

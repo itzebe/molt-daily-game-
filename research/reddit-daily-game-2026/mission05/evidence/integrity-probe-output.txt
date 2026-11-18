@@ -1,0 +1,40 @@
+============================================================
+MISSION 05 — H7: is the shared goal (SLAIN) reachable?
+============================================================
+(model-level, NOT human data)
+
+--- crowd model: uniform (genesis beast, all zones exposed) ---
+     N     Integrity    avg total dmg    SLAIN rate
+    100       10000            2742         0%
+    200       12000            5702         0%
+    250       12000            7191         0%
+    300       12000            8649         0%
+    350       12000           10111         0%
+    400       12000           11585         0%
+    450       12000           12544       100%
+    500       12000           14496       100%
+    600       12000           17433       100%
+    750       12000           21806       100%
+   1000       12000           29098       100%
+   2000       12000           58192       100%
+
+--- crowd model: herd (genesis beast, all zones exposed) ---
+     N     Integrity    avg total dmg    SLAIN rate
+    100       10000            2347         0%
+    200       12000            4779         0%
+    250       12000            6011         0%
+    300       12000            7207         0%
+    350       12000            8432         0%
+    400       12000            9632         0%
+    450       12000           10867         0%
+    500       12000           12057        59%
+    600       12000           14474       100%
+    750       12000           18104       100%
+   1000       12000           24137       100%
+   2000       12000           48273       100%
+
+--- interpretation ---
+If SLAIN rate is ~0% across realistic N, the SLAIN branch never fires and the
+ESCAPED penalty always fires: the shared goal is decorative, not a real goal.
+
+Done.

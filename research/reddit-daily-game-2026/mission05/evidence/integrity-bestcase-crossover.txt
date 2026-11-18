@@ -1,0 +1,15 @@
+============================================================
+MISSION 05 — H7 best case: can a PERFECTLY COORDINATED crowd slay?
+============================================================
+(model-level, NOT human data; genesis beast, all zones exposed)
+
+     N   Integrity   BEST coordinated total   reachable?
+   300      12000                   10320   no
+   320      12000                   11023   no
+   340      12000                   11726   no
+   350      12000                   12068   YES
+   360      12000                   12270   YES
+   380      12000                   13113   YES
+   400      12000                   13797   YES
+
+Done.

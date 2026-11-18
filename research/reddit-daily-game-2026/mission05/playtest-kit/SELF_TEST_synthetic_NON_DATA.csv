@@ -1,0 +1,9 @@
+participant_id,group,started_at,first_strike_seconds,could_name_3_zones,understood_tool_required,explained_crowd_factor,formed_day2_plan,connected_crowd_to_molt,changed_strategy,read_beast_before_choosing,enjoyment_1to5,would_return_tomorrow,agency_1to5,fairness_1to5,curiosity_1to5,social_prediction_1to5,understood_without_heavy_explanation,friction_points,bugs_observed,verbatim_quote
+P01,N,2026-11-19T10:00,22,Y,Y,Y,Y,Y,Y,Y,5,Y,5,4,5,5,Y,none,none,SELF-TEST ROW (not real)
+P02,N,2026-11-19T10:30,41,Y,Y,Y,Y,Y,N,Y,4,Y,4,4,5,4,Y,none,none,SELF-TEST ROW (not real)
+P03,N,2026-11-19T11:00,58,N,Y,N,N,Y,Y,Y,4,N,3,4,4,3,N,hesitated at tools,none,SELF-TEST ROW (not real)
+P04,N,2026-11-19T11:30,35,Y,Y,Y,Y,Y,Y,Y,5,Y,5,5,5,5,Y,none,none,SELF-TEST ROW (not real)
+P05,G,2026-11-19T12:00,14,Y,Y,Y,Y,Y,Y,Y,5,Y,5,4,5,5,Y,none,none,SELF-TEST ROW (not real)
+P06,G,2026-11-19T12:30,12,Y,Y,Y,Y,Y,Y,Y,5,Y,5,5,5,5,Y,none,none,SELF-TEST ROW (not real)
+P07,G,2026-11-19T13:00,18,Y,Y,Y,Y,Y,Y,Y,4,Y,4,4,4,5,Y,none,none,SELF-TEST ROW (not real)
+P08,G,2026-11-19T13:30,25,Y,Y,Y,Y,Y,Y,Y,5,Y,5,5,5,4,Y,none,none,SELF-TEST ROW (not real)
