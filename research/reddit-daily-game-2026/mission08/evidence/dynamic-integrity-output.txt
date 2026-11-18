@@ -1,0 +1,48 @@
+================================================================
+MISSION 08 — DYNAMIC (multi-day) INTEGRITY TEST
+================================================================
+Frozen engine; state evolves via molt(); 120 days; genesis start. [SIM]/[ENGINE]
+
+steady = mean per-player damage over the last 10 days (the reached equilibrium).
+SLAIN rate = fraction of days cleared under each formula.
+
+########## N=50 ##########
+          strategy  mean/pl  steady/pl  sqrt SLAIN  k27 SLAIN  k30 SLAIN  final state
+            random    23.09      23.09          0%         0%         0%        eaeee
+   blindDispersion    28.47      28.46          0%       100%         0%       eeaeeM
+        top5Spread    29.68      29.70          0%       100%        49%        aaaer
+       herdObvious    23.98      24.00          0%         0%         0%        aarrr
+         rightTool    22.02      22.00          0%         0%         0%       aeeeeM
+     readerPersist    28.95      29.00          0%        99%        50%        aarrr
+     coordMinority    28.95      29.00          0%        99%        50%        aarrr
+
+########## N=200 ##########
+          strategy  mean/pl  steady/pl  sqrt SLAIN  k27 SLAIN  k30 SLAIN  final state
+            random    25.40      25.21          0%         9%         0%       aeeeeM
+   blindDispersion    28.22      28.21          0%       100%         0%       eeaeeM
+        top5Spread    29.68      29.70          0%       100%        49%        aaaer
+       herdObvious    23.98      24.00          0%         0%         0%        aarrr
+         rightTool    22.02      22.00          0%         0%         0%       aeeeeM
+     readerPersist    28.95      29.00          0%        99%        50%        aarrr
+     coordMinority    28.95      29.00          0%        99%        50%        aarrr
+
+########## N=1000 ##########
+          strategy  mean/pl  steady/pl  sqrt SLAIN  k27 SLAIN  k30 SLAIN  final state
+            random    27.19      27.53        100%        56%         0%       eeeeeM
+   blindDispersion    26.91      26.89        100%         1%         0%       eeeeeM
+        top5Spread    32.30      32.24        100%       100%        99%        aaerr
+       herdObvious    23.98      24.00        100%         0%         0%        arrrr
+         rightTool    19.24      19.20        100%         0%         0%       eeeeeM
+     readerPersist    27.28      27.00        100%        66%        33%        rrarr
+     coordMinority    27.28      27.00        100%        66%        33%        rrarr
+
+READING:
+  - Under the current sqrt formula, SLAIN rate RISES with N for every strategy
+    (turnout dominance) -> large subs auto-win even by herding.
+  - Under linear k, SLAIN rate is ~independent of N for a fixed strategy ->
+    the outcome depends on the strategy, not turnout. This is the structural fix.
+  - If a TRIVIAL strategy (blindDispersion/top5Spread/herd) shows ~100% SLAIN
+    under k, that k is too low (the trivial rule still wins the shared goal).
+  - If NO strategy clears k, that k is too high (unwinnable).
+
+Done.

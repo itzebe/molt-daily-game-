@@ -1,0 +1,29 @@
+================================================================
+MISSION 08 — C1 / C2 SENSITIVITY (effect on the ceilings)
+================================================================
+
+--- genesis best-case per-player (N=2000) under each reading ---
+  engine (C1 not applied, C2=1.0):        34.79
+  hypothetical C1 applied (STATE_MULT):   34.79  (NOTE: on genesis all exposed, STATE_MULT=1.0 -> only effect on EVOLVED zones)
+  hypothetical C2 (pierce.exposed=0.6):   30.09
+
+--- the real C1 test: an ARMOURED zone ---
+  crown:cleave on ARMOURED, engine:      34
+  crown:cleave on ARMOURED, C1 applied:  18
+  => C1 changes armoured-zone damage from 34 to 18 (factor 0.55).
+     This SHIFTS every evolved-state ceiling and hence the feasible k window.
+
+--- C2 test: pierce vs exposed ---
+  crown:pierce exposed, engine (1.0): 21
+  crown:pierce exposed, C2 (0.6):     13
+  => C2 changes pierce-vs-exposed damage by ~40%; a small but real shift to the ceilings.
+
+--- VERDICT ---
+  C1 and C2 both SHIFT the absolute damage ceilings, and therefore SHIFT the
+  feasible k window. The Mission 08 k analysis follows the ENGINE (the
+  authoritative reference), which does NOT apply STATE_MULT and uses pierce:exposed=1.0.
+  If C1 or C2 were resolved the other way, the k window MUST be re-derived.
+  => C1/C2 are RELEVANT to the integrity decision (as a dependency), but are
+     NOT resolved here.
+
+Done.

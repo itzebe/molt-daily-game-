@@ -1,0 +1,125 @@
+================================================================
+MISSION 08 — INDEPENDENT MATHEMATICAL VERIFICATION
+================================================================
+Categories: [PROOF] exact, [ENGINE] frozen-engine verified. Deterministic.
+
+--- 1. FORMULAS: current sqrt vs linear (exact) ---
+         N sqrt(1000)cap12k      27N      30N per-player sqrt
+         0               0        0        0            inf
+         1            1000       27       30        1000.00
+         2 1414.213562373095       54       60         707.11
+         5 2236.06797749979      135      150         447.21
+        14 3741.657386773941      378      420         267.26
+        15 3872.983346207417      405      450         258.20
+        40 6324.555320336759     1080     1200         158.11
+       100           10000     2700     3000         100.00
+       144           12000     3888     4320          83.33
+       348           12000     9396    10440          34.48
+      1000           12000    27000    30000          12.00
+      5000           12000   135000   150000           2.40
+     10000           12000   270000   300000           1.20
+    100000           12000  2700000  3000000           0.12
+  => sqrt per-player requirement DECREASES with N (gate at small N, auto-win at large N).
+     linear per-player requirement is CONSTANT (=k). This is the structural claim.
+
+--- 1b. ROUNDING / INTEGER BOUNDARIES (exact) ---
+  Integrity: sqrt path is Math.min(1000*sqrt(N),12000) -> non-integer for non-squares,
+  compared against an INTEGER total damage via `>=`. Linear k*N is always an integer.
+  Damage: every per-strike value is Math.round(base * toolMult * crowdFactor * fatigue * ridge).
+  Verify a few boundary cases against the engine (delegated):
+    share=0.0299999 band=read factor=1.9 dmg=57
+    share=0.0300000 band=lone factor=1.4 dmg=42
+    share=0.0999999 band=lone factor=1.4 dmg=42
+    share=0.1000000 band=common factor=1 dmg=30
+    share=0.2999999 band=common factor=1 dmg=30
+    share=0.3000000 band=herd factor=0.7 dmg=21
+    => band boundaries are inclusive at the lower bound (share>=minShare).
+    integrityFor(7)=2645.751311064591 (1000*sqrt(7)=2645.751) -> non-integer target
+
+--- 2. STRATEGY CEILINGS ACROSS BEAST STATES (exact, N=2000) ---
+                     state    herd  cycle15    top5  rightTool   equil  DP-opt
+     genesis (all exposed)   21.00    29.08   28.00      24.00   34.16   34.79
+            crown armoured   34.00    30.75   31.60      27.60   36.26   39.98
+        crown+gut armoured   34.00    32.35   35.00      31.00   43.25   43.80
+              all armoured   34.00    35.81   39.20      38.40   47.23   47.23
+                  tail raw   21.00    30.94   28.40      26.00   36.49   36.75
+      crown arm + tail raw   34.00    32.62   32.00      29.60   40.85   41.32
+        gut raw + claw raw   31.00    34.93   39.20      30.20   46.19   46.52
+       2 raw 2 arm (mixed)   34.00    37.41   40.80      36.40   49.08   49.34
+  => the ceilings MOVE with state. cycle15 (blind dispersion) ranges from
+     29.08 to 37.41 (blind dispersion).
+     equilibrium ranges 34.16 to 49.08.
+     DP-optimal ranges 34.79 to 49.34.
+     global-min DP-optimal = 34.79 (the worst-case ceiling).
+     global-max blind dispersion = 37.41.
+  THIS IS THE DECISIVE TABLE for k: a k must be above the blind-dispersion
+  ceiling in EVERY state (else the trivial rule still wins somewhere), and
+  below the coordination ceiling in EVERY state (else the goal is unwinnable).
+
+--- 3. THE FEASIBLE k WINDOW (exact, across all states, N=2000) ---
+  max blind dispersion across states: 37.41
+  min equilibrium across states:      34.16
+  min DP-optimal across states:       34.79
+  top5 spread range:                  28.00 .. 40.80
+  => to defeat blind dispersion EVERYWHERE: k > 37.41  -> integer k >= 38
+  => to be winnable by equilibrium EVERYWHERE: k <= 34.16 -> integer k <= 34
+  => top5 is the tighter trivial rule: to defeat it, k > 40.80 -> k >= 41
+  FEASIBLE WINDOW (equilibrium-winnable AND beats blind dispersion):
+     38 <= k <= 34   (using equilibrium as the coordination ceiling)
+  Using DP-optimal as the coordination ceiling (central coordination):
+     38 <= k <= 34
+  NOTE: top5 spread (a DIFFERENT trivial rule) tops out at 40.80; defeating it
+        needs k >= 41, which may exceed the winnable ceiling in some states.
+
+--- 4. SCALING OF CEILINGS WITH N (genesis beast, exact) ---
+        N  cycle15    top5   equil  DP-opt  opt/I(27N)  opt/I(30N)
+        5    24.40   28.00   28.00   28.00        1.04        0.93
+       10    23.20   28.00   28.00   28.00        1.04        0.93
+       15    29.07   28.00   31.00   31.53        1.17        1.05
+       30    29.07   28.00   31.00   31.53        1.17        1.05
+       60    29.07   28.00   32.43   32.98        1.22        1.10
+      100    29.41   28.00   32.64   33.72        1.25        1.12
+      250    29.20   28.00   34.01   34.36        1.27        1.15
+      500    29.12   28.00   34.09   34.55        1.28        1.15
+     1000    29.10   28.00   34.13   34.66        1.28        1.16
+     2000    29.08   28.00   34.16   34.79        1.29        1.16
+     5000    29.07   28.00   34.17   34.86        1.29        1.16
+  => ceilings are flat in N above ~60 (scale-invariance holds); small-N wobble is
+     integer-rounding granularity. opt/I(kN) is the "coordination margin".
+
+--- 5. EDGE CASES (exact) ---
+  zero participation: total=0 (no submissions). Engine: resolveDay with n=0.
+  one striker (N=1) best: total=21; I(27N)=27; I(30N)=30 -> escape / escape
+  concentrated (all 100 on obvious): per=21.00 total=2100
+  spread cycle15 (100):              per=29.41 total=2941
+  DP-optimal (100):                  per=33.72 total=3372
+  I(27N)=2700  I(30N)=3000  (compare to the totals above)
+  partial participation is modelled as a smaller N (the engine uses distinct strikers).
+  => a half-turnout day has HALF the total but the SAME per-player requirement under linear;
+     under sqrt it is EASIER (the target grows slower than N). See section 6.
+
+--- 6. TURNOUT DEPENDENCE (analytic) [PROOF] ---
+  Under linear I=kN, SLAIN iff total >= kN iff (total/N) >= k iff per-player >= k.
+  The per-player aggregate depends on the STRATEGY MIX, not on N (scale-invariant).
+  => the outcome is determined by HOW the community plays, independent of turnout.
+  Under sqrt I=1000*sqrt(N) (cap 12000), SLAIN iff total >= 1000*sqrt(N)
+     iff (total/N) >= 1000/sqrt(N) -> the per-player bar FALLS as N grows.
+  => under sqrt the outcome is dominated by TURNOUT; under linear it is not.
+
+--- 7. SMALL-N INTEGER EFFECTS (linear) ---
+      N DP-opt total    27N    30N   k27   k30
+      1           21     27     30   esc   esc
+      2           42     54     60   esc   esc
+      3           63     81     90   esc   esc
+      4          116    108    120   WIN   esc
+      5          140    135    150   WIN   esc
+      6          164    162    180   WIN   esc
+      8          232    216    240   WIN   esc
+     10          280    270    300   WIN   esc
+     12          389    324    360   WIN   WIN
+     15          473    405    450   WIN   WIN
+     20          609    540    600   WIN   WIN
+  => at very small N the integer target can be cleared by a single good combo;
+     the linear rule is well-behaved but the game is trivially small below ~15.
+
+Done.

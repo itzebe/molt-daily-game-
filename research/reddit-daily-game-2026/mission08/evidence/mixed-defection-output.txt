@@ -1,0 +1,38 @@
+================================================================
+MISSION 08 — MIXED POPULATIONS, DEFECTION, SEED STABILITY
+================================================================
+Frozen engine; 150 days; steady = mean per-player last 20 days. [SIM]/[ENGINE]
+
+--- A. SEED STABILITY: blind15 vs top5 (9 seeds) ---
+       N      blind15 min/med/max         top5 min/med/max     window
+      50        28.46/28.46/28.46        29.70/29.70/29.70      29-29
+     200        28.21/28.21/28.21        29.70/29.70/29.70      29-29
+    1000        26.89/26.89/26.89        32.25/32.25/32.25      27-32
+  => if (floor(max blind15)+1) <= floor(min top5) for EVERY seed, a k exists.
+     The widest blind15 across seeds sets k_min; the lowest top5 sets k_max.
+
+--- B. MIXED POPULATIONS: SLAIN rate at k=27/29/30 ---
+                   mix       N=100 27/29/30       N=500 27/29/30      N=1000 27/29/30
+       all lazy (herd)             0%/0%/0%             0%/0%/0%             0%/0%/0%
+    mostly lazy+random             8%/0%/0%             0%/0%/0%             0%/0%/0%
+          half blind15            38%/6%/0%            48%/2%/0%            47%/0%/0%
+              30% top5            35%/4%/2%            95%/8%/5%           100%/6%/1%
+              50% top5            22%/4%/1%            44%/7%/2%            43%/9%/1%
+              70% top5          62%/26%/16%          95%/50%/49%          98%/48%/48%
+              all top5         100%/99%/49%         100%/99%/99%         100%/99%/99%
+  => a realistic sub should win (high SLAIN) at the chosen k. If even a 70% top5
+     crowd cannot clear k, k is too high for real communities.
+
+--- C. DEFECTION inside a top5 crowd (N=500): individual payoffs ---
+   defectors  crowd/pl  defector/pl  defect gain
+           0     32.25        35.45         3.20
+           1     32.27        35.45         3.18
+           5     32.28        35.45         3.17
+          25     32.41        35.45         3.04
+          50     32.57        35.45         2.88
+         125     27.09        26.00        -1.09
+         250     26.73        26.00        -0.73
+  => a positive "defect gain" means individuals are tempted to free-ride, which
+     makes a top5 equilibrium socially unstable (the coordination tension).
+
+Done.

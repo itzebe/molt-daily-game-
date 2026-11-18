@@ -1,0 +1,32 @@
+================================================================
+MISSION 08 — DEFINITIVE DYNAMIC STRATEGY TABLE
+================================================================
+Frozen engine; 150 days; steady = mean per-player, last 20 days. [SIM]/[ENGINE]
+
+--- A. steady per-player by strategy and N (median of 3 seeds) ---
+           strategy     N=50   N=100   N=200   N=500  N=1000  N=2000
+               herd    24.00   24.00   24.00   24.00   24.00   24.00
+             random    22.80   24.12   25.17   25.03   27.15   27.23
+    blindDispersion    28.46   27.80   28.21   26.91   26.89   26.88
+         top5Spread    29.70   29.70   29.70   32.25   32.25   32.25
+               top1    24.00   24.00   24.00   24.00   24.00   24.00
+    rightToolSpread    22.00   22.00   22.00   22.00   19.20   19.20
+    readerYesterday    29.00   29.00   29.00   27.20   27.20   27.20
+  => the DECISIVE row is top5Spread: if it is >> k at large N, k cannot
+     defeat it without becoming unwinnable for the collective.
+
+--- B. TRUE INDIVIDUAL CEILING: perfect reader vs each crowd (N=500, 3 seeds median) ---
+              crowd   perfectReader/pl  crowd/pl
+               herd              85.12     24.00
+             random              42.00     25.03
+    blindDispersion              42.00     26.91
+         top5Spread              51.83     32.25
+  => if perfectReader >> top5Spread, a reading player is individually rewarded
+     even when the crowd is trivial (the individual axis is healthy).
+
+--- C. head-to-head: top5Spread vs blindDispersion dynamic steady (median 3 seeds) ---
+  N=  50: herd 24.00  blindDispersion 28.46  top5Spread 29.70
+  N= 200: herd 24.00  blindDispersion 28.21  top5Spread 29.70
+  N=1000: herd 24.00  blindDispersion 26.89  top5Spread 32.25
+
+Done.

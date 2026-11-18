@@ -1,0 +1,5 @@
+lib8 dmg vs engine damageFor:      8000 pass, 0 fail
+lib8 total vs engine resolveDay:   400 pass, 0 fail
+lib8 integrity vs engine:          5 pass, 0 fail
+OVERALL: 8405 pass, 0 fail
+(current engine formula: min(1000*sqrt(N),12000); e.g. N=1000 -> 12000)

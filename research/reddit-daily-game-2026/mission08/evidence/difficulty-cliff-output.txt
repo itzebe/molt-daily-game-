@@ -1,0 +1,26 @@
+================================================================
+MISSION 08 — DIFFICULTY CLIFF + RANDOMISING EQUILIBRIUM
+================================================================
+State evolves under each k. 150 days, 3 seeds. [SIM]/[ENGINE]
+
+--- (A) FRACTION-NEEDED: fraction of state-readers (rest lazy herd) to clear ---
+     k   N=100 need   N=500 need  N=1000 need  (fraction for SLAIN>=50%)
+    26           5%           5%           5%
+    27          10%          10%          10%
+    28          20%          10%          10%
+    29          30%          30%          30%
+    30         100%          35%          90%
+    31        >100%        >100%        >100%
+    32        >100%        >100%        >100%
+  => the "fraction needed" is the difficulty of the shared goal. A k needing
+     >70-80% skilled play is harsh for a casual subreddit.
+
+--- (B) RANDOMISING READER vs DETERMINISTIC READER vs top5 (N=500) ---
+              strategy  steady@k27  steady@k29  steady@k30   SLAIN@k30
+     top5 (beast-read)       32.25       32.41       32.37         99%
+          randomReader       22.62       22.68       22.68          0%
+           herd (lazy)       24.00       24.00       24.00          0%
+  => if randomReader > top5, a sophisticated crowd can do better than the simple
+     spread; if not, top5 is effectively the achievable shared-goal ceiling.
+
+Done.

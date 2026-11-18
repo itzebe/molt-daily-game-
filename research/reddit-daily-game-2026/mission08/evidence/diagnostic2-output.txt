@@ -1,0 +1,83 @@
+================================================================
+MISSION 08 — DIAGNOSTIC 2: blind15 vs top5 by N
+================================================================
+
+=== blind15 N=50 (total=1423, per=28.46) ===
+  zoneState: cro=exp hid=exp gut=arm cla=exp tai=exp | fatigued=cleave ridges=[] mutated=true
+    crow:clea     cnt=   4 share=0.080 band=lone   fac=1.4 base=30.0 dmg=34
+    crow:pier     cnt=   4 share=0.080 band=lone   fac=1.4 base=30.0 dmg=42
+    crow:burn     cnt=   4 share=0.080 band=lone   fac=1.4 base=18.0 dmg=25
+    hide:clea     cnt=   4 share=0.080 band=lone   fac=1.4 base=22.0 dmg=25
+    hide:pier     cnt=   4 share=0.080 band=lone   fac=1.4 base=22.0 dmg=31
+    hide:burn     cnt=   3 share=0.060 band=lone   fac=1.4 base=13.2 dmg=18
+    gut:clea      cnt=   3 share=0.060 band=lone   fac=1.4 base=44.8 dmg=50
+    gut:pier      cnt=   3 share=0.060 band=lone   fac=1.4 base=16.8 dmg=24
+    gut:burn      cnt=   3 share=0.060 band=lone   fac=1.4 base=28.0 dmg=39
+    claw:clea     cnt=   3 share=0.060 band=lone   fac=1.4 base=24.0 dmg=27
+    claw:pier     cnt=   3 share=0.060 band=lone   fac=1.4 base=24.0 dmg=34
+    claw:burn     cnt=   3 share=0.060 band=lone   fac=1.4 base=14.4 dmg=20
+    tail:clea     cnt=   3 share=0.060 band=lone   fac=1.4 base=16.0 dmg=18
+    tail:pier     cnt=   3 share=0.060 band=lone   fac=1.4 base=16.0 dmg=22
+    tail:burn     cnt=   3 share=0.060 band=lone   fac=1.4 base=9.6 dmg=13
+
+=== top5 N=50 (total=1470, per=29.40) ===
+  zoneState: cro=arm hid=arm gut=arm cla=exp tai=raw | fatigued=cleave ridges=[crown,gut] mutated=false
+    crow:clea     cnt=  10 share=0.200 band=common fac=1 base=48.0 dmg=35
+    crow:burn     cnt=  10 share=0.200 band=common fac=1 base=30.0 dmg=27
+    hide:clea     cnt=  10 share=0.200 band=common fac=1 base=35.2 dmg=28
+    gut:clea      cnt=  10 share=0.200 band=common fac=1 base=44.8 dmg=32
+    gut:burn      cnt=  10 share=0.200 band=common fac=1 base=28.0 dmg=25
+
+=== blind15 N=300 (total=8460, per=28.20) ===
+  zoneState: cro=arm hid=exp gut=exp cla=exp tai=exp | fatigued=cleave ridges=[] mutated=true
+    crow:clea     cnt=  20 share=0.067 band=lone   fac=1.4 base=48.0 dmg=54
+    crow:pier     cnt=  20 share=0.067 band=lone   fac=1.4 base=18.0 dmg=25
+    crow:burn     cnt=  20 share=0.067 band=lone   fac=1.4 base=30.0 dmg=42
+    hide:clea     cnt=  20 share=0.067 band=lone   fac=1.4 base=22.0 dmg=25
+    hide:pier     cnt=  20 share=0.067 band=lone   fac=1.4 base=22.0 dmg=31
+    hide:burn     cnt=  20 share=0.067 band=lone   fac=1.4 base=13.2 dmg=18
+    gut:clea      cnt=  20 share=0.067 band=lone   fac=1.4 base=28.0 dmg=31
+    gut:pier      cnt=  20 share=0.067 band=lone   fac=1.4 base=28.0 dmg=39
+    gut:burn      cnt=  20 share=0.067 band=lone   fac=1.4 base=16.8 dmg=24
+    claw:clea     cnt=  20 share=0.067 band=lone   fac=1.4 base=24.0 dmg=27
+    claw:pier     cnt=  20 share=0.067 band=lone   fac=1.4 base=24.0 dmg=34
+    claw:burn     cnt=  20 share=0.067 band=lone   fac=1.4 base=14.4 dmg=20
+    tail:clea     cnt=  20 share=0.067 band=lone   fac=1.4 base=16.0 dmg=18
+    tail:pier     cnt=  20 share=0.067 band=lone   fac=1.4 base=16.0 dmg=22
+    tail:burn     cnt=  20 share=0.067 band=lone   fac=1.4 base=9.6 dmg=13
+
+=== top5 N=300 (total=8820, per=29.40) ===
+  zoneState: cro=arm hid=arm gut=arm cla=exp tai=raw | fatigued=cleave ridges=[crown,gut] mutated=false
+    crow:clea     cnt=  60 share=0.200 band=common fac=1 base=48.0 dmg=35
+    crow:burn     cnt=  60 share=0.200 band=common fac=1 base=30.0 dmg=27
+    hide:clea     cnt=  60 share=0.200 band=common fac=1 base=35.2 dmg=28
+    gut:clea      cnt=  60 share=0.200 band=common fac=1 base=44.8 dmg=32
+    gut:burn      cnt=  60 share=0.200 band=common fac=1 base=28.0 dmg=25
+
+=== blind15 N=1000 (total=26894, per=26.89) ===
+  zoneState: cro=exp hid=exp gut=exp cla=exp tai=exp | fatigued=cleave ridges=[] mutated=true
+    crow:clea     cnt=  67 share=0.067 band=lone   fac=1.4 base=30.0 dmg=34
+    crow:pier     cnt=  67 share=0.067 band=lone   fac=1.4 base=30.0 dmg=42
+    crow:burn     cnt=  67 share=0.067 band=lone   fac=1.4 base=18.0 dmg=25
+    hide:clea     cnt=  67 share=0.067 band=lone   fac=1.4 base=22.0 dmg=25
+    hide:pier     cnt=  67 share=0.067 band=lone   fac=1.4 base=22.0 dmg=31
+    hide:burn     cnt=  67 share=0.067 band=lone   fac=1.4 base=13.2 dmg=18
+    gut:clea      cnt=  67 share=0.067 band=lone   fac=1.4 base=28.0 dmg=31
+    gut:pier      cnt=  67 share=0.067 band=lone   fac=1.4 base=28.0 dmg=39
+    gut:burn      cnt=  67 share=0.067 band=lone   fac=1.4 base=16.8 dmg=24
+    claw:clea     cnt=  67 share=0.067 band=lone   fac=1.4 base=24.0 dmg=27
+    claw:pier     cnt=  66 share=0.066 band=lone   fac=1.4 base=24.0 dmg=34
+    claw:burn     cnt=  66 share=0.066 band=lone   fac=1.4 base=14.4 dmg=20
+    tail:clea     cnt=  66 share=0.066 band=lone   fac=1.4 base=16.0 dmg=18
+    tail:pier     cnt=  66 share=0.066 band=lone   fac=1.4 base=16.0 dmg=22
+    tail:burn     cnt=  66 share=0.066 band=lone   fac=1.4 base=9.6 dmg=13
+
+=== top5 N=1000 (total=31400, per=31.40) ===
+  zoneState: cro=arm hid=arm gut=exp cla=raw tai=raw | fatigued=cleave ridges=[crown,gut,hide,claw] mutated=false
+    crow:clea     cnt= 200 share=0.200 band=common fac=1 base=48.0 dmg=35
+    crow:burn     cnt= 200 share=0.200 band=common fac=1 base=30.0 dmg=27
+    hide:clea     cnt= 200 share=0.200 band=common fac=1 base=35.2 dmg=25
+    claw:pier     cnt= 200 share=0.200 band=common fac=1 base=38.4 dmg=35
+    claw:burn     cnt= 200 share=0.200 band=common fac=1 base=38.4 dmg=35
+
+Done.

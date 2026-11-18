@@ -1,0 +1,22 @@
+================================================================
+MISSION 08 — DYNAMIC EQUILIBRIUM + STATE REACHABILITY
+================================================================
+--- (A) reachable states (3 strategies x 200 days x N in {50,200,1000}) ---
+  distinct zone-state signatures reached: 9
+  aaaer  aaerr  aarrr  aeaar  aerar  araer  arrrr  eeaee  eeeee
+  max armoured zones reached: 3 / 5
+  max raw zones reached:      4 / 5
+  => compare to the static table: is "all armoured" (aaaaa) reachable?
+     "aaaaa" reached: false
+     "aaaaa" NOT reachable in this sample: true
+
+--- (B) dynamic self-interested equilibrium (best response to yesterday, state evolves) ---
+       N  mean/pl  steady/pl  last-10 daily
+      50    28.47      29.00  30,28,30,28,30,28,30,28,30,28
+     200    28.72      29.00  30,28,30,28,30,28,30,28,30,28
+     500    27.30      27.30  30,28,24,30,28,24,30,28,24,30
+    1000    27.30      27.30  30,28,24,30,28,24,30,28,24,30
+  => the self-interested equilibrium per-player damage under an EVOLVING state.
+     Compare to: top5Spread ~32.25, DP-optimal ~34.85, blindDispersion ~28.
+
+Done.

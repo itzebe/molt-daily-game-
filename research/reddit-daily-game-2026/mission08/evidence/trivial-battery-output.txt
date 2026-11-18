@@ -1,0 +1,28 @@
+================================================================
+MISSION 08 — DECISIVE ROBUSTNESS: can a beast-ignoring rule reach 29?
+================================================================
+State evolves under k=30; steady = mean per-player last 20 days; 9 seeds. [SIM]/[ENGINE]
+
+--- beast-ignoring rules: MAX steady across seeds, per N ---
+            rule      25     50    100    200    500   1000   2000   globalMax
+     herdObvious   24.00  24.00  24.00  24.00  24.00  24.00  24.00   24.00
+   uniformRandom   23.09  23.10  24.57  25.27  28.02  28.62  28.53   28.62
+      cycleAll15   28.40  28.46  27.80  28.21  28.17  27.62  28.14   28.46
+      staticTop5   23.40  23.40  23.40  23.40  23.40  23.40  23.40   23.40
+      staticTop8   22.72  22.82  22.18  21.13  22.14  21.13  21.13   22.82
+       allCleave   22.00  22.00  22.00  22.00  22.00  22.00  22.00   22.00
+       allPierce   17.20  17.20  17.20  17.20  17.20  17.20  17.20   17.20
+         allBurn   13.60  13.60  13.60  13.60  13.60  13.60  13.60   13.60
+      zoneSpread   29.16  28.48  28.44  28.27  28.23  28.22  28.21   29.16
+
+--- state-reading control ---
+   top5StateRead   32.37  32.37  32.37  32.37  32.37  32.37  32.37   min=32.37
+
+--- VERDICT ---
+  highest beast-ignoring steady across ALL rules, N and seeds: 29.16 (zoneSpread)
+  => k must exceed 29.16 to defeat EVERY beast-ignoring rule.
+     smallest such integer k = 30
+  k=29 defeats all beast-ignoring rules: NO
+  k=30 defeats all beast-ignoring rules: YES
+
+Done.

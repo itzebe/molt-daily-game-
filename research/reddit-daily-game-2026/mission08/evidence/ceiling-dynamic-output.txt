@@ -1,0 +1,37 @@
+================================================================
+MISSION 08 — DYNAMIC CEILING + EXPLOITABILITY
+================================================================
+Frozen engine; 150 days; state evolves via molt. [SIM]/[PROOF]/[ENGINE]
+
+--- (1) DYNAMIC DP-OPTIMAL ceiling (central planner) ---
+       N  mean/pl  steady/pl  final state
+      50    32.54      32.52  aeeea
+     200    34.24      34.23  aaeee
+     500    33.23      33.23  eeaee
+    1000    33.35      33.34  eeaee
+    2000    34.85      34.86  aeeee
+  => this is the absolute ceiling; no community can exceed it on that day.
+
+--- (2) EXPLOITABILITY: one trivial player inside a fixed non-reading crowd ---
+    crowd = 200 players using herdObvious (or random); the single player uses X.
+    solo top5 (top base)   vs herd crowd: solo 24.00 / crowd 24.00
+    solo reader(read band) vs herd crowd: solo 24.00 / crowd 24.00
+    solo top5              vs random crowd: solo 42.00 / crowd 28.00
+    solo reader            vs random crowd: solo 42.00 / crowd 28.00
+  => if the solo reader >> solo top5, individual reading is rewarded (as Mission 07
+     found statically). The shared goal is a SEPARATE question (section 1).
+
+--- (3) SELF-ORGANISED mixed populations (fraction reading) ---
+    a "reader" best-responds to yesterday's realised combo shares.
+   readerFrac   N=200 steady   N=1000 steady
+         0.00          24.00           24.00
+         0.10          26.44           26.65
+         0.20          26.76           27.53
+         0.30          25.82           26.24
+         0.50          25.64           25.99
+         0.80          27.32           29.35
+         1.00          29.00           27.20
+  => if the steady per-player RISES with reader fraction, reading helps the group;
+     if it FALLS, readers herd onto the same combo and hurt each other.
+
+Done.

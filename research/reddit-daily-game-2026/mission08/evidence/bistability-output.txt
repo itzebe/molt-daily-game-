@@ -1,0 +1,32 @@
+================================================================
+MISSION 08 — PATH DEPENDENCE / BISTABILITY
+================================================================
+N=200, seed=1. "." = escaped day, "S" = slain day. [SIM]/[ENGINE]
+
+--- A. top5 (beast-reading spread) under increasing k ---
+     k minPer(1-20)  minPer(all)   steady  slainDays  outcome (first 40 days)
+    27        28.00        28.00    32.25        150  SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+    29        28.00        28.00    32.41        149  .SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+    30        28.00        28.00    32.37        148  ..SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+  30.5        28.00        28.00    29.70          0  ........................................
+    31        28.00        28.00    29.70          0  ........................................
+    32        28.00        28.00    29.70          0  ........................................
+    33        28.00        28.00    29.70          0  ........................................
+  => note the CLIFF: a small k increase flips top5 from ~99% to ~0% SLAIN,
+     because an early escape locks the state into a low-damage attractor.
+
+--- B. the lock-in threshold: first-20-day min per-player for top5 ---
+  the highest k that top5 reliably clears = min over early days (it must clear EVERY early day).
+  top5 first-20-day per-player: 28.0, 32.8, 32.6, 34.0, 31.6, 31.4, 34.0, 31.6, 31.4, 34.0, 31.6, 31.4, 34.0, 31.6, 31.4, 34.0, 31.6, 31.4, 34.0, 31.6
+  min(first 20) = 28.00
+  min(first 5)  = 28.00
+  => if the community must clear EVERY day from day 1, the effective ceiling is
+     the day-1..5 minimum (~28.00), NOT the steady 32.25.
+
+--- C. is the lock-in permanent? (top5 at k=31, days 40-70) ---
+  days 40-70 per-player: 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4, 30.0, 29.4
+  days 40-70 outcomes:   ..............................
+  => if the escaped-locked state persists, recovery does not happen without a
+     change in play. This is a genuine trap, not a transient.
+
+Done.

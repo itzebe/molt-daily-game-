@@ -1,0 +1,56 @@
+================================================================
+MISSION 08 — DIAGNOSTIC OF TOP-5 SPREAD vs BLIND DISPERSION
+================================================================
+
+=== top5Spread (day 150, N=1000, total=31400, per=31.40) ===
+  state: crown=armoured hide=armoured gut=exposed claw=raw tail=raw  fatigued=cleave ridges=[crown,gut,hide,claw]
+    crown:cleave   cnt= 200 share=0.200 band=common  fac=1 base=48.0 dmg=35
+    crown:burn     cnt= 200 share=0.200 band=common  fac=1 base=30.0 dmg=27
+    hide:cleave    cnt= 200 share=0.200 band=common  fac=1 base=35.2 dmg=25
+    claw:pierce    cnt= 200 share=0.200 band=common  fac=1 base=38.4 dmg=35
+    claw:burn      cnt= 200 share=0.200 band=common  fac=1 base=38.4 dmg=35
+  check: sum(cnt*dmg)=31400  (engine total=31400)
+
+=== blindDispersion (day 150, N=1000, total=26894, per=26.89) ===
+  state: crown=exposed hide=exposed gut=exposed claw=exposed tail=exposed  fatigued=cleave ridges=[]
+    crown:cleave   cnt=  67 share=0.067 band=lone    fac=1.4 base=30.0 dmg=34
+    crown:pierce   cnt=  67 share=0.067 band=lone    fac=1.4 base=30.0 dmg=42
+    crown:burn     cnt=  67 share=0.067 band=lone    fac=1.4 base=18.0 dmg=25
+    hide:cleave    cnt=  67 share=0.067 band=lone    fac=1.4 base=22.0 dmg=25
+    hide:pierce    cnt=  67 share=0.067 band=lone    fac=1.4 base=22.0 dmg=31
+    hide:burn      cnt=  67 share=0.067 band=lone    fac=1.4 base=13.2 dmg=18
+    gut:cleave     cnt=  67 share=0.067 band=lone    fac=1.4 base=28.0 dmg=31
+    gut:pierce     cnt=  67 share=0.067 band=lone    fac=1.4 base=28.0 dmg=39
+    gut:burn       cnt=  67 share=0.067 band=lone    fac=1.4 base=16.8 dmg=24
+    claw:cleave    cnt=  67 share=0.067 band=lone    fac=1.4 base=24.0 dmg=27
+    claw:pierce    cnt=  66 share=0.066 band=lone    fac=1.4 base=24.0 dmg=34
+    claw:burn      cnt=  66 share=0.066 band=lone    fac=1.4 base=14.4 dmg=20
+    tail:cleave    cnt=  66 share=0.066 band=lone    fac=1.4 base=16.0 dmg=18
+    tail:pierce    cnt=  66 share=0.066 band=lone    fac=1.4 base=16.0 dmg=22
+    tail:burn      cnt=  66 share=0.066 band=lone    fac=1.4 base=9.6 dmg=13
+  check: sum(cnt*dmg)=26894  (engine total=26894)
+
+=== herd (day 150, N=1000, total=24000, per=24.00) ===
+  state: crown=armoured hide=raw gut=raw claw=raw tail=raw  fatigued=cleave ridges=[crown]
+    crown:cleave   cnt=1000 share=1.000 band=herd    fac=0.7 base=48.0 dmg=24
+  check: sum(cnt*dmg)=24000  (engine total=24000)
+
+=== DP-optimal (day 150, N=1000, total=32391, per=32.39) ===
+  state: crown=exposed hide=exposed gut=armoured claw=exposed tail=exposed  fatigued=cleave ridges=[crown,gut]
+    gut:cleave     cnt= 299 share=0.299 band=common  fac=1 base=44.8 dmg=32
+    crown:cleave   cnt=  99 share=0.099 band=lone    fac=1.4 base=30.0 dmg=30
+    crown:pierce   cnt=  99 share=0.099 band=lone    fac=1.4 base=30.0 dmg=38
+    hide:pierce    cnt=  99 share=0.099 band=lone    fac=1.4 base=22.0 dmg=31
+    gut:burn       cnt=  99 share=0.099 band=lone    fac=1.4 base=28.0 dmg=35
+    claw:pierce    cnt=  99 share=0.099 band=lone    fac=1.4 base=24.0 dmg=34
+    crown:burn     cnt=  29 share=0.029 band=read    fac=1.9 base=18.0 dmg=31
+    hide:cleave    cnt=  29 share=0.029 band=read    fac=1.9 base=22.0 dmg=33
+    hide:burn      cnt=  29 share=0.029 band=read    fac=1.9 base=13.2 dmg=25
+    gut:pierce     cnt=  29 share=0.029 band=read    fac=1.9 base=16.8 dmg=29
+    claw:cleave    cnt=  29 share=0.029 band=read    fac=1.9 base=24.0 dmg=36
+    claw:burn      cnt=  29 share=0.029 band=read    fac=1.9 base=14.4 dmg=27
+    tail:pierce    cnt=  29 share=0.029 band=read    fac=1.9 base=16.0 dmg=30
+    tail:cleave    cnt=   3 share=0.003 band=read    fac=1.9 base=16.0 dmg=24
+  check: sum(cnt*dmg)=32391  (engine total=32391)
+
+Done.
