@@ -14,7 +14,6 @@
 import {
   CROWD_BANDS,
   FATIGUE_PENALTY,
-  INTEGRITY_CAP,
   INTEGRITY_COEFF,
   MAW,
   RIDGE_PENALTY,
@@ -77,9 +76,9 @@ export function crowdFactor(share: number): { factor: number; label: string } {
   return { factor: CROWD_BANDS[CROWD_BANDS.length - 1].factor, label: 'read' };
 }
 
-/** §1.5 Integrity target for a day. */
+/** §1.5 Integrity target for a day: linear in the number of distinct strikers. */
 export function integrityFor(n: number): number {
-  return Math.min(INTEGRITY_COEFF * Math.sqrt(n), INTEGRITY_CAP);
+  return INTEGRITY_COEFF * n;
 }
 
 /** Aggregate raw submissions (does not depend on beast state). */

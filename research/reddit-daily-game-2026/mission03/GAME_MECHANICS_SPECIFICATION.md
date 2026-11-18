@@ -19,11 +19,19 @@ number, and data shape in MOLT. **No implementation is authorised by this docume
 
 ### 1.2 Zone states (3)
 
-| id | multiplier on damage | visual | accessibility cue |
+| id | effect on damage | visual | accessibility cue |
 | --- | --- | --- | --- |
-| `armoured` | 0.55 | cross-hatched plates | hatch pattern + slate tint |
-| `exposed` | 1.00 | plain ink outline | none |
-| `raw` | 1.70 | open wound | vermilion fill + shape |
+| `armoured` | applies through `TOOL_MULT` (§1.3) | cross-hatched plates | hatch pattern + slate tint |
+| `exposed` | neutral (all tools 1.0) | plain ink outline | none |
+| `raw` | applies through `TOOL_MULT` (§1.3) | open wound | vermilion fill + shape |
+
+> **There is no separate `STATE_MULT`.** A zone's state changes damage **only** by changing which tool
+> counters it (the `TOOL_MULT[tool][state]` matrix in §1.3). Damage is
+> `ZONE_VALUE × TOOL_MULT[tool][state] × CROWD_FACTOR` — see the normative algorithm in §2 and the
+> worked example in §4. An earlier draft of this section listed per-state multipliers
+> (`armoured` 0.55, `raw` 1.70); that was a **double-count** of the state, because the state's effect
+> is already encoded in `TOOL_MULT`, and it is **rejected**. It is not applied by the engine and must
+> not be applied.
 
 ### 1.3 Tools (3)
 
@@ -52,12 +60,19 @@ Effectiveness matrix `TOOL_MULT[tool][state]`:
 ### 1.5 Beast Integrity (the shared pool)
 
 ```
-Integrity(day) = min(1000 * sqrt(N_distinct_strikers), 12000)
+Integrity(day) = 30 * N_distinct_strikers
 ```
 
 `N_distinct_strikers` = number of unique users who submitted at least one strike that day (Reddit user
-ids, counted server-side). The cap prevents trivial mass-slaying; the sqrt keeps a small subreddit
-viable and stops a large one trivialising the day.
+ids, counted server-side). The target scales **linearly** with the crowd: each striker must contribute
+about **30 damage on average** to slay the beast. A linear target keeps a small subreddit viable and
+stops a large one trivialising the day, and it is the constant validated in Mission 09.
+
+> **History.** This was previously `min(1000 * sqrt(N), 12000)`. Mission 09 showed the sqrt form made
+> the shared goal cosmetic at scale (at N = 1000 even a lazy herd cleared it 100 %), and that a linear
+> `k·N` is the correct shape. The constant **k = 30** is the unique integer that defeats every
+> beast-ignoring strategy at every population size tested while remaining winnable by an engaged crowd
+> (≈98.7 %). See `research/reddit-daily-game-2026/mission09/` and `mission10/` for the evidence.
 
 **Slain** if `total_damage ≥ Integrity`; else **Escaped**.
 
@@ -199,7 +214,7 @@ required, so the "no shared service" limitation is not a constraint.
 | --- | --- |
 | Client fabricates damage | Damage computed only on the server from locked submissions |
 | Multiple strikes per user | `strike:{userId}:{day}` lock, written transactionally |
-| Alt-account farming | Integrity uses *distinct* users with a sqrt scale; marginal alt value is small; Trophy/flair thresholds are per-day participation |
+| Alt-account farming | Integrity uses *distinct* users with a linear scale (30 × N); the per-user strike lock means one account = one strike; Trophy/flair thresholds are per-day participation |
 | Timing sniping (waiting to see the split) | The live split is shown only as a **delayed, coarse** band (e.g. "Crown: crowded") that updates on a fixed cadence, not per-second, and the exact percentages are revealed only at resolution |
 | Harassment in comments | Standard Reddit moderation; the game itself contains no user text/images |
 | Rule tampering | All rules live server-side; the client renders state it is given |

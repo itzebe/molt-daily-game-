@@ -75,5 +75,4 @@ export const OVERUSE_THRESHOLD = 0.35; // §3.1
 export const NEGLECT_THRESHOLD = 0.05; // §3.2
 export const RIDGE_THRESHOLD = 0.25; // §3.4
 export const MUTATION_STDDEV = 0.06; // §3.5
-export const INTEGRITY_COEFF = 1000; // §1.5
-export const INTEGRITY_CAP = 12000; // §1.5
+export const INTEGRITY_COEFF = 30; // §1.5 — Integrity = 30 × N_distinct_strikers (Mission 09/10)

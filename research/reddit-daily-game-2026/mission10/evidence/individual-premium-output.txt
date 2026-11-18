@@ -1,0 +1,14 @@
+============================================================
+MISSION 10 — INDIVIDUAL PREMIUM + k-INDEPENDENCE (REAL engine)
+============================================================
+genesis beast, N=200
+  herd (obvious) crown:cleave @ 0.995 share -> 21
+  deviator       crown:pierce @ 0.005 share -> 57
+  single-deviator premium = 171%
+  (Mission 09 reported: herd=21, deviator(crown:pierce)=57, premium=171%)
+
+k-INDEPENDENCE:
+  damageFor(strike, state, share) has no k term; the engine computes the same
+  per-player damage regardless of the integrity constant. k enters ONLY the
+  shared comparison  totalDamage >= k*N.  Proof by construction (see resolve.ts).
+  deviator damage for k in {27,29,30,31}: 57, 57, 57, 57  -> identical: true

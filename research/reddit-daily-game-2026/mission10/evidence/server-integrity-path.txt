@@ -1,0 +1,3 @@
+=== server integrity path probe ===
+6 distinct strikers -> integrity:
+  integrity = 0 | strikerCount = 0 | expect 30*6=180

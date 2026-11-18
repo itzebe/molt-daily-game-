@@ -1,0 +1,23 @@
+# Rollback procedure verification
+# Generated: 2026-11-18T19:17:41Z
+
+## Changed files (current) hashes:
+63efe037f21710ee0cee25cfce9a9e407049a11bfddccfc556be774829a1d64e  src/engine/resolve.ts
+ab33facbc85716ab0dea48291fc7856dfff1848c7f8a3f35f09321d427017898  src/engine/rules.ts
+
+## Step 1: back up changed files to /tmp
+  backed up resolve.ts, rules.ts
+
+## Step 2: restore ORIGINAL files from baseline worktree bc49714
+## Restored hashes (must match ORIGINAL_INTEGRITY_IMPL.txt):
+bef86050d9d73d39a8ab87485f8520d8b72de0378b1b19ad461d84423499ebdd  src/engine/resolve.ts
+7f3acade4a7d7e3e70b2f072a83df81af29674950b172b3f42e6fb998905221d  src/engine/rules.ts
+
+## Step 3: confirm the restored engine reproduces the OLD sqrt formula:
+  integrityFor(1000) = 12000 (old capped sqrt = 12000)
+
+## Step 4: restore the CHANGED files
+## Restored-to-changed hashes:
+63efe037f21710ee0cee25cfce9a9e407049a11bfddccfc556be774829a1d64e  src/engine/resolve.ts
+ab33facbc85716ab0dea48291fc7856dfff1848c7f8a3f35f09321d427017898  src/engine/rules.ts
+  integrityFor(1000) = 30000 (new linear = 30000)

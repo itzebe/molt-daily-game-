@@ -1,0 +1,34 @@
+============================================================
+MISSION 10 — FAILURE CLIFF + SEED STABILITY (REAL engine)
+============================================================
+engaged crowd (TOP5), N=200, 150 days, 9 seeds
+
+--- 1. FINE k SWEEP ---
+  k=29.8   SLAIN = 1332/1350 (98.7%)
+  k=29.9   SLAIN = 1332/1350 (98.7%)
+  k=30     SLAIN = 1332/1350 (98.7%)
+  k=30.02  SLAIN = 0/1350 (0.0%)
+  k=30.05  SLAIN = 0/1350 (0.0%)
+  k=30.1   SLAIN = 0/1350 (0.0%)
+  k=30.2   SLAIN = 0/1350 (0.0%)
+  k=30.5   SLAIN = 0/1350 (0.0%)
+
+--- 2. MECHANISM: per-player damage by day-window ---
+  k=30: d1-3=29.13 d4-10=32.57 d11-30=32.37 d100-150=32.35 overall=32.29
+  k=30.1: d1-3=29.13 d4-10=29.66 d11-30=29.70 d100-150=29.70 overall=29.69
+
+--- 3. SEED STABILITY AT k=30 (per-seed SLAIN) ---
+  seed=1      slain=148/150
+  seed=2      slain=148/150
+  seed=3      slain=148/150
+  seed=7      slain=148/150
+  seed=42     slain=148/150
+  seed=101    slain=148/150
+  seed=1234   slain=148/150
+  seed=9001   slain=148/150
+  seed=90210  slain=148/150
+  -> identical across seeds: YES (deterministic)
+
+--- 4. DAY-3 LOCK-IN: first 5 days of outcome at k=30 vs k=30.02 (seed=1) ---
+  k=30     d1-5 = ESCAPED,ESCAPED,SLAIN,SLAIN,SLAIN
+  k=30.02  d1-5 = ESCAPED,ESCAPED,ESCAPED,ESCAPED,ESCAPED

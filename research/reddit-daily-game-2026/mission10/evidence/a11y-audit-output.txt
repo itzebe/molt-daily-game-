@@ -1,0 +1,16 @@
+### audit-a11y (CHROME=/usr/bin/chromium node scripts/audit-a11y.mjs http://localhost:8787)
+PASS  [mobile] no horizontal overflow at 390px  — scrollWidth ok
+PASS  [mobile] all text meets WCAG AA contrast  — 26 text nodes checked
+PASS  [mobile] interactive targets >= 24px  — 10 targets
+PASS  [mobile] beast zones keyboard-reachable  — 5/5 zones focusable
+PASS  [tablet] no horizontal overflow at 834px  — scrollWidth ok
+PASS  [tablet] all text meets WCAG AA contrast  — 26 text nodes checked
+PASS  [tablet] interactive targets >= 24px  — 10 targets
+PASS  [tablet] beast zones keyboard-reachable  — 5/5 zones focusable
+PASS  [desktop] no horizontal overflow at 1440px  — scrollWidth ok
+PASS  [desktop] all text meets WCAG AA contrast  — 26 text nodes checked
+PASS  [desktop] interactive targets >= 24px  — 10 targets
+PASS  [desktop] beast zones keyboard-reachable  — 5/5 zones focusable
+PASS  [reduced-motion] UI renders with motion reduced
+
+13/13 checks passed

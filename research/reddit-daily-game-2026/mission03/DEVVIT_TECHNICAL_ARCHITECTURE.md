@@ -206,7 +206,7 @@ loops for proper analytics, leaderboard tracking, and streak verification."
 - One strike per user per day, enforced transactionally.
 - Damage computed server-side only.
 - Coarse, delayed split to prevent timing-snipe copying of the crowd's exact choices.
-- Integrity uses distinct-user counting with a sqrt scale, so alt-farming is marginal.
+- Integrity uses distinct-user counting with a linear scale (30 × N); one strike per account, so alt-farming is neutral, not amplified.
 - No user text/images in the loop → no moderation surface inside the game.
 - No outbound links, no external services → Devvit-Rules compliant by construction.
 

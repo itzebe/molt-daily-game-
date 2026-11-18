@@ -1,0 +1,139 @@
+diff --git a/research/reddit-daily-game-2026/mission03/ADVERSARIAL_REVIEW.md b/research/reddit-daily-game-2026/mission03/ADVERSARIAL_REVIEW.md
+index 9884a1c..b448028 100644
+--- a/research/reddit-daily-game-2026/mission03/ADVERSARIAL_REVIEW.md
++++ b/research/reddit-daily-game-2026/mission03/ADVERSARIAL_REVIEW.md
+@@ -169,7 +169,7 @@ which uses the same engine.
+ | # | Risk | Severity | Mitigation | Owner decision point |
+ | --- | --- | --- | --- | --- |
+ | R1 | Reads as a generic tap/boss game | Medium | Lead every surface with the molt/record | Design (immediate) |
+-| R2 | Cold start with few players | Medium | Seed day 1 from a scripted prior; sqrt Integrity scaling | Build (day 1–3) |
++| R2 | Cold start with few players | Medium | Seed day 1 from a scripted prior; linear Integrity scaling | Build (day 1–3) |
+ | R3 | Crowd-factor not fun | **High** | Prototype + playtest first; tune bands; cooperative fallback | **Gate before full build** |
+ | R4 | Devvit platform loop slow | Medium | Day-1 platform spikes; scope freeze at day 10 | Plan (day 1) |
+ | R5 | Demo not filmable | Medium | Invest in plate craft + molt animation | Design (mid-build) |
+diff --git a/research/reddit-daily-game-2026/mission03/DEVELOPMENT_AND_RELEASE_PLAN.md b/research/reddit-daily-game-2026/mission03/DEVELOPMENT_AND_RELEASE_PLAN.md
+index ba8889a..11e576a 100644
+--- a/research/reddit-daily-game-2026/mission03/DEVELOPMENT_AND_RELEASE_PLAN.md
++++ b/research/reddit-daily-game-2026/mission03/DEVELOPMENT_AND_RELEASE_PLAN.md
+@@ -58,7 +58,7 @@ buffer. The estimate assumes **no unfamiliar engine** (a deliberate choice).
+ | Scheduler reliability at 00:00 UTC | Missed molt | Idempotent task + advance-day manual control |
+ | Harness frozen clock | Can't test daily loop | Clock-injection seam + mod-menu advance-day (M0/M4) |
+ | Playtester availability (R3) | Can't validate fun | Recruit a small dev-subreddit group on day 1; run the gate early |
+-| Cold start | Sparse beast | Seed day 1 from a scripted prior day; sqrt Integrity scaling |
++| Cold start | Sparse beast | Seed day 1 from a scripted prior day; linear Integrity scaling |
+ 
+ ---
+ 
+diff --git a/research/reddit-daily-game-2026/mission03/DEVVIT_TECHNICAL_ARCHITECTURE.md b/research/reddit-daily-game-2026/mission03/DEVVIT_TECHNICAL_ARCHITECTURE.md
+index 3eba383..46cfebd 100644
+--- a/research/reddit-daily-game-2026/mission03/DEVVIT_TECHNICAL_ARCHITECTURE.md
++++ b/research/reddit-daily-game-2026/mission03/DEVVIT_TECHNICAL_ARCHITECTURE.md
+@@ -206,7 +206,7 @@ loops for proper analytics, leaderboard tracking, and streak verification."
+ - One strike per user per day, enforced transactionally.
+ - Damage computed server-side only.
+ - Coarse, delayed split to prevent timing-snipe copying of the crowd's exact choices.
+-- Integrity uses distinct-user counting with a sqrt scale, so alt-farming is marginal.
++- Integrity uses distinct-user counting with a linear scale (30 × N); one strike per account, so alt-farming is neutral, not amplified.
+ - No user text/images in the loop → no moderation surface inside the game.
+ - No outbound links, no external services → Devvit-Rules compliant by construction.
+ 
+diff --git a/research/reddit-daily-game-2026/mission03/EXECUTIVE_VERDICT.md b/research/reddit-daily-game-2026/mission03/EXECUTIVE_VERDICT.md
+index a1b4cfd..fb423ac 100644
+--- a/research/reddit-daily-game-2026/mission03/EXECUTIVE_VERDICT.md
++++ b/research/reddit-daily-game-2026/mission03/EXECUTIVE_VERDICT.md
+@@ -70,8 +70,7 @@ playtesting shows the read is not fun, we tune the bands; if it cannot be made f
+ contrarianism) — same engine, different scoring. **This must be prototyped and playtested (milestone M2)
+ before the expensive polish work begins.**
+ 
+-Secondary unresolved items (lower severity): cold start with a small crowd (mitigated by seeding and
+-sqrt scaling); whether the plate's craft can be delivered in-window (mitigated by scope freeze).
++Secondary unresolved items (lower severity): cold start with a small crowd (mitigated by seeding and a linear integrity target); whether the plate's craft can be delivered in-window (mitigated by scope freeze).
+ 
+ ---
+ 
+diff --git a/research/reddit-daily-game-2026/mission03/GAME_MECHANICS_SPECIFICATION.md b/research/reddit-daily-game-2026/mission03/GAME_MECHANICS_SPECIFICATION.md
+index 8c5f649..25204c3 100644
+--- a/research/reddit-daily-game-2026/mission03/GAME_MECHANICS_SPECIFICATION.md
++++ b/research/reddit-daily-game-2026/mission03/GAME_MECHANICS_SPECIFICATION.md
+@@ -19,11 +19,19 @@ number, and data shape in MOLT. **No implementation is authorised by this docume
+ 
+ ### 1.2 Zone states (3)
+ 
+-| id | multiplier on damage | visual | accessibility cue |
++| id | effect on damage | visual | accessibility cue |
+ | --- | --- | --- | --- |
+-| `armoured` | 0.55 | cross-hatched plates | hatch pattern + slate tint |
+-| `exposed` | 1.00 | plain ink outline | none |
+-| `raw` | 1.70 | open wound | vermilion fill + shape |
++| `armoured` | applies through `TOOL_MULT` (§1.3) | cross-hatched plates | hatch pattern + slate tint |
++| `exposed` | neutral (all tools 1.0) | plain ink outline | none |
++| `raw` | applies through `TOOL_MULT` (§1.3) | open wound | vermilion fill + shape |
++
++> **There is no separate `STATE_MULT`.** A zone's state changes damage **only** by changing which tool
++> counters it (the `TOOL_MULT[tool][state]` matrix in §1.3). Damage is
++> `ZONE_VALUE × TOOL_MULT[tool][state] × CROWD_FACTOR` — see the normative algorithm in §2 and the
++> worked example in §4. An earlier draft of this section listed per-state multipliers
++> (`armoured` 0.55, `raw` 1.70); that was a **double-count** of the state, because the state's effect
++> is already encoded in `TOOL_MULT`, and it is **rejected**. It is not applied by the engine and must
++> not be applied.
+ 
+ ### 1.3 Tools (3)
+ 
+@@ -52,12 +60,19 @@ Effectiveness matrix `TOOL_MULT[tool][state]`:
+ ### 1.5 Beast Integrity (the shared pool)
+ 
+ ```
+-Integrity(day) = min(1000 * sqrt(N_distinct_strikers), 12000)
++Integrity(day) = 30 * N_distinct_strikers
+ ```
+ 
+ `N_distinct_strikers` = number of unique users who submitted at least one strike that day (Reddit user
+-ids, counted server-side). The cap prevents trivial mass-slaying; the sqrt keeps a small subreddit
+-viable and stops a large one trivialising the day.
++ids, counted server-side). The target scales **linearly** with the crowd: each striker must contribute
++about **30 damage on average** to slay the beast. A linear target keeps a small subreddit viable and
++stops a large one trivialising the day, and it is the constant validated in Mission 09.
++
++> **History.** This was previously `min(1000 * sqrt(N), 12000)`. Mission 09 showed the sqrt form made
++> the shared goal cosmetic at scale (at N = 1000 even a lazy herd cleared it 100 %), and that a linear
++> `k·N` is the correct shape. The constant **k = 30** is the unique integer that defeats every
++> beast-ignoring strategy at every population size tested while remaining winnable by an engaged crowd
++> (≈98.7 %). See `research/reddit-daily-game-2026/mission09/` and `mission10/` for the evidence.
+ 
+ **Slain** if `total_damage ≥ Integrity`; else **Escaped**.
+ 
+@@ -199,7 +214,7 @@ required, so the "no shared service" limitation is not a constraint.
+ | --- | --- |
+ | Client fabricates damage | Damage computed only on the server from locked submissions |
+ | Multiple strikes per user | `strike:{userId}:{day}` lock, written transactionally |
+-| Alt-account farming | Integrity uses *distinct* users with a sqrt scale; marginal alt value is small; Trophy/flair thresholds are per-day participation |
++| Alt-account farming | Integrity uses *distinct* users with a linear scale (30 × N); the per-user strike lock means one account = one strike; Trophy/flair thresholds are per-day participation |
+ | Timing sniping (waiting to see the split) | The live split is shown only as a **delayed, coarse** band (e.g. "Crown: crowded") that updates on a fixed cadence, not per-second, and the exact percentages are revealed only at resolution |
+ | Harassment in comments | Standard Reddit moderation; the game itself contains no user text/images |
+ | Rule tampering | All rules live server-side; the client renders state it is given |
+diff --git a/research/reddit-daily-game-2026/mission03/WINNING_GAME_DESIGN.md b/research/reddit-daily-game-2026/mission03/WINNING_GAME_DESIGN.md
+index c74bb46..985d032 100644
+--- a/research/reddit-daily-game-2026/mission03/WINNING_GAME_DESIGN.md
++++ b/research/reddit-daily-game-2026/mission03/WINNING_GAME_DESIGN.md
+@@ -63,14 +63,15 @@ Each zone has exactly one **state** each day:
+ 
+ ### 2.2 The tools (three)
+ 
+-| Tool | Strong vs | Weak vs |
+-| --- | --- | --- |
+-| **Cleave** (heavy) | Armoured | Raw |
+-| **Pierce** (pointed) | Exposed | Armoured |
+-| **Burn** (fire) | Raw | Exposed |
++| Tool | Strong vs | Neutral vs | Weak vs |
++| --- | --- | --- | --- |
++| **Cleave** (heavy) | Armoured | Exposed | Raw |
++| **Pierce** (pointed) | Raw | Exposed | Armoured |
++| **Burn** (fire) | Raw | Armoured | Exposed |
+ 
+ Damage multiplier: **1.6×** if the tool counters the zone state, **0.6×** if it is the wrong tool,
+-**1.0×** otherwise.
++**1.0×** otherwise. `exposed` is the neutral state: **every** tool is 1.0 against it. This matches the
++normative `TOOL_MULT` matrix in `GAME_MECHANICS_SPECIFICATION.md` §1.3 and the §2.4/§4 worked numbers.
+ 
+ ### 2.3 The one decision
+ 

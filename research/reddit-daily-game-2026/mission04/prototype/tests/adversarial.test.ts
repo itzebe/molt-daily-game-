@@ -114,10 +114,14 @@ describe('ATTACK: one player exploits scoring', () => {
     expect(crowdFactor(0.0).factor).toBe(1.9);
   });
 
-  it('alt-accounts add sub-linear value because Integrity scales with sqrt(N)', () => {
+  it('alt-accounts gain no advantage: integrity scales linearly with distinct strikers (§1.5)', () => {
+    // Integrity = 30 × N, so an extra distinct striker raises both the achievable
+    // damage and the target by the same proportion — the margin is neutral, not
+    // amplified. The real defence is the per-user strike lock (one strike per user).
     const d1 = integrityFor(10);
     const d2 = integrityFor(100);
-    expect(d2 / d1).toBeLessThan(100 / 10); // 10x users ≪ 10x integrity
+    expect(d2 / d1).toBe(10); // exactly linear (was sub-linear under the old sqrt form)
+    expect(integrityFor(100) - integrityFor(10)).toBe(30 * 90);
   });
 });
 
@@ -156,7 +160,7 @@ describe('ATTACK: the game breaks with low participation', () => {
   it('1 player: no crash, deterministic, small integrity', () => {
     const res = resolveDay(1, genesisState(1), mkSubs([['crown', 'cleave', 1]]));
     expect(res.n).toBe(1);
-    expect(res.integrity).toBe(1000);
+    expect(res.integrity).toBe(30); // 30 × 1 distinct striker (§1.5)
     expect(Number.isFinite(res.totalDamage)).toBe(true);
     expect(ZONES.every((z) => moltFrom(res).zoneState[z])).toBe(true);
   });

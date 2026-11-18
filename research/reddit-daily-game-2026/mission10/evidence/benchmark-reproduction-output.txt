@@ -1,0 +1,73 @@
+============================================================
+MISSION 10 — MISSION 09 BENCHMARK REPRODUCTION (REAL engine)
+============================================================
+seeds=9  N=25,50,200,1000  days=150  state evolves under each k
+
+########## N = 25 ##########
+  rule                         k=29          k=30          k=31
+  randomDaily               22.5/0%       22.5/0%       22.5/0%
+  zoneMajor15              28.7/50%       29.2/1%       29.2/0%
+  cycle15                   28.4/1%       28.4/1%       28.4/0%
+  toolMajor15               28.4/1%       28.4/1%       28.4/0%
+  even5-1tool               23.0/0%       23.0/0%       23.0/0%
+  allCleave5z               22.0/0%       22.0/0%       22.0/0%
+  allPierce5z               17.2/0%       17.2/0%       17.2/0%
+  allBurn5z                 13.6/0%       13.6/0%       13.6/0%
+  fixed-uniform             28.2/1%       28.2/0%       28.2/0%
+  fixed-crown-heavy         26.4/0%       26.4/0%       26.4/0%
+  fixed-tail-heavy          22.1/0%       22.1/0%       22.1/0%
+  herdObvious               24.0/0%       24.0/0%       24.0/0%
+  TOP5 (engaged)           32.4/99%      32.4/99%       29.7/0%
+########## N = 50 ##########
+  rule                         k=29          k=30          k=31
+  randomDaily               22.8/0%       22.8/0%       22.8/0%
+  zoneMajor15               28.5/1%       28.5/0%       28.5/0%
+  cycle15                   28.5/1%       28.5/0%       28.5/0%
+  toolMajor15               28.5/1%       28.5/0%       28.5/0%
+  even5-1tool               23.0/0%       23.0/0%       23.0/0%
+  allCleave5z               22.0/0%       22.0/0%       22.0/0%
+  allPierce5z               17.2/0%       17.2/0%       17.2/0%
+  allBurn5z                 13.6/0%       13.6/0%       13.6/0%
+  fixed-uniform             28.2/1%       28.2/0%       28.2/0%
+  fixed-crown-heavy         25.3/0%       25.3/0%       25.3/0%
+  fixed-tail-heavy          21.6/0%       21.6/0%       21.6/0%
+  herdObvious               24.0/0%       24.0/0%       24.0/0%
+  TOP5 (engaged)           32.4/99%      32.4/99%       29.7/0%
+########## N = 200 ##########
+  rule                         k=29          k=30          k=31
+  randomDaily               24.9/0%       24.9/0%       24.9/0%
+  zoneMajor15               28.3/1%       28.3/0%       28.3/0%
+  cycle15                   28.2/1%       28.2/0%       28.2/0%
+  toolMajor15               28.2/1%       28.2/0%       28.2/0%
+  even5-1tool               23.0/0%       23.0/0%       23.0/0%
+  allCleave5z               22.0/0%       22.0/0%       22.0/0%
+  allPierce5z               17.2/0%       17.2/0%       17.2/0%
+  allBurn5z                 13.6/0%       13.6/0%       13.6/0%
+  fixed-uniform             28.2/1%       28.2/0%       28.2/0%
+  fixed-crown-heavy         24.1/0%       24.1/0%       24.1/0%
+  fixed-tail-heavy          21.3/0%       21.3/0%       21.3/0%
+  herdObvious               24.0/0%       24.0/0%       24.0/0%
+  TOP5 (engaged)           32.4/99%      32.4/99%       29.7/0%
+########## N = 1000 ##########
+  rule                         k=29          k=30          k=31
+  randomDaily              28.3/16%       28.4/1%       28.4/0%
+  zoneMajor15               28.2/1%       28.2/0%       28.2/0%
+  cycle15                   27.6/1%       27.6/0%       27.6/0%
+  toolMajor15               27.6/1%       27.6/0%       27.6/0%
+  even5-1tool               23.0/0%       23.0/0%       23.0/0%
+  allCleave5z               22.0/0%       22.0/0%       22.0/0%
+  allPierce5z               17.2/0%       17.2/0%       17.2/0%
+  allBurn5z                 13.6/0%       13.6/0%       13.6/0%
+  fixed-uniform             28.2/1%       28.2/0%       28.2/0%
+  fixed-crown-heavy         26.4/0%       26.4/0%       26.4/0%
+  fixed-tail-heavy          21.1/0%       21.1/0%       21.1/0%
+  herdObvious               24.0/0%       24.0/0%       24.0/0%
+  TOP5 (engaged)           32.4/99%      32.4/99%       29.7/0%
+
+########## VERDICT (across all N) ##########
+  k   max SLAIN% over beast-ignoring rules   TOP5 engaged SLAIN% (min over N)
+  29     50.0%                                99.3%
+  30      0.7%                                98.7%
+  31      0.0%                                 0.0%
+
+k=30 fidelity vs shipped engine on every day: PASS

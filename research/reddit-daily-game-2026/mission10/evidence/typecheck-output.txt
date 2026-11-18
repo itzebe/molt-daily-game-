@@ -1,0 +1,4 @@
+=== typecheck ===
+npm notice run molt-prototype@0.1.0 npx
+npm notice run 'tsc' --noEmit
+exit=0

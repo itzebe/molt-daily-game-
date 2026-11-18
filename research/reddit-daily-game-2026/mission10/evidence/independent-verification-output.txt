@@ -1,0 +1,8 @@
+===== INDEPENDENT VERIFICATION =====
+integrity runtime checks : 13
+damageFor differentials : 400
+crowdFactor differentials: 400
+molt differentials       : 300
+day outcome checks       : 300 (outcome divergences vs baseline: 4)
+PASS: 2923  FAIL: 0
+RESULT: all independent checks passed

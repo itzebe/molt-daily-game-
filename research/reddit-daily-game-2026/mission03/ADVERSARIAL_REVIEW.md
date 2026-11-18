@@ -169,7 +169,7 @@ which uses the same engine.
 | # | Risk | Severity | Mitigation | Owner decision point |
 | --- | --- | --- | --- | --- |
 | R1 | Reads as a generic tap/boss game | Medium | Lead every surface with the molt/record | Design (immediate) |
-| R2 | Cold start with few players | Medium | Seed day 1 from a scripted prior; sqrt Integrity scaling | Build (day 1–3) |
+| R2 | Cold start with few players | Medium | Seed day 1 from a scripted prior; linear Integrity scaling | Build (day 1–3) |
 | R3 | Crowd-factor not fun | **High** | Prototype + playtest first; tune bands; cooperative fallback | **Gate before full build** |
 | R4 | Devvit platform loop slow | Medium | Day-1 platform spikes; scope freeze at day 10 | Plan (day 1) |
 | R5 | Demo not filmable | Medium | Invest in plate craft + molt animation | Design (mid-build) |

@@ -63,14 +63,15 @@ Each zone has exactly one **state** each day:
 
 ### 2.2 The tools (three)
 
-| Tool | Strong vs | Weak vs |
-| --- | --- | --- |
-| **Cleave** (heavy) | Armoured | Raw |
-| **Pierce** (pointed) | Exposed | Armoured |
-| **Burn** (fire) | Raw | Exposed |
+| Tool | Strong vs | Neutral vs | Weak vs |
+| --- | --- | --- | --- |
+| **Cleave** (heavy) | Armoured | Exposed | Raw |
+| **Pierce** (pointed) | Raw | Exposed | Armoured |
+| **Burn** (fire) | Raw | Armoured | Exposed |
 
 Damage multiplier: **1.6×** if the tool counters the zone state, **0.6×** if it is the wrong tool,
-**1.0×** otherwise.
+**1.0×** otherwise. `exposed` is the neutral state: **every** tool is 1.0 against it. This matches the
+normative `TOOL_MULT` matrix in `GAME_MECHANICS_SPECIFICATION.md` §1.3 and the §2.4/§4 worked numbers.
 
 ### 2.3 The one decision
 

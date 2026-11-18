@@ -58,7 +58,7 @@ buffer. The estimate assumes **no unfamiliar engine** (a deliberate choice).
 | Scheduler reliability at 00:00 UTC | Missed molt | Idempotent task + advance-day manual control |
 | Harness frozen clock | Can't test daily loop | Clock-injection seam + mod-menu advance-day (M0/M4) |
 | Playtester availability (R3) | Can't validate fun | Recruit a small dev-subreddit group on day 1; run the gate early |
-| Cold start | Sparse beast | Seed day 1 from a scripted prior day; sqrt Integrity scaling |
+| Cold start | Sparse beast | Seed day 1 from a scripted prior day; linear Integrity scaling |
 
 ---
 

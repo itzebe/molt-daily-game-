@@ -53,12 +53,41 @@ describe('rules tables (mechanics spec §1)', () => {
     expect(crowdFactor(0.0).factor).toBe(1.9);
   });
 
-  it('integrity uses sqrt scaling with a cap (§1.5)', () => {
+  it('integrity is linear in the number of distinct strikers (§1.5, Mission 09/10)', () => {
+    // Integrity = 30 × N. No cap, no sqrt.
     expect(integrityFor(0)).toBe(0);
-    expect(integrityFor(1)).toBe(1000);
-    expect(integrityFor(100)).toBe(10000);
-    expect(integrityFor(1000)).toBe(12000); // capped
-    expect(integrityFor(1_000_000)).toBe(12000);
+    expect(integrityFor(1)).toBe(30);
+    expect(integrityFor(100)).toBe(3000);
+    expect(integrityFor(1000)).toBe(30000);
+    expect(integrityFor(1_000_000)).toBe(30_000_000);
+    // linear: doubling N doubles the target (the property the sqrt form lacked)
+    expect(integrityFor(200) / integrityFor(100)).toBe(2);
+    expect(integrityFor(10_000) / integrityFor(100)).toBe(100);
+  });
+
+  it('C1 regression: no separate STATE_MULT — state acts only through TOOL_MULT (§1.2/§1.3)', () => {
+    // The §4 worked example pins these. If a STATE_MULT (0.55/1.70) were applied,
+    // crown:cleave (armoured) would be 18, not 34, and gut:pierce (exposed) would be
+    // 53 × 1.0 = 53 only if no extra factor. Both numbers below must match §4 exactly.
+    const armouredCrown: BeastState = {
+      day: 2,
+      zoneState: { crown: 'armoured', hide: 'exposed', gut: 'exposed', claw: 'exposed', tail: 'exposed' },
+      fatiguedTool: null, ridges: [], mutated: false, previousOutcome: null,
+    };
+    // 30 (crown) × 1.6 (cleave vs armoured) × 0.7 (≥30% crowd) = 34  [§4]
+    expect(damageFor({ zone: 'crown', tool: 'cleave' }, armouredCrown, 0.4)).toBe(34);
+    // A raw zone with the counter tool: 30 × 1.6 × 1.9 = 91 (NOT 91 × 1.70 = 155)
+    const rawCrown: BeastState = { ...armouredCrown, zoneState: { ...armouredCrown.zoneState, crown: 'raw' } };
+    expect(damageFor({ zone: 'crown', tool: 'burn' }, rawCrown, 0.02)).toBe(91);
+  });
+
+  it('C2 regression: pierce vs exposed is 1.0 (neutral), not 1.6 (§1.3/§4)', () => {
+    expect(TOOL_MULT.pierce.exposed).toBe(1.0);
+    // gut:pierce on an exposed zone at 2% = 28 × 1.0 × 1.9 = 53  [§4]
+    expect(damageFor({ zone: 'gut', tool: 'pierce' }, genesisState(1), 0.02)).toBe(53);
+    // exposed is neutral for ALL tools except burn (which is weak, 0.6)
+    expect(TOOL_MULT.cleave.exposed).toBe(1.0);
+    expect(TOOL_MULT.burn.exposed).toBe(0.6);
   });
 });
 

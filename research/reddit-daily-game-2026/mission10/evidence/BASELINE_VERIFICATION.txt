@@ -1,0 +1,38 @@
+# Mission 10 baseline verification — raw evidence
+# Generated: 2026-11-18T19:09:03Z
+
+## 1. git rev-parse HEAD
+bc49714e13b5decc5a1c5b8faaf35c2ae0990dab
+
+## 2. git branch --show-current
+master
+
+## 3. git status --short
+?? .openhands/
+?? research/reddit-daily-game-2026/mission10/
+
+## 4. git remote -v
+(none)
+
+## 5. git log --oneline -8
+bc49714 Mission 09 — MOLT rule integrity, mathematical revalidation & playtest readiness
+0697eb2 Mission 08 — MOLT integrity decision gate: independent verification (research only)
+d6a4338 Mission 07 — MOLT living beast: strategic depth, crowd psychology, T6 resolution
+4b41b86 Mission 06 — MOLT shared-victory balance, mechanics resolution, adversarial verification
+ec9bcb4 research(reddit-daily-game-2026): add Mission 05 screenshot evidence of the frozen build
+433a828 research(reddit-daily-game-2026): M2 playtest prep, mechanics analysis, adversarial findings (Mission 05)
+410b3ba research(reddit-daily-game-2026): add MOLT prototype and mechanical validation (Mission 04)
+
+## 6. mission09 checksums
+./evidence/k-decision-output.txt: OK
+./evidence/revalidation-output.txt: OK
+./evidence/window-battery-output.txt: OK
+
+## 7. prototype vs mission04 reference (empty = identical)
+(empty)
+
+## 8. engine file hashes
+7f3acade4a7d7e3e70b2f072a83df81af29674950b172b3f42e6fb998905221d  src/engine/rules.ts
+bef86050d9d73d39a8ab87485f8520d8b72de0378b1b19ad461d84423499ebdd  src/engine/resolve.ts
+c4af735bdcb448b23765d1ce1b49f7cf8af11e2f2e4cac69d793afe612212d79  src/engine/molt.ts
+55ebf720eede05a7434557480925dc851bd6b6e3da94314693dbf3de3d879de3  src/engine/game.ts

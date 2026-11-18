@@ -70,8 +70,7 @@ playtesting shows the read is not fun, we tune the bands; if it cannot be made f
 contrarianism) — same engine, different scoring. **This must be prototyped and playtested (milestone M2)
 before the expensive polish work begins.**
 
-Secondary unresolved items (lower severity): cold start with a small crowd (mitigated by seeding and
-sqrt scaling); whether the plate's craft can be delivered in-window (mitigated by scope freeze).
+Secondary unresolved items (lower severity): cold start with a small crowd (mitigated by seeding and a linear integrity target); whether the plate's craft can be delivered in-window (mitigated by scope freeze).
 
 ---
 
