@@ -1,0 +1,46 @@
+============================================================
+MISSION 07 — STRATEGY TOURNAMENT
+============================================================
+Mixed population; frozen engine; each strategy mean DAILY damage (individual payoff).
+Higher = better individual score. Categories: [SIM] (seeded) + [ENGINE].
+
+--- N=60, 60 days, 5 seeds, target 27N; shared SLAIN rate 21% ---
+              strategy  mean dmg/day  reads/day  avg rank
+            top5Spread         31.09       0.05      1.00
+       blindDispersion         28.92       0.10      2.00
+      predictorUniform         27.38       0.00      3.00
+            casualHerd         26.60       0.02      4.00
+                random         25.54       0.08      5.00
+             misleader         24.93       0.00      6.00
+  predictorPersistence         22.43       0.00      7.40
+           learnerEWMA         22.43       0.00      8.40
+            contrarian         22.27       0.00      8.20
+
+--- N=200, 60 days, 5 seeds, target 27N; shared SLAIN rate 26% ---
+              strategy  mean dmg/day  reads/day  avg rank
+            top5Spread         30.23       0.00      1.00
+       blindDispersion         28.27       0.19      2.00
+                random         27.89       0.15      3.80
+            casualHerd         27.61       0.05      4.00
+      predictorUniform         27.53       0.00      4.20
+             misleader         25.85       0.00      6.00
+  predictorPersistence         22.91       0.00      7.00
+           learnerEWMA         22.91       0.00      8.00
+            contrarian         22.38       0.00      9.00
+
+--- N=600, 60 days, 5 seeds, target 27N; shared SLAIN rate 28% ---
+              strategy  mean dmg/day  reads/day  avg rank
+            top5Spread         30.39       0.00      1.00
+       blindDispersion         28.82       0.19      2.00
+                random         28.67       0.19      3.00
+            casualHerd         28.10       0.06      4.20
+      predictorUniform         27.83       0.00      4.80
+             misleader         26.08       0.00      6.00
+            contrarian         22.77       0.00      7.40
+  predictorPersistence         22.51       0.00      7.80
+           learnerEWMA         22.51       0.00      8.80
+
+KEY QUESTION: does a crowd-reading strategy (contrarian/predictor) rank ABOVE
+blindDispersion on the individual leaderboard? If yes, MOLT rewards understanding.
+
+Done.

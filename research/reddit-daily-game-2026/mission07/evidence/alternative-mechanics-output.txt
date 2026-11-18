@@ -1,0 +1,28 @@
+============================================================
+MISSION 07 — ALTERNATIVE MECHANICS EXPERIMENTS
+============================================================
+Frozen engine molt rules; genesis beast; seeded. [SIM]/[ENGINE]
+
+--- M1: MOLT-MEMORY — can the next ARMOURED zone be predicted? ---
+  days with an armoured zone: 200
+  predictor "most-attacked zone persists" accuracy: 100%
+  predictor "always obvious zone"           accuracy: 100%
+  entropy of the armoured zone: 0.00 bits (max 2.32 for 5 zones)
+  => LOW entropy: the molt is highly predictable -> a forecast is trivial, not skillful.
+
+--- M2: FEINT — can a bloc create a misleading pattern? ---
+  day1: bloc fakes tail (share 30%) -> day2 tail state = exposed
+  a follower targeting the faked zone scores ~22; the best strike scores ~67
+  => the feint arms a low-value zone, so followers who chase the pattern are punished
+     by 45 damage. Feints are consequential: signals can be faked.
+
+--- M3: SACRIFICE — can a low-damage strike raise the SHARED total? ---
+  after a neglected-tail day, tail state on day2 = raw
+  2-day shared total: greedy=9000  sacrifice-setup=7845  (delta -1155)
+  => greedy play already dominates: sacrifice is weak on this beast.
+
+--- M4: SIGNALS — is yesterday informative about today? ---
+  "yesterday's top zone = today's top zone" accuracy: 100%
+  (baseline if random = 20%). Strong persistence: signals ARE informative.
+
+Done.

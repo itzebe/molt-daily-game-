@@ -1,0 +1,38 @@
+============================================================
+MISSION 07 — CROWD-PREDICTABILITY SWEEP
+============================================================
+Probe player vs a fixed crowd of N players; herd fraction p (rest uniform-random).
+Deterministic given seed; report mean probe payoff over 40 crowd draws. [PROOF]
+
+   p(herd)     N        random (L0)    herd (obvious)   blindDispersion L1 (BR-to-uniform)  perfectPredictor
+      0.00    50               23.8              40.3              28.9              40.3              41.5
+      0.20    50               23.9              27.8              28.9              27.8              40.9
+      0.50    50               26.4              21.0              30.5              21.0              44.3
+      0.80    50               29.7              21.0              34.1              21.0              47.9
+      0.95    50               32.6              21.0              35.5              21.0              53.9
+
+      0.00   200               25.1              42.0              28.8              42.0              42.0
+      0.20   200               25.4              28.9              29.5              28.9              43.5
+      0.50   200               27.5              21.0              31.4              21.0              51.7
+      0.80   200               32.9              21.0              36.7              21.0              56.5
+      0.95   200               34.0              21.0              37.9              21.0              57.0
+
+      0.00  1000               25.0              42.0              29.9              42.0              42.0
+      0.20  1000               25.0              30.0              29.0              30.0              42.0
+      0.50  1000               27.5              21.0              31.6              21.0              50.7
+      0.80  1000               34.0              21.0              37.9              21.0              57.0
+      0.95  1000               34.0              21.0              37.9              21.0              57.0
+
+READING: at high p (predictable herd), perfectPredictor should dominate.
+At low p (unpredictable, dispersed crowd), prediction has little edge.
+This isolates WHEN crowd-reading is rewarded.
+
+--- 2: a MIXED crowd of self-interested L1 predictors (do they cancel out?) ---
+  L1 best-response combo = crown:cleave (base 30).
+  N=50: if ALL play L1 -> share=1.00 -> everyone scores 21 (herd band). Self-defeating.
+  N=200: if ALL play L1 -> share=1.00 -> everyone scores 21 (herd band). Self-defeating.
+  N=1000: if ALL play L1 -> share=1.00 -> everyone scores 21 (herd band). Self-defeating.
+  => A prediction mechanic that everyone can copy collapses to the herd band.
+     Depth must come from prediction being CONTESTED (anti-coordination), not shared.
+
+Done.

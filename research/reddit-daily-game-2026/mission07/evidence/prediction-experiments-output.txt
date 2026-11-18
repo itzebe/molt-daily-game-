@@ -1,0 +1,66 @@
+============================================================
+MISSION 07 — PREDICTION MECHANIC EXPERIMENTS
+============================================================
+Scoring overlay is a RESEARCH MODEL (not engine code); damage from frozen engine.
+Scores are mean/day across 60 days x 4 seeds. [SIM]
+
+########## V0 baseline (no forecast) ##########
+  N=60  (trivial 'always-call-obvious' hit rate = 100%; herd-zone entropy = 0.08 bits; shared SLAIN 7%)
+       skilledReader score/day   27.75  herd-acc 11.85  molt-acc 11.75
+     blindDispersion score/day   27.20  herd-acc 12.00  molt-acc 11.75
+              random score/day   25.05  herd-acc  2.33  molt-acc  2.43
+          casualHerd score/day   24.10  herd-acc 12.00  molt-acc 11.90
+    alwaysCallObvious score/day   23.92  herd-acc 12.00  molt-acc 11.90
+  N=300  (trivial 'always-call-obvious' hit rate = 100%; herd-zone entropy = 0.00 bits; shared SLAIN 10%)
+     blindDispersion score/day   27.74  herd-acc 60.00  molt-acc 60.00
+       skilledReader score/day   27.30  herd-acc 60.00  molt-acc 60.00
+              random score/day   26.42  herd-acc 11.86  molt-acc 12.07
+          casualHerd score/day   24.73  herd-acc 60.00  molt-acc 60.00
+    alwaysCallObvious score/day   23.95  herd-acc 60.00  molt-acc 60.00
+
+########## V1 herd-call +8 bonus ##########
+  N=60  (trivial 'always-call-obvious' hit rate = 100%; herd-zone entropy = 0.08 bits; shared SLAIN 7%)
+       skilledReader score/day   35.65  herd-acc 11.85  molt-acc 11.75
+     blindDispersion score/day   35.20  herd-acc 12.00  molt-acc 11.75
+          casualHerd score/day   32.10  herd-acc 12.00  molt-acc 11.90
+    alwaysCallObvious score/day   31.92  herd-acc 12.00  molt-acc 11.90
+              random score/day   26.60  herd-acc  2.33  molt-acc  2.43
+  N=300  (trivial 'always-call-obvious' hit rate = 100%; herd-zone entropy = 0.00 bits; shared SLAIN 10%)
+     blindDispersion score/day   35.74  herd-acc 60.00  molt-acc 60.00
+       skilledReader score/day   35.30  herd-acc 60.00  molt-acc 60.00
+          casualHerd score/day   32.73  herd-acc 60.00  molt-acc 60.00
+    alwaysCallObvious score/day   31.95  herd-acc 60.00  molt-acc 60.00
+              random score/day   28.01  herd-acc 11.86  molt-acc 12.07
+
+########## V2 synced (call+go elsewhere, x1.25) ##########
+  N=60  (trivial 'always-call-obvious' hit rate = 100%; herd-zone entropy = 0.08 bits; shared SLAIN 7%)
+       skilledReader score/day   27.81  herd-acc 11.85  molt-acc 11.75
+     blindDispersion score/day   27.26  herd-acc 12.00  molt-acc 11.75
+              random score/day   25.05  herd-acc  2.33  molt-acc  2.43
+          casualHerd score/day   24.14  herd-acc 12.00  molt-acc 11.90
+    alwaysCallObvious score/day   23.97  herd-acc 12.00  molt-acc 11.90
+  N=300  (trivial 'always-call-obvious' hit rate = 100%; herd-zone entropy = 0.00 bits; shared SLAIN 10%)
+     blindDispersion score/day   27.74  herd-acc 60.00  molt-acc 60.00
+       skilledReader score/day   27.30  herd-acc 60.00  molt-acc 60.00
+              random score/day   26.42  herd-acc 11.86  molt-acc 12.07
+          casualHerd score/day   24.73  herd-acc 60.00  molt-acc 60.00
+    alwaysCallObvious score/day   23.95  herd-acc 60.00  molt-acc 60.00
+
+########## V3 molt-call +10 bonus ##########
+  N=60  (trivial 'always-call-obvious' hit rate = 100%; herd-zone entropy = 0.08 bits; shared SLAIN 7%)
+    alwaysCallObvious score/day   33.92  herd-acc 12.00  molt-acc 11.90
+          casualHerd score/day   31.69  herd-acc 12.00  molt-acc 11.90
+     blindDispersion score/day   29.70  herd-acc 12.00  molt-acc 11.75
+       skilledReader score/day   29.20  herd-acc 11.85  molt-acc 11.75
+              random score/day   27.04  herd-acc  2.33  molt-acc  2.43
+  N=300  (trivial 'always-call-obvious' hit rate = 100%; herd-zone entropy = 0.00 bits; shared SLAIN 10%)
+    alwaysCallObvious score/day   33.95  herd-acc 60.00  molt-acc 60.00
+          casualHerd score/day   32.33  herd-acc 60.00  molt-acc 60.00
+       skilledReader score/day   30.18  herd-acc 60.00  molt-acc 60.00
+     blindDispersion score/day   29.74  herd-acc 60.00  molt-acc 60.00
+              random score/day   28.43  herd-acc 11.86  molt-acc 12.07
+
+Questions answered: does a skilled reader beat blind dispersion under each
+version? Is the bonus gameable (trivial hit rate high)? Is the call non-trivial?
+
+Done.

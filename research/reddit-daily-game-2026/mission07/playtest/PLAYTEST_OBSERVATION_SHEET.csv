@@ -1,0 +1,9 @@
+participant_code,group,time_to_first_strike_s,understood_goal_unaided,understood_crowd_factor,attempted_predict_crowd,reason_for_strike,understood_molt,consequentiality_1to5,return_intent_1to5,enjoyment_1to5,confusion_points
+N1,N,,,,,,,,,,,
+N2,N,,,,,,,,,,,
+N3,N,,,,,,,,,,,
+N4,N,,,,,,,,,,,
+G1,G,,,,,,,,,,,
+G2,G,,,,,,,,,,,
+G3,G,,,,,,,,,,,
+G4,G,,,,,,,,,,,

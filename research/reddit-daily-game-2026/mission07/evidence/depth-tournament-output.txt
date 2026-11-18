@@ -1,0 +1,28 @@
+============================================================
+MISSION 07 — COGNITIVE-DEPTH TOURNAMENT
+============================================================
+Level-k reasoning. If higher levels score more, MOLT rewards thinking ahead. [PROOF/SIM]
+
+--- 1: level-k combo and its payoff vs a mixed crowd (50% previous-BR, 50% uniform) ---
+  level            combo  base  payoff
+      0     crown:cleave    30      21
+      1     crown:pierce    30      21
+      2     crown:cleave    30      21
+      3     crown:pierce    30      21
+      4     crown:cleave    30      21
+
+--- 2: iterated best-response population (everyone moves to BR of yesterday) ---
+  Each of N players moves to the best response to the previous day's realised
+  shares. Report the trajectory and the fixed point.
+  N= 100: converges in 4 samples; fixed-point agg/player=33.72; trajectory 26.3 -> 31.6 -> 33.7 -> 33.7
+  N= 400: converges in 10 samples; fixed-point agg/player=34.06; trajectory 28.6 -> 30.1 -> 31.4 -> 32.5 -> 33.3 -> 34.0 -> 33.2 -> 33.9
+  N=1000: converges in 15 samples; fixed-point agg/player=33.96; trajectory 29.1 -> 29.7 -> 30.4 -> 30.8 -> 31.5 -> 31.9 -> 32.3 -> 32.7
+  => If the fixed point is a stable, non-trivial mix (not 1 combo, not uniform),
+     the individual game has a real strategic equilibrium above blind dispersion.
+
+--- 3: exploitability of the fixed point (can one player beat it?) ---
+  crowd mean=34.13; best single deviation=30 on crown:cleave; gain=-4.13
+  read-band players at the fixed point: 11.6%
+  => gain=0 means it is a Nash equilibrium (self-consistent, unexploitable).
+
+Done.

@@ -1,0 +1,75 @@
+============================================================
+MISSION 07 — T6 INDEPENDENT REPRODUCTION
+============================================================
+Frozen engine; exact computations (no seed). Categories: [PROOF]/[ENGINE].
+genesis beast (all exposed). Individual payoff uses the marginal deviator.
+
+--- PART 1: aggregate damage/player by strategy (exact) ---
+      N    herd   top5 rightTool blindUnif  equil  optimal
+      8   21.00  28.50     25.00     23.88  29.00    29.00
+     20   21.00  28.00     24.00     25.45  30.45    30.45
+     50   21.00  28.00     24.00     29.58  32.36    32.78
+    100   21.00  28.00     24.00     29.41  33.72    33.72
+    250   21.00  28.00     24.00     29.20  34.01    34.36
+    500   21.00  28.00     24.00     29.12  34.09    34.55
+   1000   21.00  28.00     24.00     29.10  34.13    34.66
+
+  [ENGINE] cross-check vs Mission 06 numbers (N=1000): herd 21.00, blind 29.08, top5 28.00, optimal 34.66
+  reproduced: herd 21.00, blind 29.10, top5 28.00, optimal 34.66
+
+--- PART 2: is each strategy a Nash equilibrium? (fixed N; [PROOF]) ---
+  mean = crowd mean payoff; best-dev = best single-player move; gain = toPay - fromPay
+      N    strategy crowd mean    move to  best pay   gain  Nash?
+    100        herd      21.00 crown:pierce     57.00  36.00     no
+    100        top5      28.00 claw:pierce     46.00  22.00     no
+    100   rightTool      24.00 crown:pierce     57.00  41.00     no
+    100   blindUnif      29.41 crown:cleave     42.00  29.00     no
+    100       equil      33.72 crown:pierce     30.00   0.00    YES
+    100     optimal      33.72 crown:cleave     30.00   0.00    YES
+
+   1000        herd      21.00 crown:pierce     57.00  36.00     no
+   1000        top5      28.00 claw:pierce     46.00  22.00     no
+   1000   rightTool      24.00 crown:pierce     57.00  41.00     no
+   1000   blindUnif      29.10 crown:cleave     42.00  29.00     no
+   1000       equil      34.13 crown:cleave     30.00   0.00    YES
+   1000     optimal      34.66 crown:cleave     30.00   5.00     no
+
+
+--- PART 2b: best-response dynamics — where does self-interested play land? [PROOF/SIM] ---
+  Start from a random distribution; repeatedly move one player from the lowest-
+  payoff occupied combo to the highest-payoff combo. Report the fixed point.
+      N start seed  steps fixed point agg/player  reads%  Nash?
+     50         11     22                 32.36     4.0    YES
+     50         29     19                 32.36     4.0    YES
+    200         11     75                 33.95     5.0    YES
+    200         29     74                 33.95     5.0    YES
+   1000         11    347                 34.13     5.8    YES
+   1000         29    348                 34.13     5.8    YES
+  => This is the aggregate an all-self-interested population reaches. Compare to
+     blindUnif and optimal above. If it lands BELOW optimal, the shared goal is NOT
+     maximised by individual best response — a coordination problem, not a solved one.
+--- PART 3: the shared goal (SLAIN) under the CURRENT formula and 27N [ENGINE] ---
+      N    strategy agg/player    I=sqrt    I=27N  sqrt   27N
+      8        herd      21.00      2828      216   esc   esc
+      8   blindUnif      23.88      2828      216   esc   esc
+      8     optimal      29.00      2828      216   esc   WIN
+     20        herd      21.00      4472      540   esc   esc
+     20   blindUnif      25.45      4472      540   esc   esc
+     20     optimal      30.45      4472      540   esc   WIN
+     50        herd      21.00      7071     1350   esc   esc
+     50   blindUnif      29.58      7071     1350   esc   WIN
+     50     optimal      32.78      7071     1350   esc   WIN
+    100        herd      21.00     10000     2700   esc   esc
+    100   blindUnif      29.41     10000     2700   esc   WIN
+    100     optimal      33.72     10000     2700   esc   WIN
+    250        herd      21.00     12000     6750   esc   esc
+    250   blindUnif      29.20     12000     6750   esc   WIN
+    250     optimal      34.36     12000     6750   esc   WIN
+    500        herd      21.00     12000    13500   esc   esc
+    500   blindUnif      29.12     12000    13500   WIN   WIN
+    500     optimal      34.55     12000    13500   WIN   WIN
+   1000        herd      21.00     12000    27000   WIN   esc
+   1000   blindUnif      29.10     12000    27000   WIN   WIN
+   1000     optimal      34.66     12000    27000   WIN   WIN
+
+Done.

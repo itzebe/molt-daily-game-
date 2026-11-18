@@ -1,0 +1,42 @@
+============================================================
+MISSION 07 — FORECAST REFLEXIVITY & PREDICTABILITY SPECTRUM
+============================================================
+Deterministic (seeded); genesis beast. [SIM]/[PROOF]
+
+--- 1: REFLEXIVITY — bonus-chasers move off the predicted herd zone ---
+Crowd: fraction f "chases the bonus". Two modes tested: SCATTERED (each chaser
+picks a random non-obvious zone) and COORDINATED (all chasers pile on the same
+alternative zone). The predictor predicts the obvious zone.
+      f         mode obv-zone share   herd zone prediction correct?
+    0.0    scattered          1.000       crown                 YES
+    0.0  coordinated          1.000       crown                 YES
+    0.2    scattered          0.810       crown                 YES
+    0.2  coordinated          0.803       crown                 YES
+    0.4    scattered          0.591       crown                 YES
+    0.4  coordinated          0.594       crown                 YES
+    0.5    scattered          0.508       crown                 YES
+    0.5  coordinated          0.510       crown                 YES
+    0.6    scattered          0.413       crown                 YES
+    0.6  coordinated          0.429         gut        NO — flipped
+    0.7    scattered          0.316       crown                 YES
+    0.7  coordinated          0.322         gut        NO — flipped
+  => SCATTERED chasing does not flip the herd (obvious zone keeps the plurality),
+     but a COORDINATED bloc flips it once f>0.5. A herd-call bonus is thus
+     reflexively manipulable by any organised group: they move the "correct"
+     answer by chasing the bonus. The reward is not skill-stable.
+
+--- 2: PREDICTABILITY SPECTRUM — entropy of the correct answer ---
+Crowd herd fraction p (rest uniform-random). Correct answer = most-attacked ZONE.
+   p(herd) obv-zone share  obv is herd? entropy(bits)
+      0.00          0.200           20%          2.31
+      0.20          0.360          100%          0.00
+      0.35          0.480          100%          0.00
+      0.50          0.600          100%          0.00
+      0.70          0.760          100%          0.00
+      0.90          0.920          100%          0.00
+      1.00          1.000          100%          0.00
+  => entropy is low (trivial) when the crowd is predictable, and rises only when
+     the crowd is dispersed — but then the answer is unpredictable (luck, not skill).
+     There is NO regime where the herd-zone call is BOTH non-trivial AND skill-correlated.
+
+Done.

@@ -1,0 +1,55 @@
+============================================================
+MISSION 07 — POPULATION SCALING REASSESSMENT
+============================================================
+Current formula: I(N)=min(1000·sqrt(N),12000). Proposed: I(N)=k·N (no cap). [SIM]/[PROOF]
+
+--- (a) SMALL community: can skill win under each formula? ---
+      N   sqrt I  skill wins sqrt?  skill wins k=27?  skill wins k=25?
+      5     2236                no               YES               YES
+     10     3162                no               YES               YES
+     20     4472                no               YES               YES
+     40     6325                no               YES               YES
+  => under sqrt, small subs CANNOT win even with perfect skill (population gate).
+     under linear, small subs win iff they play well. This is the fix for A5.
+
+--- (b) LARGE community: can LAZY play win? (herd) ---
+       N  sqrt: herd wins?   k=25 herd   k=27 herd   k=30 herd
+     100                no     escapes     escapes     escapes
+     500                no     escapes     escapes     escapes
+    1000                no     escapes     escapes     escapes
+    5000               YES     escapes     escapes     escapes
+  => under sqrt, large subs win by herding (auto-win). under linear, the herd
+     (21.0/player) never wins for k>=22. Lazy play is punished at every size.
+
+--- (c) scale-invariance: the required SKILLED fraction should not grow with N ---
+       N   k=27 need   k=29 need   k=31 need   k=33 need
+      50         70%         85%        100%       never
+     200         60%         75%         95%         95%
+    1000         55%         75%         90%         90%
+    5000         30%         70%         90%         90%
+  => the needed skilled fraction is ~constant in N (scale-invariant): a 50-player
+     and a 5000-player sub need the same effort. This is what a linear target buys.
+
+--- (d) is prediction valuable across N? (herd-call edge vs blind) ---
+  (a player who correctly calls the herd zone vs one who ignores it)
+       N  perfect predictor  blind dispersion   edge
+      50               42.0              29.6   12.4
+     200               42.0              29.2   12.8
+    1000               42.0              29.1   12.9
+  => prediction keeps a large edge at every N (the read band multiplies damage).
+
+--- (e) is the outcome consequential? (does the crowd change the result?) ---
+       N  herd total  disp total  equil total   I(27N)
+     100        2100        2941         3264     2700
+     500       10500       14559        17044    13500
+    1000       21000       29101        34134    27000
+  => the crowd's behaviour moves the total by >50% — the beast's fate is decided
+     by the community, not by the formula. Behaviour is consequential.
+
+--- RECOMMENDATION: k in 25..30; evidence-derived single value: k=27 ---
+  k=27: herd(21) loses, dispersion(29.1) wins, skilled(34.1) wins comfortably.
+  k=29: dispersion(29.1) only just wins -> tighter; more skill demanded.
+  k=31: dispersion(29.1) loses -> the shared goal becomes a genuine SKILL goal.
+  See COMPETITIVE_SCORING.md for the trade-off. NOT APPROVED.
+
+Done.

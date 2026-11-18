@@ -1,0 +1,4 @@
+lib7 dmg vs engine damageFor:      5000 pass, 0 fail
+lib7 total vs engine resolveDay:   320 pass, 0 fail
+lib7 integrity vs engine:          5 pass, 0 fail
+OVERALL: 5325 pass, 0 fail
